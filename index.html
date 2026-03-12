@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: linear-gradient(135deg, #fafaf8 0%, #f5f3f0 100%);
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #ffffff 0%, #fdfcfb 100%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: linear-gradient(90deg, #ffffff 0%, #fdfcfb 100%);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .stats-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem 3rem;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .search-box {
+      position: relative;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 1rem 1.5rem 1rem 3.5rem;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      background: #ffffff;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), 0 2px 12px rgba(79, 70, 229, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      pointer-events: none;
+      opacity: 0.6;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle at 35% 35%, currentColor, currentColor 40%, transparent 50%);
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .search-icon::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 8px;
+      background: currentColor;
+      bottom: -6px;
+      right: -4px;
+      transform: rotate(-45deg);
+    }
+
+    .search-box input::placeholder {
+      color: #aaa;
+    }
+
+    /* Filter Pills */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      animation: fadeInUp 0.6s ease-out 0.3s both;
+    }
+
+    .filter-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #666;
+      margin-right: 0.5rem;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .filter-pill {
+      padding: 0.6rem 1.2rem;
+      border: 1.5px solid rgba(0, 0, 0, 0.15);
+      background: #ffffff;
+      border-radius: 20px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+    }
+
+    .filter-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-pill.active {
+      border-color: transparent;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .filter-pill[data-category="digital"].active {
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    }
+
+    .filter-pill[data-category="social"].active {
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    }
+
+    .filter-pill[data-category="branding"].active {
+      background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    }
+
+    .filter-pill[data-category="content"].active {
+      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    }
+
+    .filter-pill[data-category="strategy"].active {
+      background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+    }
+
+    /* Articles Grid */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.6s ease-out 0.4s both;
+    }
+
+    /* Article Card */
+    .article-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .article-card:hover .article-image img {
+      transform: scale(1.05);
+    }
+
+    .article-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .category-badge {
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .category-badge.digital {
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    }
+
+    .category-badge.social {
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    }
+
+    .category-badge.branding {
+      background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    }
+
+    .category-badge.content {
+      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    }
+
+    .category-badge.strategy {
+      background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+    }
+
+    .article-date {
+      font-size: 0.8rem;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .article-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #1a1a1a;
+      margin: 0.5rem 0;
+    }
+
+    .article-source {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 500;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+    }
+
+    .modal-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-close:hover {
+      background: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .modal-body {
+      padding: 2.5rem;
+    }
+
+    .modal-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    .modal-badge {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .modal-source {
+      font-size: 0.9rem;
+      color: #999;
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+    }
+
+    .modal-date {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .modal-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 2rem;
+      white-space: pre-wrap;
+    }
+
+    .modal-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .modal-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    }
+
+    /* No Results Message */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 2rem;
+      color: #999;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .stats-content {
+        gap: 1rem;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .modal-content {
+        border-radius: 16px;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+      }
+
+      .modal-header {
+        height: 220px;
+      }
+
+      .controls {
+        gap: 1rem;
+      }
+
+      .filters {
+        gap: 0.5rem;
+      }
+
+      .filter-pills {
+        gap: 0.5rem;
+      }
+
+      .filter-pill {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Scrollbar styling */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Marketing Hub</h1>
+      <p>Aktuelle Marketing-Nachrichten und Brancheninsights</p>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-content">
+      <div class="stat-item">
+        <span class="stat-label">Artikel insgesamt</span>
+        <span class="stat-value" id="total-articles">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Nachrichtenquellen</span>
+        <span class="stat-value" id="total-sources">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Neue heute</span>
+        <span class="stat-value" id="today-articles">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Kategorien</span>
+        <span class="stat-value" id="total-categories">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Controls -->
+    <div class="controls">
+      <div class="search-box">
+        <div class="search-icon"></div>
+        <input type="text" id="search-input" placeholder="Nach Artikeln suchen...">
+      </div>
+      <div class="filters">
+        <span class="filter-label">Kategorien:</span>
+        <div class="filter-pills" id="filter-pills">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articles-grid">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="article-modal">
+    <div class="modal-content">
+      <div class="modal-header" id="modal-image">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <div class="modal-badge" id="modal-category"></div>
+          <div class="modal-source" id="modal-source"></div>
+          <div class="modal-date" id="modal-date"></div>
+        </div>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-description" id="modal-description"></div>
+        <a href="#" class="modal-button" id="modal-link" target="_blank">Originalartikel lesen</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Embedded news data
+    const window__NEWS_DATA = {"updated":"2026-03-12T18:39:50.644064+00:00","total":60,"sources":["Marketing Week","Neil Patel","HubSpot Blog","Adweek","Search Engine Journal","Social Media Examiner"],"articles":[{"title":"ChatGPT's Default & Premium Models Search The Web Differently via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/chatgpts-default-premium-models-search-the-web-differently/569594/","description":"An analysis of ChatGPT conversations found the default and premium models cite almost entirely different sources for the same queries. The post ChatGPT's Default & Premium Models Search The Web Differently appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T16:38:54+00:00","category":"digital","image":null},{"title":"Ofcom tells major tech platforms to enforce minimum age rules","link":"https://www.marketingweek.com/ofcom-minimum-age-tech-platforms/","description":"Facebook, Instagram, Roblox, Snapchat, TikTok and YouTube must inform the regulator on actions they will take to \"better protect\" children online. Source","source":"Marketing Week","pubDate":"2026-03-12T15:08:55+00:00","category":"social","image":null},{"title":"Google Maps Launches AI Conversational Search With Ask Maps via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/google-maps-launches-ai-conversational-search-with-ask-maps/569585/","description":"Google Maps launches Ask Maps, a Gemini-powered conversational feature for local discovery in the U.S. and India, plus a navigation overhaul in the U.S. The post Google Maps Launches AI Conversational Search With Ask Maps appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T14:47:02+00:00","category":"digital","image":null},{"title":"How Archer Roose Is Flipping the Wine Industry on Its Head with CMO Conley Downing","link":"https://www.adweek.com/brand-marketing/how-archer-roose-is-flipping-the-wine-industry-on-its-head-with-cmo-conley-downing/","description":"Repositioning a legacy category by eliminating barriers to entry.","source":"Adweek","pubDate":"2026-03-12T14:27:11+00:00","category":"digital","image":null},{"title":"The Shortcut Behind Some AI Optimization Tools via @sejournal, @DuaneForrester","link":"https://www.searchenginejournal.com/the-shortcut-behind-some-ai-optimization-tools/569040/","description":"The disappearance of ChatGPT's query fan-out metadata reveals why AI intelligence tools built on unofficial access are fragile by design. The post The Shortcut Behind Some AI Optimization Tools appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T13:30:14+00:00","category":"digital","image":null},{"title":"Coinbase's Oscars Ad Turns a Video Game NPC Into a Financial Rebel","link":"https://www.adweek.com/creativity/coinbases-oscars-ad-turns-a-video-game-npc-into-a-financial-rebel/","description":"Coinbase's Oscars ad encourages people to break away from the financial systems they've always known.","source":"Adweek","pubDate":"2026-03-12T13:00:00+00:00","category":"digital","image":null},{"title":"How AI Automation Turns Static Travel Pages Into Living Content & Experiences via @sejournal, @TaylorDanRW","link":"https://www.searchenginejournal.com/how-ai-automation-turns-static-travel-pages-into-living-content-experiences/568599/","description":"Consider a new model for travel marketing where content adapts to traveler context instead of relying on static destination pages. The post How AI Automation Turns Static Travel Pages Into Living Content & Experiences appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T12:30:40+00:00","category":"digital","image":null},{"title":"John Lewis credits customer investment and strong Christmas for growth","link":"https://www.marketingweek.com/john-lewis-customer-investment/","description":"Both John Lewis and Waitrose noted success from their Christmas campaigns, and are using them as platforms for brand work going forward. Source","source":"Marketing Week","pubDate":"2026-03-12T12:25:53+00:00","category":"branding","image":null},{"title":"Huggies Invites 18 Babies to Poop All Over $500K Worth of Luxury Goods","link":"https://www.adweek.com/creativity/huggies-invites-18-babies-to-poop-all-over-500k-worth-of-luxury-goods/","description":"Huggies' 'Expensive Sh*t' livestream demonstrates how its diapers prevent costly messes.","source":"Adweek","pubDate":"2026-03-12T12:00:00+00:00","category":"digital","image":null},{"title":"AdgeAI Is the Latest Acquisition in Publicis' AI Shopping Spree","link":"https://www.adweek.com/agencies/adgeai-acquisition-publicis-ai-drive/","description":"The Israel-based creative analytics platform will be integrated into Publicis Production.","source":"Adweek","pubDate":"2026-03-12T11:19:31+00:00","category":"digital","image":null},{"title":"Improving Customer Experience: How to Increase Revenue and Profitability","link":"https://www.socialmediaexaminer.com/improving-customer-experience-how-to-increase-revenue-and-profitability/","description":"Are you spending most of your marketing budget chasing new customers while the ones you have are leaving? Do you suspect that better customer retention could be your biggest revenue lever, but you're not sure where to start? In this article, you'll discover a proven three-part framework to keep customers coming back and turn them [...] The post Improving Customer Experience: How to Increase Revenue and Profitability appeared first on Social Media Examiner.","source":"Social Media Examiner","pubDate":"2026-03-12T10:00:00+00:00","category":"strategy","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/03/SMMP709_PRIMARY.jpg"},{"title":"Google Answers Questions About Search Console's Branded Queries Filter via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/google-answers-questions-about-search-consoles-branded-queries-filter/569549/","description":"Google announced that Search Console's brand queries filter is open to all eligible sites, spurring questions about the feature. The post Google Answers Questions About Search Console's Branded Queries Filter appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T09:17:16+00:00","category":"digital","image":null},{"title":"Nielsen's New Insights Could Help Shift Ad Budgets in the Upfront","link":"https://www.adweek.com/convergent-tv/nielsen-insights-help-shift-ad-budgets-upfront/","description":"Nielsen releases new data breaking down demos across ad-supported TV.","source":"Adweek","pubDate":"2026-03-12T09:00:00+00:00","category":"strategy","image":null},{"title":"'Compound capability': Senior leaders on the '4Ps' of progression","link":"https://www.marketingweek.com/senior-leaders-progression-possibilities/","description":"Performance, persistence, passion and presence - are these the 4Ps that could unlock progression for senior marketing leaders? Source","source":"Marketing Week","pubDate":"2026-03-12T07:00:09+00:00","category":"digital","image":null},{"title":"The marketers who belittle comms are often the ones least capable of doing it well","link":"https://www.marketingweek.com/marketer-comms-belittle/","description":"Marketers frequently talk about wanting to be more strategic but advertising and marcomms shouldn't be seen as the consolation prize. It's the last part of marketing to resist automation and the most vital and unique value marketers have to offer businesses. Source","source":"Marketing Week","pubDate":"2026-03-12T07:00:08+00:00","category":"digital","image":null},{"title":"EXCLUSIVE: NewsGuard Taps Startup Pangram to Identify AI-Generated News and Misinformation","link":"https://www.adweek.com/media/newsguard-tracking-ai-slop-content-farms/","description":"A new AI-powered tool created by Pangram can spot AI-generated misinformation posing as reputable news.","source":"Adweek","pubDate":"2026-03-12T06:00:00+00:00","category":"digital","image":null},{"title":"Delta CMO Alicia Tillman to Depart; Ranjan Goswami Named Marketing and Product Chief","link":"https://www.adweek.com/brand-marketing/delta-cmo-alicia-tillman-to-depart-ranjan-goswami-named-marketing-and-product-chief/","description":"Airline announces leadership reshuffle as COO John Laughter's three-decade tenure ends.","source":"Adweek","pubDate":"2026-03-12T05:38:15+00:00","category":"digital","image":null},{"title":"WordPress Gutenberg 22.7 Lays Groundwork For AI Publishing via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/wordpress-gutenberg-22-7-lays-groundwork-for-ai-publishing/569543/","description":"Gutenberg 22.7 adds features that lay the groundwork for a role as an AI publishing platform and improve the editing experience. The post WordPress Gutenberg 22.7 Lays Groundwork For AI Publishing appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T23:16:13+00:00","category":"digital","image":null},{"title":"Netflix's Warner Bros. Bid Failed. What Should It Buy Now?","link":"https://www.adweek.com/convergent-tv/netflix-warner-bros-bid-failed-buy-now/","description":"The streamer has a war chest, rising stock price, and newfound appetite for M&A. Seven experts offer their suggestions.","source":"Adweek","pubDate":"2026-03-11T19:00:00+00:00","category":"digital","image":null},{"title":"The Trade Desk Says It's Testing AI Campaign Creation With Claude","link":"https://www.adweek.com/media/the-trade-desk-claude-campaign-tests/","description":"CEO Jeff Green says generative AI could transform programmatic at scale, while warning Amazon may retreat from its DSP business over antitrust risks.","source":"Adweek","pubDate":"2026-03-11T18:26:09+00:00","category":"digital","image":null},{"title":"WordPress Security Release 6.9.4 Fixes Issues 6.9.2 Failed To Address via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/wordpress-security-release-6-9-4/569532/","description":"WordPress issues second security release 6.9.4 to address vulnerabilities that version 6.9.2 apparently failed to patch. The post WordPress Security Release 6.9.4 Fixes Issues 6.9.2 Failed To Address appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T17:34:30+00:00","category":"digital","image":null},{"title":"'Less Franco Manca, more value': How Sky used insights to revamp its loyalty programme","link":"https://www.marketingweek.com/sky-insights-revamp-loyalty/","description":"Sky was struggling to create engagement with its VIP loyalty scheme - until it worked with insights to chart a path forward. Source","source":"Marketing Week","pubDate":"2026-03-11T15:33:26+00:00","category":"strategy","image":null},{"title":"Week of March 2 Morning News Ratings: Today Only Show to Grow in Total Viewers","link":"https://www.adweek.com/tvnewser/week-of-march-2-2026-morning-news-ratings/","description":"Today extends its lead.","source":"Adweek","pubDate":"2026-03-11T13:35:57+00:00","category":"digital","image":"https://static-www.adweek.com/wp-content/uploads/2025/01/morning-news-ratings-2025.jpg?w=1024"},{"title":"5 Things I Learned About The Future Of Search From Liz Reid's Latest Interview via @sejournal, @marie_haynes","link":"https://www.searchenginejournal.com/5-things-i-learned-about-the-future-of-search-from-liz-reids-latest-interview/569227/","description":"Five takeaways from Liz Reid on AI agents, the future of Google Search, and why originality now matters more than ever. The post 5 Things I Learned About The Future Of Search From Liz Reid's Latest Interview appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T13:30:36+00:00","category":"digital","image":null},{"title":"The Week in Tech: Grammarly rips off marketing boffins and a blow to agentic shopping","link":"https://www.marketingweek.com/week-in-tech-grammarly-agentic-shopping/","description":"Marketing Week's weekly round-up of the technology stories that impact the marketing sector: from AI to martech, regulation to public perceptions. Source","source":"Marketing Week","pubDate":"2026-03-11T12:55:26+00:00","category":"digital","image":null},{"title":"How To Prove PR Business Value With UTM Parameters and GA4 via @sejournal, @gregjarboe","link":"https://www.searchenginejournal.com/how-to-prove-pr-business-value-with-utm-parameters-ga4/566928/","description":"Here's how UTMs and GA4 can prove earned media's revenue impact in an AI-driven, zero-click world. The post How To Prove PR Business Value With UTM Parameters and GA4 appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T12:00:20+00:00","category":"digital","image":null},{"title":"How To Build A Feed-Only Performance Max Campaign","link":"https://www.searchenginejournal.com/how-to-build-a-feed-only-performance-max-campaign/568794/","description":"Advertisers using feed-only Performance Max can narrow campaign focus to product feed signals, improving efficiency when automation spreads spend too broadly. The post How To Build A Feed-Only Performance Max Campaign appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T11:00:57+00:00","category":"digital","image":null},{"title":"The simple genius behind this long-forgotten Google Chrome ad","link":"https://blog.hubspot.com/marketing/goal-dilution-effect","description":"We trust simple promises more than long lists. When brands focus on one clear benefit, it feels more believable than trying to do everything at once. Take it from Google.","source":"HubSpot Blog","pubDate":"2026-03-11T11:00:03","category":"branding","image":"https://no-cache.hubspot.com/cta/default/53/d4233c10-60b6-46d7-9852-c71dde8507b6.png"},{"title":"How a social-first strategy helped Specsavers reach millions on YouTube","link":"https://www.marketingweek.com/social-first-specsavers-youtube/","description":"Specsavers' YouTube football series celebrating Britain's Best Worst Team delivered brand likeability scores among Gen Z comparable with Netflix. Source","source":"Marketing Week","pubDate":"2026-03-11T07:41:58+00:00","category":"social","image":null},{"title":"No big gains without risk: Compare the Market's top marketer on sales promotions gone wrong","link":"https://www.marketingweek.com/risk-compare-market-sales-promotions/","description":"In the latest of our series about mistakes that help shape top marketing leaders, Compare the Market's Tom Wallis discusses two examples of sales promotions that have gone awry. Source","source":"Marketing Week","pubDate":"2026-03-11T06:55:12+00:00","category":"digital","image":null},{"title":"Old Link Building vs. AI Search: How to Earn Top-Tier Media Placements Now via @sejournal, @Michael_Resolve","link":"https://www.searchenginejournal.com/ai-search-link-building-resolve-spa/567924/","description":"Discover the new approach to link building that prioritizes brand legitimacy and digital PR over traditional methods. The post Old Link Building vs. AI Search: How to Earn Top-Tier Media Placements Now appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T05:00:26+00:00","category":"digital","image":null},{"title":"Nutrition startup Zoe stunned as ASA upholds ad ban over misleading claims","link":"https://www.marketingweek.com/zoe-stunned-asa-ad-ban/","description":"The Advertising Standards Authority has rejected Zoe's appeal regarding its use of ultra-processed foods. Source","source":"Marketing Week","pubDate":"2026-03-11T00:01:52+00:00","category":"branding","image":null},{"title":"How Channel 4 flipped the Paralympics script with focus on sporting prowess","link":"https://www.marketingweek.com/channel-4-paralympics-sporting-prowess/","description":"Shifting from inspiration porn to a celebration of elite sport helped Channel 4 improve public opinion of the Paralympic Games and fuel brand perceptions. Source","source":"Marketing Week","pubDate":"2026-03-10T22:13:10+00:00","category":"branding","image":null},{"title":"B2B Buyers Trust Peers Over AI Chatbots, Report Finds via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/b2b-buyers-trust-peers-over-ai-chatbots-report-finds/569261/","description":"A survey of B2B decision-makers found peer recommendations are trusted nearly twice as much as AI chatbots, and white papers rank last for perceived value. The post B2B Buyers Trust Peers Over AI Chatbots, Report Finds appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-10T17:22:56+00:00","category":"strategy","image":null},{"title":"O2, Channel 4 and HSBC to compete in this year's Sprintathon","link":"https://www.marketingweek.com/o2-channel-4-hsbc-sprintathon/","description":"After hitting its 1m total fundraising target last year, the aim is now to reach 2m in cumulative fundraising within the next five years. Source","source":"Marketing Week","pubDate":"2026-03-10T15:29:38+00:00","category":"digital","image":null},{"title":"How Sage embedded synthetic responses into its insights function","link":"https://www.marketingweek.com/sage-synthetic-responses-insights/","description":"Sage has changed how it approaches market research over the past two years as the speed at which consumer insight is needed ramps up. Source","source":"Marketing Week","pubDate":"2026-03-10T15:17:57+00:00","category":"strategy","image":null},{"title":"Community marketing: How to use it to drive customer advocacy and reduce CAC","link":"https://blog.hubspot.com/marketing/community-marketing","description":"Community marketing is a growth strategy centered on participation. It brings customers together to share knowledge, solve problems, and build trust. In the process, it drives advocacy, retention, and lower customer acquisition costs.","source":"HubSpot Blog","pubDate":"2026-03-10T11:00:05","category":"strategy","image":"https://no-cache.hubspot.com/cta/default/53/866a5201-b39e-4edb-9e7f-65c0d98a9ea0.png"},{"title":"Competitor analysis tools marketing teams actually use in 2026","link":"https://blog.hubspot.com/marketing/competitor-analysis-tools","description":"Competitor analysis tools are software platforms that help marketing teams monitor and compare competitor strategies across SEO, social, PPC, and market intelligence.","source":"HubSpot Blog","pubDate":"2026-03-10T11:00:02","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/1d7211ac-7b1b-4405-b940-54b8acedb26e.png"},{"title":"The AI Tool Stack That Saves Creators Hours Every Week","link":"https://www.socialmediaexaminer.com/the-ai-tool-stack-that-saves-creators-hours-every-week/","description":"Wondering which tools deliver real efficiency gains? In this article, you'll discover video and image generation platforms that let you produce multi-asset content faster.","source":"Social Media Examiner","pubDate":"2026-03-10T10:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/03/AIP96_PRIMARY.jpg"},{"title":"Answer engine optimization strategy beyond basic SEO and AEO tactics","link":"https://blog.hubspot.com/marketing/enterprise-seo-audit","description":"If you're not in the trenches of search every single day, it's hard to know how seriously to take answer engine optimization strategy.","source":"HubSpot Blog","pubDate":"2026-03-09T11:00:03","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/d4233c10-60b6-46d7-9852-c71dde8507b6.png"},{"title":"What Clickable Reels Links and Hashtag Limits Mean for Your 2026 Instagram Strategy","link":"https://www.socialmediaexaminer.com/what-clickable-reels-links-and-hashtag-limits-mean-for-your-2026-instagram-strategy/","description":"In this article, you'll discover five major Instagram updates rolling out now and learn exactly how to use them to strengthen your strategy.","source":"Social Media Examiner","pubDate":"2026-03-05T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/SMMP708_PRIMARY.jpg"},{"title":"AI and SEO: What AI means for the future of SEO","link":"https://blog.hubspot.com/marketing/how-ai-is-impacting-seo","description":"Artificial intelligence (AI) is rewriting the playbook of so much of our lives -- how we interact, how we learn, how we complete daily tasks.","source":"HubSpot Blog","pubDate":"2026-03-04T13:00:00","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/b5296305-8ec6-4375-8245-aadbacbd4058.png"},{"title":"How To Use AI To Support Your Design Process","link":"https://neilpatel.com/blog/how-use-ai-graphic-design/","description":"If you're trying to figure out how to use AI for graphic design without wrecking your creative process, you're asking the right question.","source":"Neil Patel","pubDate":"2026-03-03T20:00:00+00:00","category":"branding","image":"https://neilpatel.com/wp-content/uploads/2026/03/how-use-ai-for-graphic-design-005.webp"},{"title":"Where to Start with AI: A Practical Guide for GTM Teams","link":"https://blog.hubspot.com/marketing/where-to-start-with-ai-gtm","description":"Over the past year, I've had hundreds of conversations with business leaders about AI. The pattern is always the same.","source":"HubSpot Blog","pubDate":"2026-03-03T16:00:02","category":"digital","image":"https://53.fs1.hubspotusercontent-na1.net/hubfs/53/where-to-start-with-ai-gtm-1-20260302-4655164.webp"},{"title":"Clone Your Knowledge: Getting AI to Truly Sound Like You","link":"https://www.socialmediaexaminer.com/clone-your-knowledge-getting-ai-to-truly-sound-like-you/","description":"In this article, you'll discover how to train AI tools on your specific knowledge and personality using the Leadership Lexicon.","source":"Social Media Examiner","pubDate":"2026-03-03T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/AIP95_PRIMARY.jpg"},{"title":"How Voice Search Ads Are Changing The Search Term Report in 2026","link":"https://neilpatel.com/blog/voice-search-ads-changing-search-term-report/","description":"If you've looked at a Google Ads Search Term Report lately, you know it feels like stepping off a merry-go-round a little too fast.","source":"Neil Patel","pubDate":"2026-03-02T20:00:00+00:00","category":"digital","image":"https://neilpatel.com/wp-content/uploads/2026/02/image2-700x303.png"},{"title":"Claude vs. ChatGPT: A marketer's guide to choosing AI","link":"https://blog.hubspot.com/marketing/claude-vs-chatgpt","description":"As AI tools become essential to content workflows, understanding the differences between Claude and ChatGPT for marketing matters.","source":"HubSpot Blog","pubDate":"2026-03-02T12:00:04","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/887c58e0-5bc7-4fe2-8ea4-7a360452eaaf.png"},{"title":"AI marketing predictions that will shape 2026","link":"https://blog.hubspot.com/marketing/ai-predictions-marketing","description":"Marketing is set for its most transformative year in decades, according to major AI predictions for 2026.","source":"HubSpot Blog","pubDate":"2026-03-02T12:00:03","category":"branding","image":"https://no-cache.hubspot.com/cta/default/53/05ea94a6-06a8-47e9-841d-a65a84c72426.png"},{"title":"The Definitive Guide to Online Reputation Management","link":"https://neilpatel.com/blog/guide-to-reputation-management/","description":"Online reputation management (ORM) is the practice of monitoring and improving how your brand is perceived on the internet.","source":"Neil Patel","pubDate":"2026-02-27T20:00:00+00:00","category":"branding","image":"https://neilpatel.com/wp-content/uploads/2021/04/Reputation-Management-001-700x254.png"},{"title":"How to scale a marketing team from 5 to 25 people (and beyond)","link":"https://blog.hubspot.com/marketing/scaling-marketing-team","description":"In times of growth, scaling a marketing team is often the last thing on a company's mind -- but that is a huge mistake.","source":"HubSpot Blog","pubDate":"2026-02-27T13:00:00","category":"strategy","image":"https://no-cache.hubspot.com/cta/default/53/7cbd0328-6c8c-40e0-98dd-c3b6e6be96f0.png"},{"title":"Will AI Take Your Marketing Job? Here's What Two AI Experts Are Seeing","link":"https://www.socialmediaexaminer.com/will-ai-take-your-marketing-job-heres-what-two-ai-experts-are-seeing/","description":"In this article, you'll discover what skills are becoming more valuable now, tactical steps to stay competitive, and warning signs you're falling behind.","source":"Social Media Examiner","pubDate":"2026-02-26T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/SMMP707_PRIMARY.jpg"},{"title":"Marketing experiments every growth team should run","link":"https://blog.hubspot.com/marketing/marketing-experimentation","description":"Every reliable tactic marketers now love was once a new experiment that early adopters tested and developed.","source":"HubSpot Blog","pubDate":"2026-02-25T12:00:04","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/610b61ae-1723-4f3f-9703-35f0949765fe.png"}]};
+
+    let allArticles = [];
+    let filteredArticles = [];
+    let activeCategory = null;
+    let searchQuery = '';
+
+    // German month names
+    const monthNames = {
+      0: 'Januar',
+      1: 'Februar',
+      2: 'Marz',
+      3: 'April',
+      4: 'Mai',
+      5: 'Juni',
+      6: 'Juli',
+      7: 'August',
+      8: 'September',
+      9: 'Oktober',
+      10: 'November',
+      11: 'Dezember'
+    };
+
+    const dayNames = {
+      0: 'Sonntag',
+      1: 'Montag',
+      2: 'Dienstag',
+      3: 'Mittwoch',
+      4: 'Donnerstag',
+      5: 'Freitag',
+      6: 'Samstag'
+    };
+
+    const categoryLabels = {
+      digital: 'Digital',
+      social: 'Social Media',
+      branding: 'Branding',
+      content: 'Content',
+      strategy: 'Strategie'
+    };
+
+    // Format date to German format: "12. Marz 2026"
+    function formatDateShort(dateString) {
+      const date = new Date(dateString);
+      const day = date.getDate();
+      const month = monthNames[date.getMonth()];
+      const year = date.getFullYear();
+      return `${day}. ${month} ${year}`;
+    }
+
+    // Format date to full German format: "Donnerstag, 12. Marz 2026, 16:38 Uhr"
+    function formatDateFull(dateString) {
+      const date = new Date(dateString);
+      const dayName = dayNames[date.getDay()];
+      const day = date.getDate();
+      const month = monthNames[date.getMonth()];
+      const year = date.getFullYear();
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      return `${dayName}, ${day}. ${month} ${year}, ${hours}:${minutes} Uhr`;
+    }
+
+    // Initialize
+    async function init() {
+      try {
+        // Try to fetch from data/news.json first
+        const response = await fetch('data/news.json');
+        if (response.ok) {
+          const data = await response.json();
+          allArticles = data.articles || window__NEWS_DATA.articles;
+        } else {
+          allArticles = window__NEWS_DATA.articles;
+        }
+      } catch {
+        // Fallback to embedded data
+        allArticles = window__NEWS_DATA.articles;
+      }
+
+      // Sort articles by date (newest first)
+      allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+      renderStats();
+      renderFilters();
+      filterAndRender();
+      setupEventListeners();
+    }
+
+    function renderStats() {
+      const today = new Date().toISOString().split('T')[0];
+      const todayArticles = allArticles.filter(a => a.pubDate.split('T')[0] === today).length;
+      const uniqueCategories = new Set(allArticles.map(a => a.category)).size;
+
+      document.getElementById('total-articles').textContent = window__NEWS_DATA.total;
+      document.getElementById('total-sources').textContent = window__NEWS_DATA.sources.length;
+      document.getElementById('today-articles').textContent = todayArticles;
+      document.getElementById('total-categories').textContent = uniqueCategories;
+    }
+
+    function renderFilters() {
+      const container = document.getElementById('filter-pills');
+      const categories = ['digital', 'social', 'branding', 'content', 'strategy'];
+
+      categories.forEach(cat => {
+        const pill = document.createElement('button');
+        pill.className = 'filter-pill';
+        pill.setAttribute('data-category', cat);
+        pill.textContent = categoryLabels[cat];
+        pill.addEventListener('click', () => toggleCategory(cat));
+        container.appendChild(pill);
+      });
+    }
+
+    function toggleCategory(category) {
+      activeCategory = activeCategory === category ? null : category;
+      updateFilterButtons();
+      filterAndRender();
+    }
+
+    function updateFilterButtons() {
+      document.querySelectorAll('.filter-pill').forEach(pill => {
+        const category = pill.getAttribute('data-category');
+        if (activeCategory === category) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+    }
+
+    function filterAndRender() {
+      filteredArticles = allArticles.filter(article => {
+        const matchesCategory = !activeCategory || article.category === activeCategory;
+        const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             article.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      renderArticles();
+    }
+
+    function renderArticles() {
+      const grid = document.getElementById('articles-grid');
+      grid.innerHTML = '';
+
+      if (filteredArticles.length === 0) {
+        grid.innerHTML = '<div class="no-results">Keine Artikel gefunden</div>';
+        return;
+      }
+
+      filteredArticles.forEach((article, index) => {
+        const card = document.createElement('div');
+        card.className = 'article-card';
+        card.style.animation = `fadeInUp 0.6s ease-out ${0.4 + index * 0.05}s both`;
+
+        const imageHtml = article.image
+          ? `<img src="${article.image}" alt="${article.title}">`
+          : '';
+
+        card.innerHTML = `
+          <div class="article-image">${imageHtml}</div>
+          <div class="article-content">
+            <div class="article-meta">
+              <div class="category-badge ${article.category}">${categoryLabels[article.category]}</div>
+              <div class="article-date">${formatDateShort(article.pubDate)}</div>
+            </div>
+            <h3 class="article-title">${article.title}</h3>
+            <div class="article-source">${article.source}</div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => openModal(article));
+        grid.appendChild(card);
+      });
+    }
+
+    function openModal(article) {
+      const modal = document.getElementById('article-modal');
+      const imageContainer = document.getElementById('modal-image');
+      const categoryBadge = document.getElementById('modal-category');
+      const source = document.getElementById('modal-source');
+      const dateEl = document.getElementById('modal-date');
+      const title = document.getElementById('modal-title');
+      const description = document.getElementById('modal-description');
+      const link = document.getElementById('modal-link');
+
+      // Set image or placeholder
+      if (article.image) {
+        imageContainer.innerHTML = `<img src="${article.image}" alt="${article.title}"><button class="modal-close" onclick="closeModal()">&times;</button>`;
+      } else {
+        imageContainer.innerHTML = `<button class="modal-close" onclick="closeModal()">&times;</button>`;
+      }
+
+      categoryBadge.className = `modal-badge ${article.category}`;
+      categoryBadge.textContent = categoryLabels[article.category];
+      source.textContent = article.source;
+      dateEl.textContent = formatDateFull(article.pubDate);
+      title.textContent = article.title;
+      description.textContent = article.description;
+      link.href = article.link;
+      link.textContent = 'Originalartikel lesen';
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('article-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function setupEventListeners() {
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        filterAndRender();
+      });
+
+      document.getElementById('article-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'article-modal') {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+    }
+
+    // Initialize on load
+    init();
+  </script>
+</body>
+</html>
