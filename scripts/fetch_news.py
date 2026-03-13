@@ -1,269 +1,343 @@
 #!/usr/bin/env python3
 """
-Marketing Hub â RSS Feed Fetcher
-Fetches marketing news from multiple RSS feeds, extracts images,
-and generates a JSON file for the static GitHub Pages site.
-Runs daily via GitHub Actions.
+Marketing Hub RSS Fetcher
+Fetches articles from multiple RSS feeds, extracts full content, and generates JSON output.
+Uses only Python standard library - no external dependencies.
 """
 
 import json
 import re
-import html
-import os
-from datetime import datetime, timezone
-from urllib.request import urlopen, Request
-from urllib.error import URLError
-from xml.etree import ElementTree as ET
-
-# ââââ RSS FEED SOURCES ââââ
-FEEDS = [
-    {"url": "https://blog.hubspot.com/marketing/rss.xml", "source": "HubSpot Blog"},
-    {"url": "https://contentmarketinginstitute.com/feed/", "source": "Content Marketing Institute"},
-    {"url": "https://www.socialmediatoday.com/feed/", "source": "Social Media Today"},
-    {"url": "https://www.searchenginejournal.com/feed/", "source": "Search Engine Journal"},
-    {"url": "https://www.marketingweek.com/feed/", "source": "Marketing Week"},
-    {"url": "https://www.adweek.com/feed/", "source": "Adweek"},
-    {"url": "https://www.thinkwithgoogle.com/intl/en-gb/feed.xml", "source": "Think with Google"},
-    {"url": "https://neilpatel.com/blog/feed/", "source": "Neil Patel"},
-    {"url": "https://moz.com/devblog/feed", "source": "Moz"},
-    {"url": "https://www.socialmediaexaminer.com/feed/", "source": "Social Media Examiner"},
-]
-
-# ââââ CATEGORY KEYWORDS ââââ
-CATEGORIES = {
-    "digital": ["seo", "ppc", "google ads", "analytics", "sem", "search engine",
-                "paid media", "performance marketing", "email marketing",
-                "automation", "adtech", "programmatic", "digital marketing",
-                "martech", "crm", "wordpress"],
-    "social":  ["instagram", "tiktok", "facebook", "linkedin", "twitter",
-                "social media", "influencer", "creator economy", "reels",
-                "youtube", "snapchat", "threads", "pinterest", "social commerce",
-                "ugc", "community"],
-    "branding": ["brand", "branding", "rebrand", "logo", "identity", "campaign",
-                 "awareness", "launch", "commercial", "advertising", "ad campaign",
-                 "creative", "agency"],
-    "content":  ["content marketing", "storytelling", "blog", "video marketing",
-                 "podcast", "newsletter", "copywriting", "editorial", "cms",
-                 "content strategy", "content creation"],
-    "strategy": ["strategy", "market research", "consumer", "trend", "study",
-                 "report", "forecast", "roi", "budget", "planning", "insight",
-                 "data-driven", "b2b", "b2c", "retention", "growth", "ai marketing"]
-}
-
-# Common media namespaces in RSS
-MEDIA_NS = {
-    "media": "http://search.yahoo.com/mrss/",
-    "content": "http://purl.org/rss/1.0/modules/content/",
-    "atom": "http://www.w3.org/2005/Atom",
-    "dc": "http://purl.org/dc/elements/1.1/",
-}
+import urllib.request
+import urllib.error
+from datetime import datetime
+from html.parser import HTMLParser
+from html import unescape
+from pathlib import Path
 
 
-def clean_html(raw_html):
-    """Remove HTML tags and decode entities."""
-    if not raw_html:
-        return ""
-    clean = re.sub(r"<[^>]+>", "", raw_html)
-    clean = html.unescape(clean)
-    clean = re.sub(r"\s+", " ", clean).strip()
-    return clean[:500]
+class ContentExtractor(HTMLParser):
+    """Extract main content from HTML"""
+    def __init__(self):
+        super().__init__()
+        self.content = []
+        self.in_article = False
+        self.in_main = False
+        self.in_text = False
+        self.tag_stack = []
+
+    def handle_starttag(self, tag, attrs):
+        self.tag_stack.append(tag)
+        if tag in ('article', 'main', 'content'):
+            self.in_article = True
+            self.in_main = True
+        elif tag in ('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'):
+            if self.in_main:
+                self.in_text = True
+
+    def handle_endtag(self, tag):
+        if self.tag_stack and self.tag_stack[-1] == tag:
+            self.tag_stack.pop()
+        if tag in ('article', 'main', 'content'):
+            self.in_main = False
+
+    def handle_data(self, data):
+        if self.in_main and self.in_text:
+            text = data.strip()
+            if text and len(text) > 10:
+                self.content.append(text)
+
+    def get_text(self):
+        return ' '.join(self.content)
 
 
-def extract_image_from_html(html_str):
-    """Try to find an image URL in HTML content."""
-    if not html_str:
-        return None
-    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html_str)
-    if match:
-        url = match.group(1)
-        if url.startswith("http") and not url.endswith(".gif"):
-            return url
-    return None
-
-
-def extract_image(item):
-    """Extract image URL from various RSS elements."""
-    # 1. media:thumbnail
-    thumb = item.find("media:thumbnail", MEDIA_NS)
-    if thumb is not None:
-        url = thumb.get("url")
-        if url:
-            return url
-
-    # 2. media:content
-    media = item.find("media:content", MEDIA_NS)
-    if media is not None:
-        url = media.get("url", "")
-        if "image" in media.get("medium", "image") or "image" in media.get("type", ""):
-            return url
-        if url and any(ext in url.lower() for ext in [".jpg", ".jpeg", ".png", ".webp"]):
-            return url
-
-    # 3. enclosure
-    enc = item.find("enclosure")
-    if enc is not None:
-        enc_type = enc.get("type", "")
-        if "image" in enc_type:
-            return enc.get("url")
-
-    # 4. Look in content:encoded for first <img>
-    content_encoded = item.findtext("content:encoded", "", MEDIA_NS)
-    img = extract_image_from_html(content_encoded)
-    if img:
-        return img
-
-    # 5. Look in description for <img>
-    desc = item.findtext("description", "")
-    img = extract_image_from_html(desc)
-    if img:
-        return img
-
-    return None
-
-
-def categorize(text):
-    """Assign a category based on keyword matching."""
-    lower = text.lower()
-    scores = {}
-    for cat, keywords in CATEGORIES.items():
-        scores[cat] = sum(1 for kw in keywords if kw in lower)
-    best = max(scores, key=scores.get)
-    return best if scores[best] > 0 else "digital"
-
-
-def parse_date(date_str):
-    """Try to parse various RSS date formats."""
-    if not date_str:
-        return datetime.now(timezone.utc)
-    formats = [
-        "%a, %d %b %Y %H:%M:%S %z",
-        "%a, %d %b %Y %H:%M:%S %Z",
-        "%Y-%m-%dT%H:%M:%S%z",
-        "%Y-%m-%dT%H:%M:%SZ",
-        "%Y-%m-%d %H:%M:%S",
-        "%Y-%m-%d",
-    ]
-    # Handle timezone offset without colon (e.g. +0000)
-    cleaned = date_str.strip()
-    for fmt in formats:
-        try:
-            return datetime.strptime(cleaned, fmt)
-        except (ValueError, AttributeError):
-            continue
-    return datetime.now(timezone.utc)
-
-
-def fetch_feed(feed_info):
-    """Fetch and parse a single RSS feed."""
-    articles = []
+def fetch_url(url, timeout=10):
+    """Safely fetch URL content"""
     try:
-        req = Request(feed_info["url"], headers={
-            "User-Agent": "MarketingHub/1.0 (GitHub Pages)"
-        })
-        with urlopen(req, timeout=15) as response:
-            data = response.read()
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            return response.read().decode('utf-8', errors='ignore')
+    except (urllib.error.URLError, urllib.error.HTTPError, Exception):
+        return None
 
-        root = ET.fromstring(data)
 
-        # RSS 2.0
-        items = root.findall(".//item")
-        if items:
-            for item in items[:12]:
-                title = item.findtext("title", "").strip()
-                link = item.findtext("link", "").strip()
-                desc_raw = item.findtext("description", "")
-                desc = clean_html(desc_raw)
-                pub_date = item.findtext("pubDate", "")
-                image = extract_image(item)
+def extract_og_image(html):
+    """Extract Open Graph image from HTML"""
+    match = re.search(r'<meta\s+property=["\']og:image["\']\s+content=["\'](.*?)["\']', html, re.IGNORECASE)
+    return match.group(1) if match else None
 
-                if not title:
-                    continue
 
-                category = categorize(title + " " + desc)
+def extract_image_from_article(content):
+    """Extract first image from article content"""
+    match = re.search(r'<img[^>]+src=["\'](.*?)["\']', content, re.IGNORECASE)
+    return match.group(1) if match else None
 
-                articles.append({
-                    "title": html.unescape(title),
-                    "link": link,
-                    "description": desc,
-                    "source": feed_info["source"],
-                    "pubDate": parse_date(pub_date).isoformat(),
-                    "category": category,
-                    "image": image,
-                })
 
-        # Atom
-        else:
-            ns = {"atom": "http://www.w3.org/2005/Atom"}
-            entries = root.findall("atom:entry", ns)
-            for entry in entries[:12]:
-                title = entry.findtext("atom:title", "", ns).strip()
-                link_el = entry.find("atom:link", ns)
-                link = link_el.get("href", "") if link_el is not None else ""
-                summary = clean_html(entry.findtext("atom:summary", "", ns))
-                updated = entry.findtext("atom:updated", "", ns)
+def sanitize_html(html, max_length=5000):
+    """Keep only safe HTML tags and limit length"""
+    if not html:
+        return ""
+    
+    allowed_tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'blockquote', 'img', 'br']
+    
+    # Remove script and style tags completely
+    html = re.sub(r'<script[^>]*>.*?</script>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    html = re.sub(r'<style[^>]*>.*?</style>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    html = re.sub(r'<iframe[^>]*>.*?</iframe>', '', html, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Remove disallowed tags but keep content
+    for tag in re.findall(r'</?([a-z][a-z0-9]*)', html, re.IGNORECASE):
+        if tag.lower() not in allowed_tags:
+            html = re.sub(f'</?{tag}[^>]*>', '', html, flags=re.IGNORECASE)
+    
+    # Remove dangerous attributes
+    html = re.sub(r'\s(on\w+)=["\']*[^\s>"\']*["\']*', '', html, flags=re.IGNORECASE)
+    html = re.sub(r'\s(javascript:)', '', html, flags=re.IGNORECASE)
+    
+    # Truncate if needed
+    if len(html) > max_length:
+        html = html[:max_length] + '...'
+    
+    return html.strip()
 
-                # Try media:thumbnail in Atom
-                thumb = entry.find("media:thumbnail", MEDIA_NS)
-                image = thumb.get("url") if thumb is not None else None
 
-                if not title:
-                    continue
+def parse_date(date_string):
+    """Parse RSS date to ISO format"""
+    if not date_string:
+        return datetime.now().isoformat() + 'Z'
+    
+    date_formats = [
+        '%a, %d %b %Y %H:%M:%S %z',
+        '%Y-%m-%dT%H:%M:%SZ',
+        '%Y-%m-%d %H:%M:%S',
+        '%Y-%m-%dT%H:%M:%S%z',
+    ]
+    
+    for fmt in date_formats:
+        try:
+            dt = datetime.strptime(date_string.replace(' +0000', ' +0000'), fmt)
+            return dt.isoformat() + 'Z'
+        except ValueError:
+            continue
+    
+    return datetime.now().isoformat() + 'Z'
 
-                category = categorize(title + " " + summary)
 
-                articles.append({
-                    "title": html.unescape(title),
-                    "link": link,
-                    "description": summary,
-                    "source": feed_info["source"],
-                    "pubDate": parse_date(updated).isoformat(),
-                    "category": category,
-                    "image": image,
-                })
+def extract_rss_content(feed_xml):
+    """Parse RSS/Atom feed"""
+    articles = []
 
-        print(f"  [OK] {feed_info['source']}: {len(articles)} articles")
+    # Extract items (RSS uses <item>, Atom uses <entry>)
+    items = re.findall(r'<item[^>]*>.*?</item>', feed_xml, re.DOTALL | re.IGNORECASE)
+    if not items:
+        items = re.findall(r'<entry[^>]*>.*?</entry>', feed_xml, re.DOTALL | re.IGNORECASE)
 
-    except Exception as e:
-        print(f"  [WARN] {feed_info['source']}: {e}")
+    for item in items:
+        try:
+            article = {}
+
+            # Extract title (handle CDATA)
+            title_match = re.search(r'<title[^>]*>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</title>', item, re.DOTALL | re.IGNORECASE)
+            article['title'] = unescape(re.sub(r'<[^>]+>', '', title_match.group(1).strip())) if title_match else 'Untitled'
+
+            # Extract link (RSS: <link>url</link>, Atom: <link href="url"/>)
+            link_match = re.search(r'<link[^>]*href=["\']([^"\']+)["\']', item, re.IGNORECASE)
+            if not link_match:
+                link_match = re.search(r'<link[^>]*>(.*?)</link>', item, re.DOTALL | re.IGNORECASE)
+            article['link'] = unescape(link_match.group(1).strip()) if link_match else ''
+
+            # Try to get full content from content:encoded, then content, then description
+            content_match = re.search(r'<content:encoded[^>]*>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</content:encoded>', item, re.DOTALL | re.IGNORECASE)
+            if content_match:
+                full_content = content_match.group(1).strip()
+            else:
+                content_match = re.search(r'<content[^>]*>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</content[^>]*>', item, re.DOTALL | re.IGNORECASE)
+                if content_match:
+                    full_content = content_match.group(1).strip()
+                else:
+                    desc_match = re.search(r'<description[^>]*>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</description>', item, re.DOTALL | re.IGNORECASE)
+                    full_content = unescape(desc_match.group(1).strip()) if desc_match else ''
+
+            article['fullContent'] = sanitize_html(full_content)
+            article['description'] = re.sub(r'<[^>]+>', '', full_content)[:200]
+
+            # Publication date (RSS: pubDate, Atom: published or updated)
+            pub_date_match = re.search(r'<pubDate[^>]*>(.*?)</pubDate>', item, re.DOTALL | re.IGNORECASE)
+            if not pub_date_match:
+                pub_date_match = re.search(r'<published[^>]*>(.*?)</published>', item, re.DOTALL | re.IGNORECASE)
+            if not pub_date_match:
+                pub_date_match = re.search(r'<updated[^>]*>(.*?)</updated>', item, re.DOTALL | re.IGNORECASE)
+            article['pubDate'] = parse_date(pub_date_match.group(1) if pub_date_match else None)
+
+            # Image extraction: try media:content, media:thumbnail, enclosure, then inline img
+            media_match = re.search(r'<media:content[^>]+url=["\']([^"\']+)["\']', item, re.IGNORECASE)
+            if not media_match:
+                media_match = re.search(r'<media:thumbnail[^>]+url=["\']([^"\']+)["\']', item, re.IGNORECASE)
+            if not media_match:
+                media_match = re.search(r'<enclosure[^>]+url=["\']([^"\']+)["\'][^>]+type=["\']image/', item, re.IGNORECASE)
+
+            if media_match:
+                image = media_match.group(1)
+            else:
+                image = extract_image_from_article(full_content)
+
+            article['image'] = image if image and image.startswith('http') else None
+
+            articles.append(article)
+        except Exception:
+            continue
 
     return articles
 
 
-def main():
-    print("Marketing Hub â Fetching news...")
-    print(f"  Time: {datetime.now(timezone.utc).isoformat()}")
-    print(f"  Feeds: {len(FEEDS)}\n")
-
-    all_articles = []
-    for feed in FEEDS:
-        articles = fetch_feed(feed)
-        all_articles.extend(articles)
-
-    # Sort by date (newest first)
-    all_articles.sort(key=lambda a: a["pubDate"], reverse=True)
-
-    # Limit to most recent 60
-    all_articles = all_articles[:60]
-
-    # Stats
-    with_images = sum(1 for a in all_articles if a.get("image"))
-    print(f"\n  Total: {len(all_articles)} articles")
-    print(f"  With images: {with_images}")
-
-    output = {
-        "updated": datetime.now(timezone.utc).isoformat(),
-        "total": len(all_articles),
-        "sources": list(set(a["source"] for a in all_articles)),
-        "articles": all_articles,
+def categorize_article(title, description):
+    """Categorize article based on content"""
+    content = (title + ' ' + description).lower()
+    
+    categories = {
+        'digital': ['digital', 'online', 'internet', 'web', 'seo', 'website', 'e-commerce', 'digital marketing'],
+        'social': ['social media', 'social', 'instagram', 'facebook', 'twitter', 'linkedin', 'tiktok', 'social networks'],
+        'branding': ['brand', 'branding', 'identity', 'logo', 'design', 'markenidentitÃ¤t'],
+        'content': ['content', 'artikel', 'blog', 'writing', 'copywriting', 'storytelling'],
+        'strategy': ['strategie', 'strategy', 'planning', 'marketing plan', 'goals', 'objectives']
     }
+    
+    for category, keywords in categories.items():
+        if any(keyword in content for keyword in keywords):
+            return category
+    
+    return 'digital'  # Default
 
-    os.makedirs("data", exist_ok=True)
 
-    with open("data/news.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+def calculate_reading_time(text):
+    """Calculate reading time in minutes"""
+    words = len(text.split())
+    minutes = max(1, round(words / 200))
+    return minutes
 
-    print(f"\n  Saved to data/news.json")
+
+def fetch_feeds():
+    """Fetch and process all RSS feeds"""
+    feeds = [
+        {
+            'url': 'https://blog.hubspot.com/marketing/rss.xml',
+            'source': 'HubSpot Blog'
+        },
+        {
+            'url': 'https://contentmarketinginstitute.com/feed/',
+            'source': 'Content Marketing Institute'
+        },
+        {
+            'url': 'https://www.socialmediatoday.com/feed/',
+            'source': 'Social Media Today'
+        },
+        {
+            'url': 'https://www.searchenginejournal.com/feed/',
+            'source': 'Search Engine Journal'
+        },
+        {
+            'url': 'https://www.marketingweek.com/feed/',
+            'source': 'Marketing Week'
+        },
+        {
+            'url': 'https://www.adweek.com/feed/',
+            'source': 'Adweek'
+        },
+        {
+            'url': 'https://feeds.feedburner.com/naborly',
+            'source': 'Neil Patel'
+        },
+        {
+            'url': 'https://moz.com/devblog/feed',
+            'source': 'Moz'
+        },
+        {
+            'url': 'https://www.socialmediaexaminer.com/feed/',
+            'source': 'Social Media Examiner'
+        },
+        {
+            'url': 'https://blog.hootsuite.com/feed/',
+            'source': 'Hootsuite Blog'
+        },
+        {
+            'url': 'https://sproutsocial.com/insights/feed/',
+            'source': 'Sprout Social'
+        },
+        {
+            'url': 'https://www.thinkwithgoogle.com/rss/',
+            'source': 'Think with Google'
+        }
+    ]
+    
+    all_articles = []
+    sources_seen = set()
+    
+    for feed_config in feeds:
+        try:
+            feed_xml = fetch_url(feed_config['url'], timeout=15)
+            if not feed_xml:
+                continue
+            
+            articles = extract_rss_content(feed_xml)
+            
+            for article in articles:
+                article['source'] = feed_config['source']
+                article['category'] = categorize_article(article['title'], article['description'])
+                article['readingTime'] = calculate_reading_time(article.get('description', '') + ' ' + re.sub(r'<[^>]+>', '', article.get('fullContent', '')))
+
+                # Try og:image fallback for articles without images
+                if not article.get('image') and article.get('link'):
+                    try:
+                        page_html = fetch_url(article['link'], timeout=8)
+                        if page_html:
+                            og_img = extract_og_image(page_html)
+                            if og_img and og_img.startswith('http'):
+                                article['image'] = og_img
+                    except Exception:
+                        pass
+
+                sources_seen.add(feed_config['source'])
+                all_articles.append(article)
+        
+        except Exception:
+            continue
+    
+    # Sort by date descending
+    all_articles.sort(key=lambda x: x['pubDate'], reverse=True)
+    
+    # Keep only unique articles by title
+    seen_titles = set()
+    unique_articles = []
+    for article in all_articles:
+        if article['title'] not in seen_titles:
+            unique_articles.append(article)
+            seen_titles.add(article['title'])
+    
+    return unique_articles[:100], list(sources_seen)
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point"""
+    articles, sources = fetch_feeds()
+    
+    output_data = {
+        'updated': datetime.now().isoformat() + 'Z',
+        'total': len(articles),
+        'sources': sorted(sources),
+        'articles': articles
+    }
+    
+    output_path = Path(__file__).parent.parent / 'data' / 'news.json'
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(output_data, f, ensure_ascii=False, indent=2)
+    
+    print(f'Fetched {len(articles)} articles from {len(sources)} sources')
+    print(f'Output saved to {output_path}')
+
+
+if __name__ == '__main__':
     main()
