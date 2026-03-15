@@ -1,922 +1,1213 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marketing Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ============================
+       CSS VARIABLES & THEME
+    ============================ */
+    :root {
+      --bg:           #09090b;
+      --bg-elevated:  #111113;
+      --bg-card:      #18181b;
+      --bg-hover:     #27272a;
+      --border:       rgba(255,255,255,0.07);
+      --border-hover: rgba(255,255,255,0.14);
+      --text:         #fafafa;
+      --text-muted:   #a1a1aa;
+      --text-subtle:  #71717a;
+      --accent:       #8b5cf6;
+      --accent-alt:   #6366f1;
+      --accent-glow:  rgba(139,92,246,0.25);
+      --shadow-card:  0 1px 3px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
+      --shadow-hover: 0 4px 6px rgba(0,0,0,0.5), 0 16px 40px rgba(0,0,0,0.4);
+
+      --cat-digital:  #6366f1;
+      --cat-social:   #ec4899;
+      --cat-branding: #f59e0b;
+      --cat-content:  #10b981;
+      --cat-strategy: #3b82f6;
+
+      --radius:       16px;
+      --font-sans:    'Inter', system-ui, sans-serif;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
     }
 
-    html, body {
-      width: 100%;
-      height: 100%;
+    [data-theme="light"] {
+      --bg:           #f4f4f5;
+      --bg-elevated:  #ffffff;
+      --bg-card:      #ffffff;
+      --bg-hover:     #f0f0f1;
+      --border:       rgba(0,0,0,0.07);
+      --border-hover: rgba(0,0,0,0.14);
+      --text:         #09090b;
+      --text-muted:   #52525b;
+      --text-subtle:  #a1a1aa;
+      --shadow-card:  0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+      --shadow-hover: 0 4px 8px rgba(0,0,0,0.1),  0 16px 40px rgba(0,0,0,0.1);
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
     body {
-      font-family: 'Instrument Sans', sans-serif;
-      background: linear-gradient(135deg, #fafaf8 0%, #f5f3f0 100%);
-      color: #1a1a1a;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Header */
-    .header {
-      background: linear-gradient(135deg, #ffffff 0%, #fdfcfb 100%);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 2.5rem 2rem;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* ============================
+       HEADER
+    ============================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 300;
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
     }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    [data-theme="light"] header {
+      background: rgba(244,244,245,0.9);
     }
-
-    .header-content {
-      max-width: 1400px;
+    .header-inner {
+      max-width: 1440px;
       margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
     }
-
-    .header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #60a5fa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-
-    .header p {
-      color: #666;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    /* Stats Bar */
-    .stats-bar {
-      background: linear-gradient(90deg, #ffffff 0%, #fdfcfb 100%);
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 1.5rem 2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    }
-
-    .stats-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      animation: fadeInUp 0.6s ease-out 0.1s both;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: #888;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .stat-value {
-      font-size: 1.75rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      color: #1a1a1a;
-    }
-
-    /* Main Container */
-    .main-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem 3rem;
-    }
-
-    /* Controls */
-    .controls {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .search-box {
+    .h-divider { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    .header-search {
+      flex: 1;
+      max-width: 380px;
       position: relative;
-      animation: fadeInUp 0.6s ease-out 0.2s both;
     }
-
-    .search-box input {
-      width: 100%;
-      padding: 1rem 1.5rem 1rem 3.5rem;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 1rem;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-radius: 12px;
-      background: #ffffff;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    .search-box input:focus {
-      outline: none;
-      border-color: #4f46e5;
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), 0 2px 12px rgba(79, 70, 229, 0.15);
-    }
-
-    .search-icon {
+    .header-search svg {
       position: absolute;
-      left: 1.2rem;
+      left: 0.875rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.2rem;
+      color: var(--text-subtle);
       pointer-events: none;
-      opacity: 0.6;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle at 35% 35%, currentColor, currentColor 40%, transparent 50%);
-      border: 2px solid currentColor;
-      border-radius: 50%;
-      position: relative;
     }
-
-    .search-icon::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 8px;
-      background: currentColor;
-      bottom: -6px;
-      right: -4px;
-      transform: rotate(-45deg);
-    }
-
-    .search-box input::placeholder {
-      color: #aaa;
-    }
-
-    /* Filter Pills */
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-      animation: fadeInUp 0.6s ease-out 0.3s both;
-    }
-
-    .filter-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #666;
-      margin-right: 0.5rem;
-    }
-
-    .filter-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .filter-pill {
-      padding: 0.6rem 1.2rem;
-      border: 1.5px solid rgba(0, 0, 0, 0.15);
-      background: #ffffff;
-      border-radius: 20px;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      user-select: none;
-    }
-
-    .filter-pill:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .filter-pill.active {
-      border-color: transparent;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .filter-pill[data-category="digital"].active {
-      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-    }
-
-    .filter-pill[data-category="social"].active {
-      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-    }
-
-    .filter-pill[data-category="branding"].active {
-      background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
-    }
-
-    .filter-pill[data-category="content"].active {
-      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    }
-
-    .filter-pill[data-category="strategy"].active {
-      background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
-    }
-
-    /* Articles Grid */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-      animation: fadeInUp 0.6s ease-out 0.4s both;
-    }
-
-    /* Article Card */
-    .article-card {
-      background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .article-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-      border-color: rgba(0, 0, 0, 0.12);
-    }
-
-    .article-image {
+    .header-search input {
       width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
-      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.5rem 1rem 0.5rem 2.5rem;
+      font-size: 0.8125rem;
+      font-family: var(--font-sans);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .header-search input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .header-search input::placeholder { color: var(--text-subtle); }
+    .header-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+    .updated-tag {
+      font-size: 0.7rem;
+      color: var(--text-subtle);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: livePulse 2s ease-in-out infinite;
+    }
+    @keyframes livePulse { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+    .btn-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      flex-shrink: 0;
+    }
+    .btn-icon:hover {
+      background: var(--bg-hover);
+      color: var(--text);
+      border-color: var(--border-hover);
     }
 
-    .article-image img {
+    /* ============================
+       PAGE LAYOUT
+    ============================ */
+    .page-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* ============================
+       STATS ROW + CHART
+    ============================ */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 300px;
+      gap: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.125rem 1.375rem;
+      box-shadow: var(--shadow-card);
+    }
+    .stat-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-subtle);
+      margin-bottom: 0.375rem;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .stat-sub { font-size: 0.7rem; color: var(--text-subtle); }
+
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+    .chart-wrap { flex-shrink: 0; position: relative; }
+    .chart-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .chart-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .chart-sub { font-size: 0.52rem; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.08em; }
+    .chart-legend { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.7rem; }
+    .leg-item { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); }
+    .leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .leg-name { flex: 1; }
+    .leg-count { font-weight: 600; color: var(--text); }
+
+    /* ============================
+       FILTERS
+    ============================ */
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.375rem;
+      flex-wrap: wrap;
+    }
+    .filter-lbl {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-subtle);
+      margin-right: 0.125rem;
+    }
+    .pill {
+      padding: 0.35rem 0.875rem;
+      border-radius: 100px;
+      font-size: 0.775rem;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: all 0.18s;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .pill:hover { border-color: var(--border-hover); color: var(--text); }
+    .pill.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      box-shadow: 0 2px 12px var(--accent-glow);
+    }
+
+    /* ============================
+       BENTO GRID â 12 columns
+    ============================ */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 290px;
+      gap: 0.875rem;
+    }
+
+    /* ============================
+       ARTICLE CARDS
+    ============================ */
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-hover);
+    }
+    .article-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Size variants */
+    .card-hero    { grid-column: span 8; grid-row: span 2; }
+    .card-tall    { grid-column: span 4; grid-row: span 2; }
+    .card-wide    { grid-column: span 8; }
+    .card-regular { grid-column: span 4; }
+
+    /* Image */
+    .card-img {
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      min-height: 100px;
+    }
+    .card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.4s ease;
     }
+    .article-card:hover .card-img img { transform: scale(1.05); }
+    .card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 55%, transparent 100%);
+      pointer-events: none;
+    }
+    .card-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-fallback-letter {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: rgba(255,255,255,0.1);
+      font-size: 4rem;
+      user-select: none;
+    }
+    .card-hero .card-fallback-letter  { font-size: 8rem; }
+    .card-tall .card-fallback-letter  { font-size: 5rem; }
 
-    .article-card:hover .article-image img {
-      transform: scale(1.05);
+    /* Badges */
+    .card-badges {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      z-index: 2;
+    }
+    .badge-cat {
+      font-size: 0.58rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      color: #fff;
+    }
+    .badge-src {
+      font-size: 0.58rem;
+      font-weight: 500;
+      padding: 0.2rem 0.625rem;
+      border-radius: 100px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.78);
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    .article-content {
-      padding: 1.5rem;
-      flex-grow: 1;
+    /* Card body */
+    .card-body {
+      padding: 0.875rem 1.125rem 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.375rem;
+      flex-shrink: 0;
     }
+    .card-hero .card-body { padding: 1.125rem 1.375rem 1.25rem; }
+    .card-tall .card-body { padding: 0.875rem 1rem 1rem; }
 
-    .article-meta {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .card-date { font-size: 0.67rem; color: var(--text-subtle); }
 
-    .category-badge {
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
-      font-size: 0.75rem;
+    .card-title {
+      font-family: var(--font-display);
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #ffffff;
-    }
-
-    .category-badge.digital {
-      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-    }
-
-    .category-badge.social {
-      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-    }
-
-    .category-badge.branding {
-      background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
-    }
-
-    .category-badge.content {
-      background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-    }
-
-    .category-badge.strategy {
-      background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
-    }
-
-    .article-date {
-      font-size: 0.8rem;
-      color: #999;
-      font-weight: 500;
-    }
-
-    .article-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      line-height: 1.4;
-      color: #1a1a1a;
-      margin: 0.5rem 0;
-    }
-
-    .article-source {
-      font-size: 0.85rem;
-      color: #999;
-      font-weight: 500;
-      margin-top: auto;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: #ffffff;
-      border-radius: 20px;
-      max-width: 700px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .modal-header {
-      position: relative;
-      height: 300px;
+      color: var(--text);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
       overflow: hidden;
-      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
     }
+    .card-regular .card-title { font-size: 0.9rem;   -webkit-line-clamp: 2; }
+    .card-tall    .card-title { font-size: 1rem;     -webkit-line-clamp: 3; }
+    .card-wide    .card-title { font-size: 1.075rem; -webkit-line-clamp: 2; }
+    .card-hero    .card-title { font-size: 1.45rem;  -webkit-line-clamp: 3; }
 
-    .modal-header img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .card-excerpt {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
+    .card-hero .card-excerpt { -webkit-line-clamp: 3; font-size: 0.875rem; }
 
-    .modal-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.95);
-      border: none;
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.67rem;
+      color: var(--text-subtle);
+    }
+    .card-rt { display: flex; align-items: center; gap: 0.3rem; }
+    .card-arrow { color: var(--accent); opacity: 0.7; }
+
+    /* ============================
+       LOADING / EMPTY
+    ============================ */
+    .loading-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    .spinner {
+      width: 30px; height: 30px;
+      border: 2.5px solid var(--border-hover);
+      border-top-color: var(--accent);
       border-radius: 50%;
-      font-size: 1.5rem;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty-wrap {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--text-muted);
+    }
+    .empty-wrap h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ============================
+       MODAL
+    ============================ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      animation: mIn 0.22s ease;
+    }
+    @keyframes mIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    /* Progress bar */
+    .modal-progress { height: 3px; background: var(--border); }
+    .modal-prog-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #8b5cf6, #6366f1, #60a5fa);
+      transition: width 0.08s linear;
+    }
+
+    /* Close btn */
+    .modal-close-wrap {
+      position: absolute;
+      top: 0.875rem;
+      right: 0.875rem;
+      z-index: 20;
+    }
+    .modal-close-btn {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(9,9,11,0.75);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.75);
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer;
+      transition: all 0.15s;
+    }
+    .modal-close-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+    /* Hero image */
+    .modal-hero-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-hero-fallback {
+      width: 100%;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-family: var(--font-display);
+      font-size: 6rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.07);
     }
 
-    .modal-close:hover {
-      background: #ffffff;
-      transform: scale(1.1);
-    }
-
+    /* Modal body */
     .modal-body {
-      padding: 2.5rem;
+      padding: 1.875rem 2.25rem 2.5rem;
     }
 
-    .modal-meta {
+    .modal-meta-row {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 1.5rem;
+      gap: 0.625rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.875rem;
     }
+    .m-meta { font-size: 0.7rem; color: var(--text-subtle); }
+    .m-sep  { font-size: 0.6rem; color: var(--border-hover); }
 
     .modal-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.8rem;
+      font-family: var(--font-display);
+      font-size: 1.7rem;
       font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 1.5rem;
-      color: #1a1a1a;
+      line-height: 1.22;
+      color: var(--text);
+      margin-bottom: 1.625rem;
     }
 
-    .modal-badge {
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #ffffff;
-    }
-
-    .modal-source {
-      font-size: 0.9rem;
-      color: #999;
-      font-weight: 500;
-      padding: 0.6rem 1.2rem;
-      background: rgba(0, 0, 0, 0.04);
-      border-radius: 8px;
-    }
-
-    .modal-date {
-      font-size: 0.9rem;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .modal-description {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #444;
+    /* Takeaways box */
+    .takeaways-box {
+      background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(99,102,241,0.05));
+      border: 1px solid rgba(139,92,246,0.22);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
-      white-space: pre-wrap;
+    }
+    .tk-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.875rem;
+    }
+    .tk-label {
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .tk-line { flex: 1; height: 1px; background: rgba(139,92,246,0.2); }
+    .tk-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+    .tk-list li {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .tk-list li::before { content: 'â'; position: absolute; left: 0; color: var(--accent); }
+
+    /* Section label */
+    .sect-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-subtle);
+      margin-bottom: 1.25rem;
+    }
+    .sect-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
-    .modal-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 1rem;
+    /* Article HTML content */
+    .art-content {
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .art-content p   { margin-bottom: 1.125rem; }
+    .art-content h2  { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--text); margin: 2rem 0 0.75rem; }
+    .art-content h3  { font-family: var(--font-display); font-size: 1rem;     font-weight: 600; color: var(--text); margin: 1.5rem 0 0.625rem; }
+    .art-content h4  { font-weight: 600; color: var(--text); margin: 1.25rem 0 0.5rem; }
+    .art-content ul, .art-content ol { padding-left: 1.5rem; margin-bottom: 1.125rem; }
+    .art-content li  { margin-bottom: 0.4rem; }
+    .art-content a   { color: var(--accent); text-decoration: none; }
+    .art-content a:hover { text-decoration: underline; }
+    .art-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1.25rem;
+      margin: 1.25rem 0;
+      background: rgba(139,92,246,0.06);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+    .art-content strong, .art-content b { color: var(--text); font-weight: 600; }
+    .art-content em, .art-content i { font-style: italic; }
+    .art-content img { max-width: 100%; border-radius: 8px; margin: 1rem 0; border: 1px solid var(--border); }
+
+    /* Modal footer */
+    .modal-footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn-src {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 100px;
+      font-size: 0.825rem;
       font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
     }
+    .btn-src:hover { opacity: 0.85; transform: translateY(-1px); }
+    .m-footer-meta { font-size: 0.7rem; color: var(--text-subtle); }
 
-    .modal-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1200px) {
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+      .chart-card { display: none; }
     }
-
-    /* No Results Message */
-    .no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 3rem 2rem;
-      color: #999;
-      font-size: 1.1rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 2rem;
+    @media (max-width: 900px) {
+      .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 260px;
       }
-
-      .stats-content {
-        gap: 1rem;
-      }
-
-      .articles-grid {
+      .card-hero    { grid-column: span 6; grid-row: span 2; }
+      .card-tall    { grid-column: span 3; grid-row: span 2; }
+      .card-wide    { grid-column: span 6; }
+      .card-regular { grid-column: span 3; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .bento-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-auto-rows: auto;
       }
-
-      .modal-content {
-        border-radius: 16px;
-      }
-
-      .modal-body {
-        padding: 1.5rem;
-      }
-
-      .modal-title {
-        font-size: 1.5rem;
-      }
-
-      .modal-header {
-        height: 220px;
-      }
-
-      .controls {
-        gap: 1rem;
-      }
-
-      .filters {
-        gap: 0.5rem;
-      }
-
-      .filter-pills {
-        gap: 0.5rem;
-      }
-
-      .filter-pill {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-      }
-    }
-
-    /* Scrollbar styling */
-    .modal-content::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .modal-content::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 4px;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb:hover {
-      background: #999;
+      .card-hero,.card-tall,.card-wide,.card-regular { grid-column: span 1; grid-row: span 1; }
+      .card-img { height: 200px; flex: none; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .header-search { max-width: 180px; }
+      .modal-body { padding: 1.25rem 1.25rem 2rem; }
+      .modal-title { font-size: 1.25rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-      <h1>Marketing Hub</h1>
-      <p>Aktuelle Marketing-Nachrichten und Brancheninsights</p>
-    </div>
-  </header>
 
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stats-content">
-      <div class="stat-item">
-        <span class="stat-label">Artikel insgesamt</span>
-        <span class="stat-value" id="total-articles">0</span>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <span class="logo">Marketing Hub</span>
+    <div class="h-divider"></div>
+    <div class="header-search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Suche in Artikeln...">
+    </div>
+    <div class="header-right">
+      <div class="updated-tag">
+        <span class="live-dot"></span>
+        <span id="updatedLabel">Wird geladen...</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-label">Nachrichtenquellen</span>
-        <span class="stat-value" id="total-sources">0</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label">Neue heute</span>
-        <span class="stat-value" id="today-articles">0</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-label">Kategorien</span>
-        <span class="stat-value" id="total-categories">0</span>
-      </div>
+      <button class="btn-icon" id="themeToggle" title="Theme wechseln">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
     </div>
   </div>
+</header>
 
-  <!-- Main Container -->
-  <div class="main-container">
-    <!-- Controls -->
-    <div class="controls">
-      <div class="search-box">
-        <div class="search-icon"></div>
-        <input type="text" id="search-input" placeholder="Nach Artikeln suchen...">
-      </div>
-      <div class="filters">
-        <span class="filter-label">Kategorien:</span>
-        <div class="filter-pills" id="filter-pills">
-          <!-- Generated by JS -->
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Artikel insgesamt</div>
+      <div class="stat-value" id="sTotal">â</div>
+      <div class="stat-sub" id="sSub">aus mehreren Quellen</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Aktive Quellen</div>
+      <div class="stat-value" id="sSources">â</div>
+      <div class="stat-sub">RSS-Feeds</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Heute neu</div>
+      <div class="stat-value" id="sToday">â</div>
+      <div class="stat-sub" id="sDate">â</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-wrap">
+        <canvas id="donutCanvas" width="90" height="90"></canvas>
+        <div class="chart-center">
+          <span class="chart-num" id="chartNum">â</span>
+          <span class="chart-sub">Kat.</span>
         </div>
       </div>
-    </div>
-
-    <!-- Articles Grid -->
-    <div class="articles-grid" id="articles-grid">
-      <!-- Generated by JS -->
+      <div class="chart-legend" id="chartLegend"></div>
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal" id="article-modal">
-    <div class="modal-content">
-      <div class="modal-header" id="modal-image">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-meta">
-          <div class="modal-badge" id="modal-category"></div>
-          <div class="modal-source" id="modal-source"></div>
-          <div class="modal-date" id="modal-date"></div>
-        </div>
-        <h2 class="modal-title" id="modal-title"></h2>
-        <div class="modal-description" id="modal-description"></div>
-        <a href="#" class="modal-button" id="modal-link" target="_blank">Originalartikel lesen</a>
-      </div>
-    </div>
+  <!-- FILTERS -->
+  <div class="filter-row">
+    <span class="filter-lbl">Filter:</span>
+    <button class="pill active" data-filter="all">Alle</button>
+    <button class="pill" data-filter="digital">Digital</button>
+    <button class="pill" data-filter="social">Social Media</button>
+    <button class="pill" data-filter="branding">Branding</button>
+    <button class="pill" data-filter="content">Content</button>
+    <button class="pill" data-filter="strategy">Strategie</button>
   </div>
 
-  <script>
-    // Embedded news data
-    const window__NEWS_DATA = {"updated":"2026-03-12T18:39:50.644064+00:00","total":60,"sources":["Marketing Week","Neil Patel","HubSpot Blog","Adweek","Search Engine Journal","Social Media Examiner"],"articles":[{"title":"ChatGPT's Default & Premium Models Search The Web Differently via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/chatgpts-default-premium-models-search-the-web-differently/569594/","description":"An analysis of ChatGPT conversations found the default and premium models cite almost entirely different sources for the same queries. The post ChatGPT's Default & Premium Models Search The Web Differently appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T16:38:54+00:00","category":"digital","image":null},{"title":"Ofcom tells major tech platforms to enforce minimum age rules","link":"https://www.marketingweek.com/ofcom-minimum-age-tech-platforms/","description":"Facebook, Instagram, Roblox, Snapchat, TikTok and YouTube must inform the regulator on actions they will take to \"better protect\" children online. Source","source":"Marketing Week","pubDate":"2026-03-12T15:08:55+00:00","category":"social","image":null},{"title":"Google Maps Launches AI Conversational Search With Ask Maps via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/google-maps-launches-ai-conversational-search-with-ask-maps/569585/","description":"Google Maps launches Ask Maps, a Gemini-powered conversational feature for local discovery in the U.S. and India, plus a navigation overhaul in the U.S. The post Google Maps Launches AI Conversational Search With Ask Maps appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T14:47:02+00:00","category":"digital","image":null},{"title":"How Archer Roose Is Flipping the Wine Industry on Its Head with CMO Conley Downing","link":"https://www.adweek.com/brand-marketing/how-archer-roose-is-flipping-the-wine-industry-on-its-head-with-cmo-conley-downing/","description":"Repositioning a legacy category by eliminating barriers to entry.","source":"Adweek","pubDate":"2026-03-12T14:27:11+00:00","category":"digital","image":null},{"title":"The Shortcut Behind Some AI Optimization Tools via @sejournal, @DuaneForrester","link":"https://www.searchenginejournal.com/the-shortcut-behind-some-ai-optimization-tools/569040/","description":"The disappearance of ChatGPT's query fan-out metadata reveals why AI intelligence tools built on unofficial access are fragile by design. The post The Shortcut Behind Some AI Optimization Tools appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T13:30:14+00:00","category":"digital","image":null},{"title":"Coinbase's Oscars Ad Turns a Video Game NPC Into a Financial Rebel","link":"https://www.adweek.com/creativity/coinbases-oscars-ad-turns-a-video-game-npc-into-a-financial-rebel/","description":"Coinbase's Oscars ad encourages people to break away from the financial systems they've always known.","source":"Adweek","pubDate":"2026-03-12T13:00:00+00:00","category":"digital","image":null},{"title":"How AI Automation Turns Static Travel Pages Into Living Content & Experiences via @sejournal, @TaylorDanRW","link":"https://www.searchenginejournal.com/how-ai-automation-turns-static-travel-pages-into-living-content-experiences/568599/","description":"Consider a new model for travel marketing where content adapts to traveler context instead of relying on static destination pages. The post How AI Automation Turns Static Travel Pages Into Living Content & Experiences appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T12:30:40+00:00","category":"digital","image":null},{"title":"John Lewis credits customer investment and strong Christmas for growth","link":"https://www.marketingweek.com/john-lewis-customer-investment/","description":"Both John Lewis and Waitrose noted success from their Christmas campaigns, and are using them as platforms for brand work going forward. Source","source":"Marketing Week","pubDate":"2026-03-12T12:25:53+00:00","category":"branding","image":null},{"title":"Huggies Invites 18 Babies to Poop All Over $500K Worth of Luxury Goods","link":"https://www.adweek.com/creativity/huggies-invites-18-babies-to-poop-all-over-500k-worth-of-luxury-goods/","description":"Huggies' 'Expensive Sh*t' livestream demonstrates how its diapers prevent costly messes.","source":"Adweek","pubDate":"2026-03-12T12:00:00+00:00","category":"digital","image":null},{"title":"AdgeAI Is the Latest Acquisition in Publicis' AI Shopping Spree","link":"https://www.adweek.com/agencies/adgeai-acquisition-publicis-ai-drive/","description":"The Israel-based creative analytics platform will be integrated into Publicis Production.","source":"Adweek","pubDate":"2026-03-12T11:19:31+00:00","category":"digital","image":null},{"title":"Improving Customer Experience: How to Increase Revenue and Profitability","link":"https://www.socialmediaexaminer.com/improving-customer-experience-how-to-increase-revenue-and-profitability/","description":"Are you spending most of your marketing budget chasing new customers while the ones you have are leaving? Do you suspect that better customer retention could be your biggest revenue lever, but you're not sure where to start? In this article, you'll discover a proven three-part framework to keep customers coming back and turn them [...] The post Improving Customer Experience: How to Increase Revenue and Profitability appeared first on Social Media Examiner.","source":"Social Media Examiner","pubDate":"2026-03-12T10:00:00+00:00","category":"strategy","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/03/SMMP709_PRIMARY.jpg"},{"title":"Google Answers Questions About Search Console's Branded Queries Filter via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/google-answers-questions-about-search-consoles-branded-queries-filter/569549/","description":"Google announced that Search Console's brand queries filter is open to all eligible sites, spurring questions about the feature. The post Google Answers Questions About Search Console's Branded Queries Filter appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-12T09:17:16+00:00","category":"digital","image":null},{"title":"Nielsen's New Insights Could Help Shift Ad Budgets in the Upfront","link":"https://www.adweek.com/convergent-tv/nielsen-insights-help-shift-ad-budgets-upfront/","description":"Nielsen releases new data breaking down demos across ad-supported TV.","source":"Adweek","pubDate":"2026-03-12T09:00:00+00:00","category":"strategy","image":null},{"title":"'Compound capability': Senior leaders on the '4Ps' of progression","link":"https://www.marketingweek.com/senior-leaders-progression-possibilities/","description":"Performance, persistence, passion and presence - are these the 4Ps that could unlock progression for senior marketing leaders? Source","source":"Marketing Week","pubDate":"2026-03-12T07:00:09+00:00","category":"digital","image":null},{"title":"The marketers who belittle comms are often the ones least capable of doing it well","link":"https://www.marketingweek.com/marketer-comms-belittle/","description":"Marketers frequently talk about wanting to be more strategic but advertising and marcomms shouldn't be seen as the consolation prize. It's the last part of marketing to resist automation and the most vital and unique value marketers have to offer businesses. Source","source":"Marketing Week","pubDate":"2026-03-12T07:00:08+00:00","category":"digital","image":null},{"title":"EXCLUSIVE: NewsGuard Taps Startup Pangram to Identify AI-Generated News and Misinformation","link":"https://www.adweek.com/media/newsguard-tracking-ai-slop-content-farms/","description":"A new AI-powered tool created by Pangram can spot AI-generated misinformation posing as reputable news.","source":"Adweek","pubDate":"2026-03-12T06:00:00+00:00","category":"digital","image":null},{"title":"Delta CMO Alicia Tillman to Depart; Ranjan Goswami Named Marketing and Product Chief","link":"https://www.adweek.com/brand-marketing/delta-cmo-alicia-tillman-to-depart-ranjan-goswami-named-marketing-and-product-chief/","description":"Airline announces leadership reshuffle as COO John Laughter's three-decade tenure ends.","source":"Adweek","pubDate":"2026-03-12T05:38:15+00:00","category":"digital","image":null},{"title":"WordPress Gutenberg 22.7 Lays Groundwork For AI Publishing via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/wordpress-gutenberg-22-7-lays-groundwork-for-ai-publishing/569543/","description":"Gutenberg 22.7 adds features that lay the groundwork for a role as an AI publishing platform and improve the editing experience. The post WordPress Gutenberg 22.7 Lays Groundwork For AI Publishing appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T23:16:13+00:00","category":"digital","image":null},{"title":"Netflix's Warner Bros. Bid Failed. What Should It Buy Now?","link":"https://www.adweek.com/convergent-tv/netflix-warner-bros-bid-failed-buy-now/","description":"The streamer has a war chest, rising stock price, and newfound appetite for M&A. Seven experts offer their suggestions.","source":"Adweek","pubDate":"2026-03-11T19:00:00+00:00","category":"digital","image":null},{"title":"The Trade Desk Says It's Testing AI Campaign Creation With Claude","link":"https://www.adweek.com/media/the-trade-desk-claude-campaign-tests/","description":"CEO Jeff Green says generative AI could transform programmatic at scale, while warning Amazon may retreat from its DSP business over antitrust risks.","source":"Adweek","pubDate":"2026-03-11T18:26:09+00:00","category":"digital","image":null},{"title":"WordPress Security Release 6.9.4 Fixes Issues 6.9.2 Failed To Address via @sejournal, @martinibuster","link":"https://www.searchenginejournal.com/wordpress-security-release-6-9-4/569532/","description":"WordPress issues second security release 6.9.4 to address vulnerabilities that version 6.9.2 apparently failed to patch. The post WordPress Security Release 6.9.4 Fixes Issues 6.9.2 Failed To Address appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T17:34:30+00:00","category":"digital","image":null},{"title":"'Less Franco Manca, more value': How Sky used insights to revamp its loyalty programme","link":"https://www.marketingweek.com/sky-insights-revamp-loyalty/","description":"Sky was struggling to create engagement with its VIP loyalty scheme - until it worked with insights to chart a path forward. Source","source":"Marketing Week","pubDate":"2026-03-11T15:33:26+00:00","category":"strategy","image":null},{"title":"Week of March 2 Morning News Ratings: Today Only Show to Grow in Total Viewers","link":"https://www.adweek.com/tvnewser/week-of-march-2-2026-morning-news-ratings/","description":"Today extends its lead.","source":"Adweek","pubDate":"2026-03-11T13:35:57+00:00","category":"digital","image":"https://static-www.adweek.com/wp-content/uploads/2025/01/morning-news-ratings-2025.jpg?w=1024"},{"title":"5 Things I Learned About The Future Of Search From Liz Reid's Latest Interview via @sejournal, @marie_haynes","link":"https://www.searchenginejournal.com/5-things-i-learned-about-the-future-of-search-from-liz-reids-latest-interview/569227/","description":"Five takeaways from Liz Reid on AI agents, the future of Google Search, and why originality now matters more than ever. The post 5 Things I Learned About The Future Of Search From Liz Reid's Latest Interview appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T13:30:36+00:00","category":"digital","image":null},{"title":"The Week in Tech: Grammarly rips off marketing boffins and a blow to agentic shopping","link":"https://www.marketingweek.com/week-in-tech-grammarly-agentic-shopping/","description":"Marketing Week's weekly round-up of the technology stories that impact the marketing sector: from AI to martech, regulation to public perceptions. Source","source":"Marketing Week","pubDate":"2026-03-11T12:55:26+00:00","category":"digital","image":null},{"title":"How To Prove PR Business Value With UTM Parameters and GA4 via @sejournal, @gregjarboe","link":"https://www.searchenginejournal.com/how-to-prove-pr-business-value-with-utm-parameters-ga4/566928/","description":"Here's how UTMs and GA4 can prove earned media's revenue impact in an AI-driven, zero-click world. The post How To Prove PR Business Value With UTM Parameters and GA4 appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T12:00:20+00:00","category":"digital","image":null},{"title":"How To Build A Feed-Only Performance Max Campaign","link":"https://www.searchenginejournal.com/how-to-build-a-feed-only-performance-max-campaign/568794/","description":"Advertisers using feed-only Performance Max can narrow campaign focus to product feed signals, improving efficiency when automation spreads spend too broadly. The post How To Build A Feed-Only Performance Max Campaign appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T11:00:57+00:00","category":"digital","image":null},{"title":"The simple genius behind this long-forgotten Google Chrome ad","link":"https://blog.hubspot.com/marketing/goal-dilution-effect","description":"We trust simple promises more than long lists. When brands focus on one clear benefit, it feels more believable than trying to do everything at once. Take it from Google.","source":"HubSpot Blog","pubDate":"2026-03-11T11:00:03","category":"branding","image":"https://no-cache.hubspot.com/cta/default/53/d4233c10-60b6-46d7-9852-c71dde8507b6.png"},{"title":"How a social-first strategy helped Specsavers reach millions on YouTube","link":"https://www.marketingweek.com/social-first-specsavers-youtube/","description":"Specsavers' YouTube football series celebrating Britain's Best Worst Team delivered brand likeability scores among Gen Z comparable with Netflix. Source","source":"Marketing Week","pubDate":"2026-03-11T07:41:58+00:00","category":"social","image":null},{"title":"No big gains without risk: Compare the Market's top marketer on sales promotions gone wrong","link":"https://www.marketingweek.com/risk-compare-market-sales-promotions/","description":"In the latest of our series about mistakes that help shape top marketing leaders, Compare the Market's Tom Wallis discusses two examples of sales promotions that have gone awry. Source","source":"Marketing Week","pubDate":"2026-03-11T06:55:12+00:00","category":"digital","image":null},{"title":"Old Link Building vs. AI Search: How to Earn Top-Tier Media Placements Now via @sejournal, @Michael_Resolve","link":"https://www.searchenginejournal.com/ai-search-link-building-resolve-spa/567924/","description":"Discover the new approach to link building that prioritizes brand legitimacy and digital PR over traditional methods. The post Old Link Building vs. AI Search: How to Earn Top-Tier Media Placements Now appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-11T05:00:26+00:00","category":"digital","image":null},{"title":"Nutrition startup Zoe stunned as ASA upholds ad ban over misleading claims","link":"https://www.marketingweek.com/zoe-stunned-asa-ad-ban/","description":"The Advertising Standards Authority has rejected Zoe's appeal regarding its use of ultra-processed foods. Source","source":"Marketing Week","pubDate":"2026-03-11T00:01:52+00:00","category":"branding","image":null},{"title":"How Channel 4 flipped the Paralympics script with focus on sporting prowess","link":"https://www.marketingweek.com/channel-4-paralympics-sporting-prowess/","description":"Shifting from inspiration porn to a celebration of elite sport helped Channel 4 improve public opinion of the Paralympic Games and fuel brand perceptions. Source","source":"Marketing Week","pubDate":"2026-03-10T22:13:10+00:00","category":"branding","image":null},{"title":"B2B Buyers Trust Peers Over AI Chatbots, Report Finds via @sejournal, @MattGSouthern","link":"https://www.searchenginejournal.com/b2b-buyers-trust-peers-over-ai-chatbots-report-finds/569261/","description":"A survey of B2B decision-makers found peer recommendations are trusted nearly twice as much as AI chatbots, and white papers rank last for perceived value. The post B2B Buyers Trust Peers Over AI Chatbots, Report Finds appeared first on Search Engine Journal.","source":"Search Engine Journal","pubDate":"2026-03-10T17:22:56+00:00","category":"strategy","image":null},{"title":"O2, Channel 4 and HSBC to compete in this year's Sprintathon","link":"https://www.marketingweek.com/o2-channel-4-hsbc-sprintathon/","description":"After hitting its 1m total fundraising target last year, the aim is now to reach 2m in cumulative fundraising within the next five years. Source","source":"Marketing Week","pubDate":"2026-03-10T15:29:38+00:00","category":"digital","image":null},{"title":"How Sage embedded synthetic responses into its insights function","link":"https://www.marketingweek.com/sage-synthetic-responses-insights/","description":"Sage has changed how it approaches market research over the past two years as the speed at which consumer insight is needed ramps up. Source","source":"Marketing Week","pubDate":"2026-03-10T15:17:57+00:00","category":"strategy","image":null},{"title":"Community marketing: How to use it to drive customer advocacy and reduce CAC","link":"https://blog.hubspot.com/marketing/community-marketing","description":"Community marketing is a growth strategy centered on participation. It brings customers together to share knowledge, solve problems, and build trust. In the process, it drives advocacy, retention, and lower customer acquisition costs.","source":"HubSpot Blog","pubDate":"2026-03-10T11:00:05","category":"strategy","image":"https://no-cache.hubspot.com/cta/default/53/866a5201-b39e-4edb-9e7f-65c0d98a9ea0.png"},{"title":"Competitor analysis tools marketing teams actually use in 2026","link":"https://blog.hubspot.com/marketing/competitor-analysis-tools","description":"Competitor analysis tools are software platforms that help marketing teams monitor and compare competitor strategies across SEO, social, PPC, and market intelligence.","source":"HubSpot Blog","pubDate":"2026-03-10T11:00:02","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/1d7211ac-7b1b-4405-b940-54b8acedb26e.png"},{"title":"The AI Tool Stack That Saves Creators Hours Every Week","link":"https://www.socialmediaexaminer.com/the-ai-tool-stack-that-saves-creators-hours-every-week/","description":"Wondering which tools deliver real efficiency gains? In this article, you'll discover video and image generation platforms that let you produce multi-asset content faster.","source":"Social Media Examiner","pubDate":"2026-03-10T10:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/03/AIP96_PRIMARY.jpg"},{"title":"Answer engine optimization strategy beyond basic SEO and AEO tactics","link":"https://blog.hubspot.com/marketing/enterprise-seo-audit","description":"If you're not in the trenches of search every single day, it's hard to know how seriously to take answer engine optimization strategy.","source":"HubSpot Blog","pubDate":"2026-03-09T11:00:03","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/d4233c10-60b6-46d7-9852-c71dde8507b6.png"},{"title":"What Clickable Reels Links and Hashtag Limits Mean for Your 2026 Instagram Strategy","link":"https://www.socialmediaexaminer.com/what-clickable-reels-links-and-hashtag-limits-mean-for-your-2026-instagram-strategy/","description":"In this article, you'll discover five major Instagram updates rolling out now and learn exactly how to use them to strengthen your strategy.","source":"Social Media Examiner","pubDate":"2026-03-05T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/SMMP708_PRIMARY.jpg"},{"title":"AI and SEO: What AI means for the future of SEO","link":"https://blog.hubspot.com/marketing/how-ai-is-impacting-seo","description":"Artificial intelligence (AI) is rewriting the playbook of so much of our lives -- how we interact, how we learn, how we complete daily tasks.","source":"HubSpot Blog","pubDate":"2026-03-04T13:00:00","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/b5296305-8ec6-4375-8245-aadbacbd4058.png"},{"title":"How To Use AI To Support Your Design Process","link":"https://neilpatel.com/blog/how-use-ai-graphic-design/","description":"If you're trying to figure out how to use AI for graphic design without wrecking your creative process, you're asking the right question.","source":"Neil Patel","pubDate":"2026-03-03T20:00:00+00:00","category":"branding","image":"https://neilpatel.com/wp-content/uploads/2026/03/how-use-ai-for-graphic-design-005.webp"},{"title":"Where to Start with AI: A Practical Guide for GTM Teams","link":"https://blog.hubspot.com/marketing/where-to-start-with-ai-gtm","description":"Over the past year, I've had hundreds of conversations with business leaders about AI. The pattern is always the same.","source":"HubSpot Blog","pubDate":"2026-03-03T16:00:02","category":"digital","image":"https://53.fs1.hubspotusercontent-na1.net/hubfs/53/where-to-start-with-ai-gtm-1-20260302-4655164.webp"},{"title":"Clone Your Knowledge: Getting AI to Truly Sound Like You","link":"https://www.socialmediaexaminer.com/clone-your-knowledge-getting-ai-to-truly-sound-like-you/","description":"In this article, you'll discover how to train AI tools on your specific knowledge and personality using the Leadership Lexicon.","source":"Social Media Examiner","pubDate":"2026-03-03T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/AIP95_PRIMARY.jpg"},{"title":"How Voice Search Ads Are Changing The Search Term Report in 2026","link":"https://neilpatel.com/blog/voice-search-ads-changing-search-term-report/","description":"If you've looked at a Google Ads Search Term Report lately, you know it feels like stepping off a merry-go-round a little too fast.","source":"Neil Patel","pubDate":"2026-03-02T20:00:00+00:00","category":"digital","image":"https://neilpatel.com/wp-content/uploads/2026/02/image2-700x303.png"},{"title":"Claude vs. ChatGPT: A marketer's guide to choosing AI","link":"https://blog.hubspot.com/marketing/claude-vs-chatgpt","description":"As AI tools become essential to content workflows, understanding the differences between Claude and ChatGPT for marketing matters.","source":"HubSpot Blog","pubDate":"2026-03-02T12:00:04","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/887c58e0-5bc7-4fe2-8ea4-7a360452eaaf.png"},{"title":"AI marketing predictions that will shape 2026","link":"https://blog.hubspot.com/marketing/ai-predictions-marketing","description":"Marketing is set for its most transformative year in decades, according to major AI predictions for 2026.","source":"HubSpot Blog","pubDate":"2026-03-02T12:00:03","category":"branding","image":"https://no-cache.hubspot.com/cta/default/53/05ea94a6-06a8-47e9-841d-a65a84c72426.png"},{"title":"The Definitive Guide to Online Reputation Management","link":"https://neilpatel.com/blog/guide-to-reputation-management/","description":"Online reputation management (ORM) is the practice of monitoring and improving how your brand is perceived on the internet.","source":"Neil Patel","pubDate":"2026-02-27T20:00:00+00:00","category":"branding","image":"https://neilpatel.com/wp-content/uploads/2021/04/Reputation-Management-001-700x254.png"},{"title":"How to scale a marketing team from 5 to 25 people (and beyond)","link":"https://blog.hubspot.com/marketing/scaling-marketing-team","description":"In times of growth, scaling a marketing team is often the last thing on a company's mind -- but that is a huge mistake.","source":"HubSpot Blog","pubDate":"2026-02-27T13:00:00","category":"strategy","image":"https://no-cache.hubspot.com/cta/default/53/7cbd0328-6c8c-40e0-98dd-c3b6e6be96f0.png"},{"title":"Will AI Take Your Marketing Job? Here's What Two AI Experts Are Seeing","link":"https://www.socialmediaexaminer.com/will-ai-take-your-marketing-job-heres-what-two-ai-experts-are-seeing/","description":"In this article, you'll discover what skills are becoming more valuable now, tactical steps to stay competitive, and warning signs you're falling behind.","source":"Social Media Examiner","pubDate":"2026-02-26T11:00:00+00:00","category":"social","image":"https://www.socialmediaexaminer.com/wp-content/uploads/2026/02/SMMP707_PRIMARY.jpg"},{"title":"Marketing experiments every growth team should run","link":"https://blog.hubspot.com/marketing/marketing-experimentation","description":"Every reliable tactic marketers now love was once a new experiment that early adopters tested and developed.","source":"HubSpot Blog","pubDate":"2026-02-25T12:00:04","category":"digital","image":"https://no-cache.hubspot.com/cta/default/53/610b61ae-1723-4f3f-9703-35f0949765fe.png"}]};
+  <!-- LOADING -->
+  <div class="loading-wrap" id="loadingWrap">
+    <div class="spinner"></div>
+    <span>Artikel werden geladen...</span>
+  </div>
 
-    let allArticles = [];
-    let filteredArticles = [];
-    let activeCategory = null;
-    let searchQuery = '';
+  <!-- GRID -->
+  <div class="bento-grid" id="bentoGrid" style="display:none;"></div>
 
-    // German month names
-    const monthNames = {
-      0: 'Januar',
-      1: 'Februar',
-      2: 'Marz',
-      3: 'April',
-      4: 'Mai',
-      5: 'Juni',
-      6: 'Juli',
-      7: 'August',
-      8: 'September',
-      9: 'Oktober',
-      10: 'November',
-      11: 'Dezember'
-    };
+  <!-- EMPTY -->
+  <div class="empty-wrap" id="emptyWrap" style="display:none;">
+    <h3>Keine Artikel gefunden</h3>
+    <p>Versuche einen anderen Suchbegriff oder eine andere Kategorie.</p>
+  </div>
 
-    const dayNames = {
-      0: 'Sonntag',
-      1: 'Montag',
-      2: 'Dienstag',
-      3: 'Mittwoch',
-      4: 'Donnerstag',
-      5: 'Freitag',
-      6: 'Samstag'
-    };
+</div>
 
-    const categoryLabels = {
-      digital: 'Digital',
-      social: 'Social Media',
-      branding: 'Branding',
-      content: 'Content',
-      strategy: 'Strategie'
-    };
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal-box">
+    <div class="modal-progress"><div class="modal-prog-bar" id="progBar"></div></div>
+    <div class="modal-close-wrap">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Schliessen">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div id="modalInner"></div>
+  </div>
+</div>
 
-    // Format date to German format: "12. Marz 2026"
-    function formatDateShort(dateString) {
-      const date = new Date(dateString);
-      const day = date.getDate();
-      const month = monthNames[date.getMonth()];
-      const year = date.getFullYear();
-      return `${day}. ${month} ${year}`;
-    }
+<script>
+/* ============================
+   CONSTANTS
+============================ */
+var CAT_COLOR = {
+  digital:'#6366f1', social:'#ec4899',
+  branding:'#f59e0b', content:'#10b981', strategy:'#3b82f6'
+};
+var CAT_LABEL = {
+  digital:'Digital', social:'Social Media',
+  branding:'Branding', content:'Content', strategy:'Strategie'
+};
+var CAT_GRAD = {
+  digital: 'linear-gradient(135deg,#1e1b4b,#312e81)',
+  social:  'linear-gradient(135deg,#500724,#881337)',
+  branding:'linear-gradient(135deg,#451a03,#92400e)',
+  content: 'linear-gradient(135deg,#022c22,#065f46)',
+  strategy:'linear-gradient(135deg,#172554,#1e3a8a)'
+};
+// 12-column bento pattern
+var CARD_CLS = [
+  'card-hero',    // 0: 8col x 2row â big feature
+  'card-tall',    // 1: 4col x 2row â tall secondary
+  'card-regular', // 2
+  'card-regular', // 3
+  'card-regular', // 4
+  'card-wide',    // 5: 8col
+  'card-regular', // 6
+  'card-regular', // 7
+  'card-regular', // 8
+  'card-wide',    // 9
+  'card-regular', // 10
+];
 
-    // Format date to full German format: "Donnerstag, 12. Marz 2026, 16:38 Uhr"
-    function formatDateFull(dateString) {
-      const date = new Date(dateString);
-      const dayName = dayNames[date.getDay()];
-      const day = date.getDate();
-      const month = monthNames[date.getMonth()];
-      const year = date.getFullYear();
-      const hours = String(date.getHours()).padStart(2, '0');
-      const minutes = String(date.getMinutes()).padStart(2, '0');
-      return `${dayName}, ${day}. ${month} ${year}, ${hours}:${minutes} Uhr`;
-    }
+/* ============================
+   STATE
+============================ */
+var allArticles = [];
+var currentFilter = 'all';
+var searchQuery   = '';
 
-    // Initialize
-    async function init() {
-      try {
-        // Try to fetch from data/news.json first
-        const response = await fetch('data/news.json');
-        if (response.ok) {
-          const data = await response.json();
-          allArticles = data.articles || window__NEWS_DATA.articles;
-        } else {
-          allArticles = window__NEWS_DATA.articles;
-        }
-      } catch {
-        // Fallback to embedded data
-        allArticles = window__NEWS_DATA.articles;
-      }
+/* ============================
+   LOAD DATA
+============================ */
+function loadArticles() {
+  fetch('data/news.json?t=' + Date.now())
+    .then(function(r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    })
+    .then(function(d) {
+      allArticles = d.articles || [];
+      renderStats(d);
+      renderGrid();
+      var el = document.getElementById('updatedLabel');
+      el.textContent = d.updated
+        ? 'Aktualisiert ' + new Date(d.updated).toLocaleDateString('de-DE',{day:'numeric',month:'short'})
+        : '';
+    })
+    .catch(function() {
+      var fb = window.__NEWS_DATA || {articles:[],total:0,sources:[]};
+      allArticles = fb.articles || [];
+      renderStats(fb);
+      renderGrid();
+      document.getElementById('updatedLabel').textContent = 'Fallback';
+    });
+}
 
-      // Sort articles by date (newest first)
-      allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+/* ============================
+   STATS + DONUT CHART
+============================ */
+function renderStats(d) {
+  var arts = d.articles || [];
+  document.getElementById('sTotal').textContent   = arts.length || 'â';
+  document.getElementById('sSources').textContent = (d.sources || []).length || 'â';
 
-      renderStats();
-      renderFilters();
-      filterAndRender();
-      setupEventListeners();
-    }
+  var today    = new Date().toISOString().slice(0,10);
+  var newToday = arts.filter(function(a){ return a.pubDate && a.pubDate.slice(0,10) === today; }).length;
+  document.getElementById('sToday').textContent = newToday;
+  document.getElementById('sDate').textContent  = d.updated
+    ? 'Stand: ' + new Date(d.updated).toLocaleDateString('de-DE',{day:'numeric',month:'long'})
+    : '';
 
-    function renderStats() {
-      const today = new Date().toISOString().split('T')[0];
-      const todayArticles = allArticles.filter(a => a.pubDate.split('T')[0] === today).length;
-      const uniqueCategories = new Set(allArticles.map(a => a.category)).size;
+  var cats = {};
+  arts.forEach(function(a) {
+    var c = a.category || 'digital';
+    cats[c] = (cats[c] || 0) + 1;
+  });
+  drawDonut(cats, arts.length);
+}
 
-      document.getElementById('total-articles').textContent = window__NEWS_DATA.total;
-      document.getElementById('total-sources').textContent = window__NEWS_DATA.sources.length;
-      document.getElementById('today-articles').textContent = todayArticles;
-      document.getElementById('total-categories').textContent = uniqueCategories;
-    }
+function drawDonut(cats, total) {
+  var cv = document.getElementById('donutCanvas');
+  if (!cv || !total) return;
+  var ctx = cv.getContext('2d');
+  var cx = 45, cy = 45, ro = 38, ri = 24;
+  ctx.clearRect(0, 0, 90, 90);
 
-    function renderFilters() {
-      const container = document.getElementById('filter-pills');
-      const categories = ['digital', 'social', 'branding', 'content', 'strategy'];
+  var entries = Object.entries(cats).sort(function(a,b){ return b[1]-a[1]; });
+  var a = -Math.PI / 2;
+  entries.forEach(function(e) {
+    var slice = (e[1] / total) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, ro, a, a + slice);
+    ctx.closePath();
+    ctx.fillStyle = CAT_COLOR[e[0]] || '#6366f1';
+    ctx.fill();
+    a += slice;
+  });
 
-      categories.forEach(cat => {
-        const pill = document.createElement('button');
-        pill.className = 'filter-pill';
-        pill.setAttribute('data-category', cat);
-        pill.textContent = categoryLabels[cat];
-        pill.addEventListener('click', () => toggleCategory(cat));
-        container.appendChild(pill);
-      });
-    }
+  ctx.beginPath();
+  ctx.arc(cx, cy, ri, 0, Math.PI * 2);
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  ctx.fillStyle = isLight ? '#ffffff' : '#111113';
+  ctx.fill();
 
-    function toggleCategory(category) {
-      activeCategory = activeCategory === category ? null : category;
-      updateFilterButtons();
-      filterAndRender();
-    }
+  document.getElementById('chartNum').textContent = Object.keys(cats).length;
 
-    function updateFilterButtons() {
-      document.querySelectorAll('.filter-pill').forEach(pill => {
-        const category = pill.getAttribute('data-category');
-        if (activeCategory === category) {
-          pill.classList.add('active');
-        } else {
-          pill.classList.remove('active');
-        }
-      });
-    }
+  document.getElementById('chartLegend').innerHTML = entries.slice(0,5).map(function(e) {
+    return '<div class="leg-item">'
+      + '<span class="leg-dot" style="background:' + (CAT_COLOR[e[0]] || '#6366f1') + '"></span>'
+      + '<span class="leg-name">' + (CAT_LABEL[e[0]] || e[0]) + '</span>'
+      + '<span class="leg-count">' + e[1] + '</span>'
+      + '</div>';
+  }).join('');
+}
 
-    function filterAndRender() {
-      filteredArticles = allArticles.filter(article => {
-        const matchesCategory = !activeCategory || article.category === activeCategory;
-        const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                             article.description.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
-      });
+/* ============================
+   GRID RENDER
+============================ */
+function cardCls(i) {
+  return CARD_CLS[i] || 'card-regular';
+}
 
-      renderArticles();
-    }
+function renderGrid() {
+  document.getElementById('loadingWrap').style.display = 'none';
 
-    function renderArticles() {
-      const grid = document.getElementById('articles-grid');
-      grid.innerHTML = '';
+  var filtered = allArticles.filter(function(a) {
+    var mc = currentFilter === 'all' || a.category === currentFilter;
+    var q  = searchQuery.toLowerCase();
+    var ms = !q
+      || (a.title       || '').toLowerCase().includes(q)
+      || (a.description || '').toLowerCase().includes(q)
+      || (a.source      || '').toLowerCase().includes(q);
+    return mc && ms;
+  });
 
-      if (filteredArticles.length === 0) {
-        grid.innerHTML = '<div class="no-results">Keine Artikel gefunden</div>';
-        return;
-      }
+  var grid  = document.getElementById('bentoGrid');
+  var empty = document.getElementById('emptyWrap');
 
-      filteredArticles.forEach((article, index) => {
-        const card = document.createElement('div');
-        card.className = 'article-card';
-        card.style.animation = `fadeInUp 0.6s ease-out ${0.4 + index * 0.05}s both`;
+  if (!filtered.length) {
+    grid.style.display  = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  grid.style.display  = 'grid';
+  empty.style.display = 'none';
 
-        const imageHtml = article.image
-          ? `<img src="${article.image}" alt="${article.title}">`
-          : '';
+  grid.innerHTML = filtered.map(function(a, i) {
+    return buildCard(a, cardCls(i), i);
+  }).join('');
 
-        card.innerHTML = `
-          <div class="article-image">${imageHtml}</div>
-          <div class="article-content">
-            <div class="article-meta">
-              <div class="category-badge ${article.category}">${categoryLabels[article.category]}</div>
-              <div class="article-date">${formatDateShort(article.pubDate)}</div>
-            </div>
-            <h3 class="article-title">${article.title}</h3>
-            <div class="article-source">${article.source}</div>
-          </div>
-        `;
+  grid.querySelectorAll('.article-card').forEach(function(el, i) {
+    el.addEventListener('click',   function(){ openModal(filtered[i]); });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(filtered[i]); }
+    });
+  });
+}
 
-        card.addEventListener('click', () => openModal(article));
-        grid.appendChild(card);
-      });
-    }
+function buildCard(a, cls, idx) {
+  var cat    = a.category || 'digital';
+  var color  = CAT_COLOR[cat] || '#6366f1';
+  var grad   = CAT_GRAD[cat]  || CAT_GRAD.digital;
+  var letter = (a.source || 'M').charAt(0).toUpperCase();
+  var large  = cls === 'card-hero' || cls === 'card-tall' || cls === 'card-wide';
+  var load   = idx < 3 ? 'eager' : 'lazy';
 
-    function openModal(article) {
-      const modal = document.getElementById('article-modal');
-      const imageContainer = document.getElementById('modal-image');
-      const categoryBadge = document.getElementById('modal-category');
-      const source = document.getElementById('modal-source');
-      const dateEl = document.getElementById('modal-date');
-      const title = document.getElementById('modal-title');
-      const description = document.getElementById('modal-description');
-      const link = document.getElementById('modal-link');
+  var img = a.image
+    ? '<img src="' + esc(a.image) + '" alt="" loading="' + load + '" '
+        + 'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+      + '<div class="card-fallback" style="background:' + grad + ';display:none;">'
+        + '<span class="card-fallback-letter">' + letter + '</span></div>'
+    : '<div class="card-fallback" style="background:' + grad + '">'
+        + '<span class="card-fallback-letter">' + letter + '</span></div>';
 
-      // Set image or placeholder
-      if (article.image) {
-        imageContainer.innerHTML = `<img src="${article.image}" alt="${article.title}"><button class="modal-close" onclick="closeModal()">&times;</button>`;
-      } else {
-        imageContainer.innerHTML = `<button class="modal-close" onclick="closeModal()">&times;</button>`;
-      }
+  var excerpt = (large && a.description)
+    ? '<p class="card-excerpt">' + esc(a.description.substring(0, 220)) + '</p>'
+    : '';
 
-      categoryBadge.className = `modal-badge ${article.category}`;
-      categoryBadge.textContent = categoryLabels[article.category];
-      source.textContent = article.source;
-      dateEl.textContent = formatDateFull(article.pubDate);
-      title.textContent = article.title;
-      description.textContent = article.description;
-      link.href = article.link;
-      link.textContent = 'Originalartikel lesen';
+  return '<article class="article-card ' + cls + '" tabindex="0" role="button">'
+    + '<div class="card-img">'
+    +   img
+    +   '<div class="card-badges">'
+    +     '<span class="badge-cat" style="background:' + color + '">' + (CAT_LABEL[cat] || cat) + '</span>'
+    +     '<span class="badge-src">' + esc(a.source || '') + '</span>'
+    +   '</div>'
+    + '</div>'
+    + '<div class="card-body">'
+    +   '<div class="card-date">' + fmtDate(a.pubDate) + '</div>'
+    +   '<h2 class="card-title">' + esc(a.title || '') + '</h2>'
+    +   excerpt
+    +   '<div class="card-footer">'
+    +     '<span class="card-rt">'
+    +       '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'
+    +         '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
+    +       (a.readingTime || 3) + ' Min.'
+    +     '</span>'
+    +     '<svg class="card-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">'
+    +       '<path d="M5 12h14M12 5l7 7-7 7"/></svg>'
+    +   '</div>'
+    + '</div>'
+    + '</article>';
+}
 
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+/* ============================
+   MODAL
+============================ */
+function extractKeyPoints(html) {
+  if (!html) return [];
+  var pts = [];
 
-    function closeModal() {
-      const modal = document.getElementById('article-modal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
+  // Prioritise list items
+  var li = html.match(/<li[^>]*>([\s\S]*?)<\/li>/gi) || [];
+  li.forEach(function(m) {
+    var t = m.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+    if (t.length > 35 && t.length < 380) pts.push(t);
+  });
+  if (pts.length >= 3) return pts.slice(0, 7);
 
-    function setupEventListeners() {
-      document.getElementById('search-input').addEventListener('input', (e) => {
-        searchQuery = e.target.value;
-        filterAndRender();
-      });
+  // Fall back to paragraphs
+  var pp = html.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+  pp.forEach(function(m) {
+    var t = m.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+    if (t.length > 70 && t.length < 450) pts.push(t);
+  });
+  return pts.slice(0, 6);
+}
 
-      document.getElementById('article-modal').addEventListener('click', (e) => {
-        if (e.target.id === 'article-modal') {
-          closeModal();
-        }
-      });
+function openModal(a) {
+  var cat    = a.category || 'digital';
+  var color  = CAT_COLOR[cat] || '#6366f1';
+  var grad   = CAT_GRAD[cat]  || CAT_GRAD.digital;
+  var letter = (a.source || 'M').charAt(0).toUpperCase();
+  var pts    = extractKeyPoints(a.fullContent);
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeModal();
-        }
-      });
-    }
+  // Image
+  var imgHtml = a.image
+    ? '<img class="modal-hero-img" src="' + esc(a.image) + '" alt="" '
+        + 'onerror="this.style.display=\'none\';document.getElementById(\'mFb\').style.display=\'flex\'">'
+      + '<div id="mFb" class="modal-hero-fallback" style="background:' + grad + ';display:none;">' + letter + '</div>'
+    : '<div class="modal-hero-fallback" style="background:' + grad + '">' + letter + '</div>';
 
-    // Initialize on load
-    init();
-  </script>
+  // Takeaways
+  var tkHtml = '';
+  if (pts.length) {
+    tkHtml = '<div class="takeaways-box">'
+      + '<div class="tk-header"><span class="tk-label">Wichtigste Erkenntnisse</span><span class="tk-line"></span></div>'
+      + '<ul class="tk-list">' + pts.map(function(p){ return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>'
+      + '</div>';
+  }
+
+  // Article content
+  var artHtml = '';
+  if (a.fullContent) {
+    artHtml = '<div class="sect-label">Vollstaendiger Artikel</div>'
+      + '<div class="art-content">' + a.fullContent + '</div>';
+  } else if (a.description) {
+    artHtml = '<div class="sect-label">Zusammenfassung</div>'
+      + '<div class="art-content"><p>' + esc(a.description) + '</p></div>';
+  } else {
+    artHtml = '<p style="color:var(--text-muted);font-size:.875rem">Kein Inhalt â Originalquelle besuchen.</p>';
+  }
+
+  document.getElementById('modalInner').innerHTML =
+      imgHtml
+    + '<div class="modal-body">'
+    +   '<div class="modal-meta-row">'
+    +     '<span class="badge-cat" style="background:' + color + '">' + (CAT_LABEL[cat] || cat) + '</span>'
+    +     '<span class="m-sep">|</span><span class="m-meta">' + esc(a.source || '') + '</span>'
+    +     '<span class="m-sep">|</span><span class="m-meta">' + fmtDate(a.pubDate) + '</span>'
+    +     '<span class="m-sep">|</span><span class="m-meta">' + (a.readingTime || 3) + ' Min.</span>'
+    +   '</div>'
+    +   '<h1 class="modal-title">' + esc(a.title || '') + '</h1>'
+    +   tkHtml
+    +   artHtml
+    +   '<div class="modal-footer">'
+    +     '<a href="' + esc(a.link || '#') + '" target="_blank" rel="noopener noreferrer" class="btn-src">'
+    +       'Zum Originalartikel'
+    +       '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">'
+    +         '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>'
+    +         '<polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>'
+    +       '</svg>'
+    +     '</a>'
+    +     '<span class="m-footer-meta">Quelle: ' + esc(a.source || '') + '</span>'
+    +   '</div>'
+    + '</div>';
+
+  var bd = document.getElementById('modalBackdrop');
+  bd.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  bd.scrollTop = 0;
+  document.getElementById('progBar').style.width = '0%';
+
+  if (bd._sh) bd.removeEventListener('scroll', bd._sh);
+  bd._sh = function() {
+    var max = bd.scrollHeight - bd.clientHeight;
+    document.getElementById('progBar').style.width =
+      (max > 0 ? Math.min(100, bd.scrollTop / max * 100) : 0) + '%';
+  };
+  bd.addEventListener('scroll', bd._sh);
+}
+
+function closeModal() {
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ============================
+   FILTERS + SEARCH
+============================ */
+document.querySelectorAll('.pill').forEach(function(p) {
+  p.addEventListener('click', function() {
+    document.querySelectorAll('.pill').forEach(function(x){ x.classList.remove('active'); });
+    p.classList.add('active');
+    currentFilter = p.dataset.filter;
+    renderGrid();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  searchQuery = e.target.value;
+  renderGrid();
+});
+
+document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+document.getElementById('modalBackdrop').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+/* ============================
+   THEME
+============================ */
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('mhTheme', t);
+}
+document.getElementById('themeToggle').addEventListener('click', function() {
+  applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  if (allArticles.length) {
+    var cats = {};
+    allArticles.forEach(function(a){ var c = a.category||'digital'; cats[c]=(cats[c]||0)+1; });
+    drawDonut(cats, allArticles.length);
+  }
+});
+
+/* ============================
+   UTILS
+============================ */
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function fmtDate(iso) {
+  if (!iso) return '';
+  try { return new Date(iso).toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'}); }
+  catch(e) { return iso; }
+}
+
+/* ============================
+   FALLBACK DATA + INIT
+============================ */
+window.__NEWS_DATA = {"updated":"2026-03-13T07:00:00Z","total":0,"sources":[],"articles":[]};
+
+(function init() {
+  applyTheme(localStorage.getItem('mhTheme') || 'dark');
+  loadArticles();
+})();
+</script>
+
 </body>
 </html>
