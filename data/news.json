@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-04T07:50:05.770956Z",
+  "updated": "2026-04-05T07:55:52.826617Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "The 5-Pillar Framework For AI Content That Audiences Actually Trust via @sejournal, @gregjarboe",
+      "link": "https://www.searchenginejournal.com/the-5-pillar-framework-for-ai-content-that-audiences-actually-trust/568860/",
+      "fullContent": "<p>More AI-generated content isn’t the answer. This guide outlines how to balance scale with authenticity to create content audiences actually value.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/the-5-pillar-framework-for-ai-content-that-audiences-actually-trust/568860/\">The 5-Pillar Framework For AI Content That Audiences Actually Trust</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "More AI-generated content isn’t the answer. This guide outlines how to balance scale with authenticity to create content audiences actually value. The post The 5-Pillar Framework For AI Content That Audiences Actually Trust appeared first on Search Engine Journal .",
+      "pubDate": "2026-04-04T12:00:46+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/03/ai-content-625.jpg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "More AI-generated content isn’t the answer. This guide outlines how to balance scale with authenticity to create content audiences actually value. The post The 5-Pillar Framework For AI Content That Audiences Actually Trust appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "What are AI agents and why do marketers need them now",
       "link": "https://sproutsocial.com/insights/what-are-ai-agents/",
@@ -370,18 +382,6 @@
       "source": "Search Engine Journal",
       "category": "strategy",
       "summary": "How CMOs should structure PPC teams to manage AI-driven campaigns, avoid blind spots, and align spend with profit, not platform metrics. The post Building An In-House PPC Team: Why A Hybrid Model May Protect Your Ad Spend appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "Who Owns SEO In The Enterprise? The Accountability Gap That Kills Performance via @sejournal, @billhunt",
-      "link": "https://www.searchenginejournal.com/who-owns-seo-in-the-enterprise-the-accountability-gap-that-kills-performance/566095/",
-      "fullContent": "<p>Bill Hunt explains why enterprise SEO performance improves when accountability matches authority across content, technology, and governance.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/who-owns-seo-in-the-enterprise-the-accountability-gap-that-kills-performance/566095/\">Who Owns SEO In The Enterprise? The Accountability Gap That Kills Performance</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Bill Hunt explains why enterprise SEO performance improves when accountability matches authority across content, technology, and governance. The post Who Owns SEO In The Enterprise? The Accountability Gap That Kills Performance appeared first on Search Engine Journal .",
-      "pubDate": "2026-04-01T11:30:02+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/02/accountability-gap-564.jpg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Bill Hunt explains why enterprise SEO performance improves when accountability matches authority across content, technology, and governance. The Accountability Gap That Kills Performance appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
