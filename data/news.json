@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-11T07:51:47.846108Z",
+  "updated": "2026-04-12T08:04:26.825027Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "What Pichai’s Interview Reveals About Google’s Search Direction via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/what-pichais-interview-reveals-about-googles-search-direction/571574/",
+      "fullContent": "<p>Sundar Pichai outlines search as an “agent manager,” signaling a shift from link-based results to task completion and multi-step workflows.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/what-pichais-interview-reveals-about-googles-search-direction/571574/\">What Pichai’s Interview Reveals About Google’s Search Direction</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Sundar Pichai outlines search as an “agent manager,” signaling a shift from link-based results to task completion and multi-step workflows. The post What Pichai’s Interview Reveals About Google’s Search Direction appeared first on Search Engine Journal .",
+      "pubDate": "2026-04-11T12:00:21+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/04/b240b6d8-f9d7-4fec-85e8-86f7cce6f5e1-475.jpeg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Sundar Pichai outlines search as an “agent manager,” signaling a shift from link-based results to task completion and multi-step workflows. The post What Pichai’s Interview Reveals About Google’s Search Direction appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "How to Do Keyword Research for SEO",
       "link": "https://neilpatel.com/blog/keyword-research/",
@@ -382,18 +394,6 @@
       "source": "Search Engine Journal",
       "category": "digital",
       "summary": "Discover the importance of AI search in modern marketing. Learn how to close the gap between content and SEO teams for success. The post Breaking Content & SEO Silos To Build Entity Authority in AI Search appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "OpenAI, Meta, ByteDance Lead AI Bot Traffic In Publishing via @sejournal, @MattGSouthern",
-      "link": "https://www.searchenginejournal.com/openai-meta-bytedance-lead-ai-bot-traffic-in-publishing/571483/",
-      "fullContent": "<p>Akamai breaks down which AI bots are hitting publishing, who operates them, and why fetcher bots may pose a more immediate risk.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/openai-meta-bytedance-lead-ai-bot-traffic-in-publishing/571483/\">OpenAI, Meta, ByteDance Lead AI Bot Traffic In Publishing</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Akamai breaks down which AI bots are hitting publishing, who operates them, and why fetcher bots may pose a more immediate risk. The post OpenAI, Meta, ByteDance Lead AI Bot Traffic In Publishing appeared first on Search Engine Journal .",
-      "pubDate": "2026-04-09T04:20:50+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/04/4c1258f3-cf2b-4809-949b-151237538542-611.jpeg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Akamai breaks down which AI bots are hitting publishing, who operates them, and why fetcher bots may pose a more immediate risk. The post OpenAI, Meta, ByteDance Lead AI Bot Traffic In Publishing appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
