@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-12T08:04:26.825027Z",
+  "updated": "2026-04-13T09:02:00.438637Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "How AI Agents See Your Website (And How To Build For Them) via @sejournal, @slobodanmanic",
+      "link": "https://www.searchenginejournal.com/how-ai-agents-see-your-website-and-how-to-build-for-them/570443/",
+      "fullContent": "<p>Websites built with semantic HTML, accessible patterns, and visible server-rendered content are better positioned for the agentic web.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/how-ai-agents-see-your-website-and-how-to-build-for-them/570443/\">How AI Agents See Your Website (And How To Build For Them)</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Websites built with semantic HTML, accessible patterns, and visible server-rendered content are better positioned for the agentic web. The post How AI Agents See Your Website (And How To Build For Them) appeared first on Search Engine Journal .",
+      "pubDate": "2026-04-12T12:00:14+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/03/agentic-ai-875.jpg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Websites built with semantic HTML, accessible patterns, and visible server-rendered content are better positioned for the agentic web. The post How AI Agents See Your Website (And How To Build For Them) appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "What Pichai’s Interview Reveals About Google’s Search Direction via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/what-pichais-interview-reveals-about-googles-search-direction/571574/",
@@ -382,18 +394,6 @@
       "source": "Social Media Examiner",
       "category": "social",
       "summary": "Are your competitors producing more creative than you can match because they've figured out how to use AI to do it at scale? Are you still waiting weeks for a UGC creator to deliver one video, then repeating that cycle for every new ad variation you want to test? In this article, you'll discover why […] The post Ads and AI: Leveraging AI Creative in 2026 appeared first on Social Media Examiner .",
-      "readingTime": 1
-    },
-    {
-      "title": "Breaking Content & SEO Silos To Build Entity Authority in AI Search",
-      "link": "https://www.searchenginejournal.com/entity-authority-ai-search-victorious-spa/570686/",
-      "fullContent": "<p>Discover the importance of AI search in modern marketing. Learn how to close the gap between content and SEO teams for success.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/entity-authority-ai-search-victorious-spa/570686/\">Breaking Content & SEO Silos To Build Entity Authority in AI Search</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Discover the importance of AI search in modern marketing. Learn how to close the gap between content and SEO teams for success. The post Breaking Content & SEO Silos To Build Entity Authority in AI Search appeared first on Search Engine Journal .",
-      "pubDate": "2026-04-09T05:00:49+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/04/featured-30.png",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Discover the importance of AI search in modern marketing. Learn how to close the gap between content and SEO teams for success. The post Breaking Content & SEO Silos To Build Entity Authority in AI Search appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
