@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-02T08:21:38.061253Z",
+  "updated": "2026-05-03T08:48:09.550925Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "What Google & Microsoft Earnings Say About Search via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/what-google-microsoft-earnings-say-about-search/573499/",
+      "fullContent": "<p>Alphabet and Microsoft earnings show search ad revenue growing while Google Network revenue fell to $6.97B, continuing a multi-quarter decline.  </p>\n<p>The post <a href=\"https://www.searchenginejournal.com/what-google-microsoft-earnings-say-about-search/573499/\">What Google & Microsoft Earnings Say About Search</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Alphabet and Microsoft earnings show search ad revenue growing while Google Network revenue fell to $6.97B, continuing a multi-quarter decline. The post What Google & Microsoft Earnings Say About Search appeared first on Search Engine Journal .",
+      "pubDate": "2026-05-02T12:00:53+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/05/3410e444-41c8-4a63-b3e6-834b2fa356a4-266.jpeg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Alphabet and Microsoft earnings show search ad revenue growing while Google Network revenue fell to $6.97B, continuing a multi-quarter decline. The post What Google & Microsoft Earnings Say About Search appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "Google’s Preferred Sources Is Now A Global SEO Signal via @sejournal, @martinibuster",
       "link": "https://www.searchenginejournal.com/googles-preferred-sources-feature-is-now-a-global-seo-signal/573591/",
@@ -370,18 +382,6 @@
       "source": "Search Engine Journal",
       "category": "digital",
       "summary": "Google adds AI Brief and text disclaimers to AI Max. See how new controls help regulated advertisers adopt automation while maintaining compliance and messaging accuracy. The post New: AI Brief And Text Disclaimers Come To Google AI Max appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "Google Launches AI Max For Shopping and Travel Campaigns via @sejournal, @brookeosmundson",
-      "link": "https://www.searchenginejournal.com/google-launches-ai-max-for-shopping-and-travel-campaigns/573375/",
-      "fullContent": "<p>Google expands AI Max to Shopping and Travel campaigns. Learn what’s changing, how it works, and what advertisers should prepare for ahead of broader rollout.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-launches-ai-max-for-shopping-and-travel-campaigns/573375/\">Google Launches AI Max For Shopping and Travel Campaigns</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Google expands AI Max to Shopping and Travel campaigns. Learn what’s changing, how it works, and what advertisers should prepare for ahead of broader rollout. The post Google Launches AI Max For Shopping and Travel Campaigns appeared first on Search Engine Journal .",
-      "pubDate": "2026-04-30T13:00:24+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/04/shutterstock_1523032028-779.jpg",
-      "source": "Search Engine Journal",
-      "category": "strategy",
-      "summary": "Google expands AI Max to Shopping and Travel campaigns. Learn what’s changing, how it works, and what advertisers should prepare for ahead of broader rollout. The post Google Launches AI Max For Shopping and Travel Campaigns appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
