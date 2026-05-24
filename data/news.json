@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-23T09:02:38.043290Z",
+  "updated": "2026-05-24T09:22:20.372266Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "Google I/O Didn’t End SEO. The Risk Is Somewhere Else via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/google-i-o-didnt-end-seo-the-risk-is-somewhere-else/575660/",
+      "fullContent": "<p>Google I/O triggered panic about the death of Search. The risk is economic, not technical, and both sides of the debate are getting it wrong. </p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-i-o-didnt-end-seo-the-risk-is-somewhere-else/575660/\">Google I/O Didn’t End SEO. The Risk Is Somewhere Else</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Google I/O triggered panic about the death of Search. The risk is economic, not technical, and both sides of the debate are getting it wrong. The post Google I/O Didn’t End SEO. The Risk Is Somewhere Else appeared first on Search Engine Journal .",
+      "pubDate": "2026-05-23T12:00:44+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/05/bafce591-9a16-46dd-87bd-1ca3a711f8f2-538.jpeg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Google I/O triggered panic about the death of Search. The risk is economic, not technical, and both sides of the debate are getting it wrong. The Risk Is Somewhere Else appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "As the AI Battle Rages, Yusuf Mehdi Becomes the Latest Microsoft Veteran to Walk",
       "link": "https://www.adweek.com/brand-marketing/ai-battle-microsoft-yusuf-mehdi/",
@@ -382,18 +394,6 @@
       "source": "Search Engine Journal",
       "category": "digital",
       "summary": "Google's John Mueller says markdown pages can help developer documentation, but most sites should focus on current SEO needs before agentic traffic. The post Mueller Explains Why Google Uses Markdown On Dev Docs appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "WordPress 7.0 Launches With Native AI Integration via @sejournal, @martinibuster",
-      "link": "https://www.searchenginejournal.com/wordpress-7-0-launches-with-native-ai-integration/575419/",
-      "fullContent": "<p>WordPress 7.0 was expected to focus on real-time collaboration, but native AI integration may define the release and the platform's future.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/wordpress-7-0-launches-with-native-ai-integration/575419/\">WordPress 7.0 Launches With Native AI Integration</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "WordPress 7.0 was expected to focus on real-time collaboration, but native AI integration may define the release and the platform's future. The post WordPress 7.0 Launches With Native AI Integration appeared first on Search Engine Journal .",
-      "pubDate": "2026-05-20T19:14:28+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/05/wordpress-7-974.jpg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "WordPress 7.0 was expected to focus on real-time collaboration, but native AI integration may define the release and the platform's future. The post WordPress 7.0 Launches With Native AI Integration appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
