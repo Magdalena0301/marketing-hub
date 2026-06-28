@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T09:29:12.763330Z",
+  "updated": "2026-06-28T09:57:59.315266Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,66 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "Google’s Spam Update Now Reaches AI Answers. Enforcement Is Hard via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/googles-spam-update-now-reaches-ai-answers-enforcement-is-hard/580535/",
+      "fullContent": "<p>The line between earning a brand mention in AI answers and engineering one is getting redrawn. Here's what the research and Google's June update say.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/googles-spam-update-now-reaches-ai-answers-enforcement-is-hard/580535/\">Google’s Spam Update Now Reaches AI Answers. Enforcement Is Hard</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "The line between earning a brand mention in AI answers and engineering one is getting redrawn. Here's what the research and Google's June update say. The post Google’s Spam Update Now Reaches AI Answers. Enforcement Is Hard appeared first on Search Engine Journal .",
+      "pubDate": "2026-06-27T12:00:59+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/06/95daef14-16ee-449f-9ebf-5bee29e9ed4c-201.jpeg",
+      "source": "Search Engine Journal",
+      "category": "branding",
+      "summary": "The line between earning a brand mention in AI answers and engineering one is getting redrawn. Here's what the research and Google's June update say. The post Google’s Spam Update Now Reaches AI Answers. Enforcement Is Hard appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
+    {
+      "title": "Rethinking Audience Strategy for an Unpredictable Consumer",
+      "link": "https://www.adweek.com/commerce/rethinking-audience-strategy-for-an-unpredictable-consumer/",
+      "fullContent": "<p>By Michael Keenan The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. Get your ticket.</p>\n<p>This post was created in partnership with GroundTruth</p>\n<p>Younger consumers are changing retail by blending online viral trends with in-store shopping.</p>\n<p>During an ADWEEK House Cannes Lions panel co-hosted with GroundTruth, Will Lee, CEO of ADWEEK, sat down with Rosie O’Meara, CEO of GroundTruth, and Katie Comerford, president of commerce and transformation at Horizon Media, to discuss mapping the future path to purchase.</p>\n<p>Brands adapt instantly when items go viral. For SharkNinja, which launches hundreds of items every year, the hurdle is securing shelf space in consumers’ kitchens.</p>\n<p>When helping the brand launch a new slushy machine, Horizon Media looked to balance the product’s appeal across audiences. “It was about to be summer, so we went after the frosé sentiment—you know, everybody loves frosé. But what else could you do, knowing Gen Z are not huge drinkers, unlike millennials,” Comeford explained. “So, we went in both routes to make sure we were personalizing, but driving that virality to win that limited counter space.”</p>\n<p>To navigate sudden spikes in popularity, marketers use real-time behavioral signals to guide shoppers. Comerford stated the goal is to “ride that virality and get the shopper to where they want to shop and not dictate where they’re going to get the product.”</p>\n<p>This requires leveraging retail inventory feeds to avoid consumer frustration. As Comerford explained, tracking stock “allows us to direct the customer where the product’s available.”</p>\n<p>Younger buyers frequently shop in physical spaces despite the growth of digital platforms like TikTok Shop. Malls and beauty retailers see large groups of teens wanting to test products in person. As Comerford explained, “I think there’s a demand to try products in-person and not just trust, ‘I’m gonna buy it online, and I’ll get it shipped to me.'”</p>\n<p>GroundTruth tracks real-world movement because, as O’Meara stated, “where you go in the physical world, we have always believed, is who you really are as a consumer.”</p>\n<p>Following its acquisition by ZeroToOne.AI , GroundTruth uses a large predictive behavioral model. O’Meara explained, “With 90% accuracy, we can understand what you are likely to do next, when you’re likely to do it, and also what you’re not likely to do next, which also eliminates waste.”</p>\n<p>Physical retail continues to play an important role for younger shoppers. “We’re seeing that a majority of purchases still happen in store, and that includes Gen Z for sure,” O’Meara noted.</p>\n<p>AI reshapes targeting and search strategy</p>\n<p>Alongside a broader shift toward business outcomes, marketers are using AI models to dissect vague household CRM data to “make household level data, user level data, or person level data, so that they can better target, reach, and engage with those customers,” O’Meara explained.</p>\n<p>Concurrently, the rise of AI search requires new strategies. Comerford highlighted that “with Reddit being a huge source of that information, there’s limited control over what the answer engines are going to pick up and say about your brand,” shifting media focus toward answer engine optimization.</p>",
+      "description": "This post was created in partnership with GroundTruth Younger consumers are changing retail by blending online viral trends with in-store shopping. During an ADWEEK House Cannes Lions panel co-hosted with […]",
+      "pubDate": "2026-06-27T08:59:12+00:00Z",
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/GroundTruth_fireside_062426_group.jpg?w=600&h=315&crop=1",
+      "source": "Adweek",
+      "category": "digital",
+      "summary": "By Michael Keenan The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. This post was created in partnership with GroundTruth Younger consumers are changing retail by blending online viral trends with in-store shopping. During an ADWEEK House Cannes Lions panel co-hosted with GroundTruth, Will Lee, CEO of ADWEEK, sat down with Rosie O’Meara, CEO of GroundTruth, and Katie Comerford, president of commerce and transformation at Horizon Media, to discuss mapping the future path to purchase. Brands adapt instantly when items go viral.",
+      "readingTime": 3
+    },
+    {
+      "title": "When Past Purchases Aren’t Enough Anymore",
+      "link": "https://www.adweek.com/performance-marketing/when-past-purchases-arent-enough-anymore/",
+      "fullContent": "<p>By Michael Keenan The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. Get your ticket.</p>\n<p>This post was created in partnership with Seedtag</p>\n<p>Identity tracking has dominated digital marketing for two decades, but knowing a profile doesn’t mean understanding a real-time mindset.</p>\n<p>During an ADWEEK House Cannes Lions panel co-hosted with Seedtag, industry leaders discussed how to look beyond static data points to capture the fleeting emotions, immediate motivations, and environmental context driving consumer decisions.</p>\n<p>When play and cravings become real ‑ time signals</p>\n<p>Interactive platforms offer behavioral signals that traditional media cannot match. Andrea Hopelain, general manager and SVP of global marketing at Electronic Arts (EA), explained that gaming environments provide deep clarity into consumer moods because “play is a language.” Having launched EA Advertising last week , Hopelain explained how these live actions inform brands.</p>\n<p>“If you’ve got a player that’s rage quitting because they’ve just lost four matches in a row, you can infer that they may need something right in that moment,” Hopelain said. These specific reactions help companies deliver relevant messages at the right time.</p>\n<p>Peter Giordano, general manager of platform and growth services at DoorDash, noted that consumer profiles are incomplete without situational triggers. DoorDash uses an occasion-based approach to connect merchants with active buyers.</p>\n<p>“More iced coffee is bought in the afternoon than in the morning,” Giordano shared. He explained that buying patterns shift based on the moment, with afternoon coffee orders often leading to pet treats and late-night weekend purchases driving demand for items like toothbrushes. Rather than relying solely on historical purchase data, smart campaigns combine past behavior with real-time signals to respond to immediate needs.</p>\n<p>Prioritizing a consumer’s environment over raw metrics represents a necessary change for modern agencies. Brian Gleason, CEO of Seedtag, stated that the industry became highly effective at tracking people but lost sight of conversational tone and modality.</p>\n<p>“When you think back, and you look at Mad Men, there’s a moment of inspiration that you feel something and you connect with someone,” Gleason said. While LLMs give platforms the processing power to interpret content across channels, Gleason noted that custom fine-tuning creates the differentiation brands need.</p>\n<p>Technology alone cannot generate meaning. Hopelain noted that while AI helps with execution, human oversight is required to build valuable experiences. She pointed to a recent partnership in which millions of players used Coach handbags in The Sims world, giving the fashion brand direct insights into real-world retail preferences.</p>\n<p>The panel concluded that modern advertising is shifting away from massive calendar events toward individual milestones. “We’re definitely moving to a more personalized moment experience based on all of the other signals we have,” Giordano noted.</p>\n<p>Ultimately, the goal is to establish an ecosystem where digital ads provide a distinct benefit to the user.</p>",
+      "description": "This post was created in partnership with Seedtag Identity tracking has dominated digital marketing for two decades, but knowing a profile doesn’t mean understanding a real-time mindset. During an ADWEEK […]",
+      "pubDate": "2026-06-27T08:57:17+00:00Z",
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Seedtag_fireside_062426_group.jpg?w=600&h=315&crop=1",
+      "source": "Adweek",
+      "category": "branding",
+      "summary": "By Michael Keenan The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. This post was created in partnership with Seedtag Identity tracking has dominated digital marketing for two decades, but knowing a profile doesn’t mean understanding a real-time mindset. During an ADWEEK House Cannes Lions panel co-hosted with Seedtag, industry leaders discussed how to look beyond static data points to capture the fleeting emotions, immediate motivations, and environmental context driving consumer decisions. When play and cravings become real ‑ time signals Interactive platforms offer behavioral signals that traditional media cannot match.",
+      "readingTime": 2
+    },
+    {
+      "title": "The Campaign That Listened Before It Launched",
+      "link": "https://www.adweek.com/social-marketing/the-campaign-that-listened-before-it-launched/",
+      "fullContent": "<p>By Ashley Cisneros Mejia The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. Get your ticket.</p>\n<p>This post was created in partnership with Collectively</p>\n<p>The campaign for SheaMoisture’s Silk Press in a Bottle generated millions of views and sales that doubled in peak retail weeks. The strategy behind those numbers started long before cameras rolled.</p>\n<p>During an ADWEEK House Cannes Lions panel co-hosted with Collectively, Rebecca Stewart, brand editor at ADWEEK, sat down with Raven Walker, SVP of client partnerships at Collectively, and Reema Amin, head of marketing at SheaMoisture, to discuss the listening-first approach behind the launch.</p>\n<p>The SheaMoisture team aimed to earn consumers’ belief in the product by listening to their needs above all else. To do so, they watched thousands of videos, tracked social exchanges, and mapped what kept surfacing: heat damage, protecting curl patterns, humidity, and reversion.</p>\n<p>“When we were developing the product, the first thing we looked at was the data,” said Amin. “The same pain points kept coming up over and over.”</p>\n<p>“Silk press season never ends” emerged straight from that listening. It translated something consumers wanted: freedom from the seasonal limitations that had long defined how Black women approached the style. That phrase became the campaign’s center of gravity.</p>\n<p>Creator selection followed the same discipline. Walker’s team studied the cultural conversation with relevance in mind.</p>\n<p>“It wasn’t who’s the most popular right now,” Walker explained. “It’s whose life is going to serve as the stress test for this product.”</p>\n<p>The team cast the creators as proof points, with the campaign showing different moments where a silk press would need to hold up.</p>\n<p>Each creator brought something distinct: different real-world conditions, audiences, and ways of proving the product. “That’s not a brand campaign,” Walker said. “That’s true resonance.”</p>\n<p>Paid and earned ran as one strategy from the first brief. Creators shaped the architecture, and the brand trusted them to lead the storytelling.</p>\n<p>The launch unfolded like a story. Amin described a social-first rollout that used seeding and paparazzi-style content to build anticipation before the hero video debuted.</p>\n<p>Sheacation, SheaMoisture’s signature creator brand trip, carried the story into real life. Over three days in Miami, creators wore the product through nightlife, outdoor heat, and high humidity. Going on vacation with a silk press isn’t something many Black women have historically felt comfortable doing. That built-in skepticism gave the resulting content its credibility. The activation let creators show how the product performed under pressure rather than simply describing the promise.</p>\n<p>A pop-up with Walmart extended the campaign into commerce, where consumers could sample the product and shop directly from a digital magazine.</p>\n<p>Today’s sophisticated consumers can tell when a creator’s relationship with a product is transactional rather than genuine. Amin noted that authenticity can’t be layered in at the end. It gets established from the start and has to come from the purpose, product, and fit between the creator and the community.</p>\n<p>Creator marketing reaches its potential when consumer insight shapes the idea, the right creators prove the promise, and brands give them the room to make it real. Walker described the result: “They wanted to share it. They clicked, they bought it, and they trusted it before they ever clicked to buy.”</p>",
+      "description": "This post was created in partnership with Collectively The campaign for SheaMoisture’s Silk Press in a Bottle generated millions of views and sales that doubled in peak retail weeks. The […]",
+      "pubDate": "2026-06-27T08:56:34+00:00Z",
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Collectively_fireside_062426_group.jpg?w=600&h=315&crop=1",
+      "source": "Adweek",
+      "category": "strategy",
+      "summary": "By Ashley Cisneros Mejia The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. This post was created in partnership with Collectively The campaign for SheaMoisture’s Silk Press in a Bottle generated millions of views and sales that doubled in peak retail weeks. The strategy behind those numbers started long before cameras rolled. During an ADWEEK House Cannes Lions panel co-hosted with Collectively, Rebecca Stewart, brand editor at ADWEEK, sat down with Raven Walker, SVP of client partnerships at Collectively, and Reema Amin, head of marketing at SheaMoisture, to discuss the listening-first approach behind the launch.",
+      "readingTime": 3
+    },
+    {
+      "title": "Sports Marketing Is About Memorable Moments, Not Brand Awareness",
+      "link": "https://www.adweek.com/brand-marketing/sports-marketing-is-about-memorable-moments-not-brand-awareness/",
+      "fullContent": "<p>By Seth Simons The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. Get your ticket.</p>\n<p>This post was created in partnership with Zappi</p>\n<p>Sporting events are one of the most dependable ways to reach a highly engaged live audience, but brands have to get more creative than ever if they want to stand out.</p>\n<p>During an ADWEEK House Cannes Lions panel co-hosted with Zappi, marketing leaders sat down with Ryan Joe, editor-in-chief of ADWEEK, to discuss what it takes to break through to sporting audiences, the importance of authenticity, and how to keep up with fast-moving cultural conversations.</p>\n<p>The explosion in the popularity of sports is a blessing and a curse for legacy brands. With viewership high and the market oversaturated, putting a sign in the outfield no longer moves the needle.</p>\n<p>“Awareness is not our issue, so doing a logo slap—‘presented by X,’ ‘sponsored by Y’—that’s not success for us,” said Todd Kaplan, CMO for North America at Kraft Heinz.</p>\n<p>Instead, the challenge is to connect with audiences on a more authentic, emotional level. Dove did just that with its limited-edition line of World Cup–branded products such as deodorant and body wash.</p>\n<p>“It wasn’t just imposing yourself, but being inspired by the event,” said Steve Phillips, founder, chair, and chief innovation officer at Zappi, describing feedback he heard from consumers about the activation. “You really understood the fan experience and engaged with that fan experience in an interesting way.”</p>\n<p>Gabrielle Wesley, CMO of confectionery at Mars Snacking North America, urged marketers to think about sports marketing as a relationship with audiences rather than a broadcast to them. “Consumers don’t want to be messaged; they want to engage,” she explained. “It’s a two-way conversation.”</p>\n<p>With fans continuing to interact with clips, reaction videos, and celebrations after a game ends, brands have plenty of opportunities to keep that conversation going.</p>\n<p>That philosophy of maintaining an ongoing relationship with fans extends beyond official sponsorships. Kraft Heinz may not be a World Cup sponsor, but it still found a way to participate in the festivities with its “unofficial stadium ketchup” and limited-edition TSA-compliant ranch dressing packs.</p>\n<p>Successful sports activations, the panelists argued, are about creating your own moments alongside the broader cultural ones. Kaplan’s favorite example came from the Indy 500, when Oscar Mayer raced its fleet of Wienermobiles around the Indianapolis Motor Speedway. The “Wienie 500,” as it was called, garnered billions of earned media impressions, with fans even placing bets on DraftKings.</p>\n<p>“How you show up differently with ownable, distinctive assets—things that only your brand can do—that’s where the good stuff is,” Kaplan reflected.</p>\n<p>Authentic brand experiences can also come from unexpected places. Wesley pointed to Alex Freeman, the previously unknown U.S. men’s national soccer team player who became a viral sensation, as exactly the type of unscripted moment that marketers should be ready to leverage.</p>\n<p>“Those are engagements that are pure, that you can’t necessarily plan,” she stressed. “Making sure that you’re engaged in culture allows you to participate in those moments.”</p>\n<p>For Phillips, success comes down to a simple truth: The best sports ads, such as Stella Artois’ World Cup commercial with David Beckham, capture what it feels like to be a fan. “That really deep understanding of your audience, of what’s happening—associating that with your brand, that’s the type of success I think brands are looking for,” he said.</p>",
+      "description": "This post was created in partnership with Zappi Sporting events are one of the most dependable ways to reach a highly engaged live audience, but brands have to get more […]",
+      "pubDate": "2026-06-27T08:56:09+00:00Z",
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Zappi_panel_062426_group.jpg?w=600&h=315&crop=1",
+      "source": "Adweek",
+      "category": "branding",
+      "summary": "By Seth Simons The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. This post was created in partnership with Zappi Sporting events are one of the most dependable ways to reach a highly engaged live audience, but brands have to get more creative than ever if they want to stand out. During an ADWEEK House Cannes Lions panel co-hosted with Zappi, marketing leaders sat down with Ryan Joe, editor-in-chief of ADWEEK, to discuss what it takes to break through to sporting audiences, the importance of authenticity, and how to keep up with fast-moving cultural conversations. The explosion in the popularity of sports is a blessing and a curse for legacy brands.",
+      "readingTime": 3
+    },
     {
       "title": "Bruce Clay, One of the Founding Figures of SEO, Has Died via @sejournal, @martinibuster",
       "link": "https://www.searchenginejournal.com/bruce-clay-seo-pioneer-who-invented-content-siloing-has-died/580602/",
@@ -39,85 +99,73 @@
     {
       "title": "Ogilvy Takes Home Cannes Lions Network of the Year for 2026",
       "link": "https://www.adweek.com/agencies/ogilvy-takes-home-cannes-lions-network-of-the-year-for-2026/",
-      "fullContent": "WPP earns the two top Network of the Year spots with Ogilvy and VML.",
-      "description": "WPP earns the two top Network of the Year spots with Ogilvy and VML.",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Christopher Cicchiello To round out the Cannes Lions International Festival of Creativity, WPP’s Ogilvy won Network of the Year, with a fellow WPP agency, VML, earning the No. 2 spot.</p>\n<p>This award helped lift WPP to become the most awarded group at the festival for the second time in a row, tallying 140 Lions—a Titanium, 7 Grand Prix, 29 Gold, 40 Silver, and 63 Bronze. Ogilvy reclaimed the top honor after winning in 2024.</p>\n<p>In 2025, the festival awarded the Network of the Year to the now-defunct DDB Worldwide, which today has been absorbed into Omnicom’s TBWA.</p>\n<p>For Ogilvy alone, the agency won 81 Lions, including 3 Grand Prix, 13 Gold, 22 Silver, and 43 Bronze.</p>\n<p>Christopher Cicchiello is ADWEEK's agencies reporter. Previously, he was on the breaking news assignment desk at NBC News in Washington D.C., where he earned an Emmy nomination for his 2024 election coverage. His byline has appeared in NBC News, TODAY, Quincy News, The Times Union, and The Daily Orange.</p>\n<p>@ChrisCicchiello | Chris.cicchiello@adweek.com</p>",
+      "description": "SUBSCRIPTION ONLY By Christopher Cicchiello To round out the Cannes Lions International Festival of Creativity, WPP’s Ogilvy won Network of the Year, with a fellow WPP agency, VML, earning the No. This award helped lift WPP to become the most awarded group at the festival for the second time in a row, tallying 140 Lions—a Titanium, 7 Grand Prix, 29 Gold, 40 Silver, and 63 Bronze. Ogilvy reclaimed the top honor after winning in 2024.",
       "pubDate": "2026-06-26T17:55:20+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Ogilvy-Network-of-the-Year-2026.png?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "WPP earns the two top Network of the Year spots with Ogilvy and VML.",
+      "summary": "SUBSCRIPTION ONLY By Christopher Cicchiello To round out the Cannes Lions International Festival of Creativity, WPP’s Ogilvy won Network of the Year, with a fellow WPP agency, VML, earning the No. This award helped lift WPP to become the most awarded group at the festival for the second time in a row, tallying 140 Lions—a Titanium, 7 Grand Prix, 29 Gold, 40 Silver, and 63 Bronze. Ogilvy reclaimed the top honor after winning in 2024. In 2025, the festival awarded the Network of the Year to the now-defunct DDB Worldwide, which today has been absorbed into Omnicom’s TBWA. For Ogilvy alone, the agency won 81 Lions, including 3 Grand Prix, 13 Gold, 22 Silver, and 43 Bronze.",
       "readingTime": 1
     },
     {
       "title": "LePub Milan Wins Cannes Lions Agency of the Year 2026",
       "link": "https://www.adweek.com/agencies/lepub-milan-wins-cannes-lions-agency-of-the-year-2026/",
-      "fullContent": "The agency earns the honor largely through its documentary-style Heineken campaign.",
-      "description": "The agency earns the honor largely through its documentary-style Heineken campaign.",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Christopher Cicchiello Publicis’ LePub Milan is bringing back some new hardware from Cannes Lions after receiving this year’s Agency of the Year award on Friday.</p>\n<p>It’s been a successful Cannes for the agency. For the first time, it also won two Grand Prix, including the top Creative Strategy award for the Heineken campaign “The Pub That Refused To Die.”</p>\n<p>Less an ad and more a rousing documentary, the 10-minute film follows 26 locals in Kilteely, Ireland, banding together to keep the “beating heart” of their community alive: a pub that was put on the market for €300,000. Despite having no experience in the hospitality industry, they purchased the pub and reopened it as Street Pub.</p>\n<p>Christopher Cicchiello is ADWEEK's agencies reporter. Previously, he was on the breaking news assignment desk at NBC News in Washington D.C., where he earned an Emmy nomination for his 2024 election coverage. His byline has appeared in NBC News, TODAY, Quincy News, The Times Union, and The Daily Orange.</p>\n<p>@ChrisCicchiello | Chris.cicchiello@adweek.com</p>",
+      "description": "SUBSCRIPTION ONLY By Christopher Cicchiello Publicis’ LePub Milan is bringing back some new hardware from Cannes Lions after receiving this year’s Agency of the Year award on Friday. It’s been a successful Cannes for the agency. For the first time, it also won two Grand Prix, including the top Creative Strategy award for the Heineken campaign “The Pub That Refused To Die.” Less an ad and more a rousing documentary, the 10-minute film follows 26 locals in Kilteely, Ireland, banding together to keep the “beating heart” of their community alive: a pub that was put on the market for €300,000.",
       "pubDate": "2026-06-26T16:46:03+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Cannes-Lions-Agency-of-the-Year.jpg?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "strategy",
-      "summary": "The agency earns the honor largely through its documentary-style Heineken campaign.",
+      "summary": "SUBSCRIPTION ONLY By Christopher Cicchiello Publicis’ LePub Milan is bringing back some new hardware from Cannes Lions after receiving this year’s Agency of the Year award on Friday. It’s been a successful Cannes for the agency. For the first time, it also won two Grand Prix, including the top Creative Strategy award for the Heineken campaign “The Pub That Refused To Die.” Less an ad and more a rousing documentary, the 10-minute film follows 26 locals in Kilteely, Ireland, banding together to keep the “beating heart” of their community alive: a pub that was put on the market for €300,000. Despite having no experience in the hospitality industry, they purchased the pub and reopened it as Street Pub. Christopher Cicchiello is ADWEEK's agencies reporter.",
       "readingTime": 1
     },
     {
       "title": "Suncorp’s Climate-Proofing Platform for Homes Wins Cannes Lions Titanium Grand Prix",
       "link": "https://www.adweek.com/creativity/suncorps-climate-proofing-platform-for-homes-wins-cannes-lions-titanium-grand-prix/",
-      "fullContent": "Suncorp’s digital platform helping homeowners climate-proof their properties won the Dan Wieden Titanium Grand Prix at Cannes Lions.",
+      "fullContent": "<p>By Brittaney Kiefer Australian insurer Suncorp’s digital platform helping homeowners climate-proof their properties won the Dan Wieden Titanium Grand Prix at Cannes Lions 2026 .</p>\n<p>Suncorp’s “Haven,” created by Leo Australia, addressed the problem that while 81% of Australians have experienced extreme weather, only 17% have a plan to protect their home. The digital platform allowed homeowners to assess the risk to their property and create a plan to make their home more resilient to extreme weather and climate change.</p>\n<p>The Titanium Lions, which recognize work that progresses the industry, are one of the most prestigious prizes in advertising. This year, 18 pieces of work out of 137 entries were shortlisted.</p>\n<p>Chaka Sobhani, jury president of the Titanium Lions and global chief creative officer of TBWA, called Suncorp’s initiative “a truly brilliant piece of work.”</p>\n<p>“It’s a business strategy about resilience, as opposed to just recovery, which is a game changer in the insurance business,” she said. “We thought it stood apart because this is not just for this year. This will be a continuing platform and will make seismic changes for the future of Australian homes.”</p>\n<p>Last year, the Titanium Grand Prix went to another insurance company: AXA’s “Three Words” by Publicis Conseil , which changed home insurance policies in France to help people leave domestic abuse.</p>\n<p>Watch the 2026 Titanium Grand Prix winner below.</p>\n<p>Brittaney is Adweek's creative editor based in London.</p>\n<p>@BrittaneyKiefer | brittaney.kiefer@adweek.com</p>",
       "description": "Suncorp’s digital platform helping homeowners climate-proof their properties won the Dan Wieden Titanium Grand Prix at Cannes Lions.",
       "pubDate": "2026-06-26T16:30:00+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/SuncorpHaven.png?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "Suncorp’s digital platform helping homeowners climate-proof their properties won the Dan Wieden Titanium Grand Prix at Cannes Lions.",
+      "summary": "By Brittaney Kiefer Australian insurer Suncorp’s digital platform helping homeowners climate-proof their properties won the Dan Wieden Titanium Grand Prix at Cannes Lions 2026 . Suncorp’s “Haven,” created by Leo Australia, addressed the problem that while 81% of Australians have experienced extreme weather, only 17% have a plan to protect their home. The digital platform allowed homeowners to assess the risk to their property and create a plan to make their home more resilient to extreme weather and climate change. The Titanium Lions, which recognize work that progresses the industry, are one of the most prestigious prizes in advertising. This year, 18 pieces of work out of 137 entries were shortlisted.",
       "readingTime": 1
     },
     {
       "title": "Claude’s Super Bowl Campaign Mocking AI Ads Wins Cannes Lions Film Grand Prix",
       "link": "https://www.adweek.com/creativity/claudes-super-bowl-campaign-mocking-ai-ads-wins-cannes-lions-film-grand-prix/",
-      "fullContent": "Claude's Super Bowl campaign mocking AI advertising won the Film Grand Prix at Cannes Lions 2026.",
-      "description": "Claude's Super Bowl campaign mocking AI advertising won the Film Grand Prix at Cannes Lions 2026.",
+      "fullContent": "<p>By Brittaney Kiefer The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. Get your ticket.</p>\n<p>AI platform Claude’s Super Bowl LX campaign that mocked AI advertising has won the Film Grand Prix at Cannes Lions 2026 .</p>\n<p>Two spots—“Can I Get a Six Pack Quickly?” and “How Can I Communicate Better With My Mom?”—took home the top prize in Cannes Lions’ oldest category. The work was created by Mother London and directed by Jeff Low through Biscuit Filmworks.</p>\n<p>The campaign, which marked Claude owner Anthropic’s Super Bowl debut , was a favorite among creative leaders going into Cannes Lions, with some predicting it would win big at the festival. It also won Gold and Silver Lions in Film and a Silver Lion in Creative Strategy.</p>\n<p>When they were released in February, just days before Super Bowl 60, Claude’s films drew attention for taking on larger competitors like ChatGPT, which had just announced it was bringing advertising to its platform. Claude used humor to criticize this move and argue there was “a time and a place” for advertising.</p>\n<p>The campaign even prompted a public response from OpenAI CEO Sam Altman, who lashed out at Anthropic on X and accused his rival of being “deceptive.”</p>\n<p>“It’s an ad about where ads shouldn’t exist, it’s an AI making fun of AI, a challenger that took on the market leader,” said Pelle Sjoenell, Film Lions jury president and worldwide chief creative officer of NLS Corp. “With wicked nerve and craft in every frame, the risk was profound, the execution was immaculate, and it reshuffled the perceptions in the most consequential technology race of our age.”</p>\n<p>Watch this year’s Film Grand Prix winner below.</p>\n<p>Brittaney is Adweek's creative editor based in London.</p>\n<p>@BrittaneyKiefer | brittaney.kiefer@adweek.com</p>",
+      "description": "By Brittaney Kiefer The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. AI platform Claude’s Super Bowl LX campaign that mocked AI advertising has won the Film Grand Prix at Cannes Lions 2026 .",
       "pubDate": "2026-06-26T16:30:00+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/02/AnthropicSuperBowl2026.png?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "strategy",
-      "summary": "Claude's Super Bowl campaign mocking AI advertising won the Film Grand Prix at Cannes Lions 2026.",
-      "readingTime": 1
+      "summary": "By Brittaney Kiefer The future of brands gets decided here. Join the industry’s top marketers at Brandweek for the ideas, insights, and connections shaping what’s next. AI platform Claude’s Super Bowl LX campaign that mocked AI advertising has won the Film Grand Prix at Cannes Lions 2026 . Two spots—“Can I Get a Six Pack Quickly?” and “How Can I Communicate Better With My Mom?”—took home the top prize in Cannes Lions’ oldest category. The work was created by Mother London and directed by Jeff Low through Biscuit Filmworks.",
+      "readingTime": 2
     },
     {
       "title": "Venezuelan Election Operation Among ‘Good’ Grand Prix Winners on Cannes Lions 2026 Day 5",
       "link": "https://www.adweek.com/creativity/venezuelan-election-operation-among-good-grand-prix-winners-on-cannes-lions-2026-day-5/",
-      "fullContent": "Cannes Lions announces the winners across its awards for good track, including Glass, Sustainable Development Goals and Grand Prix For Good.",
+      "fullContent": "<p>By Imogen Watson Comando Con Venezuela, the informal Venezuelan political organization established to support politician María Corina Machado’s candidacy, has won the Grand Prix for Good for its “600K Network” election operation by Rainbow Lobster.</p>\n<p>When Machado was barred from standing as the leading opposition candidate to the widely classified authoritarian dictator, Nicolás Maduro, the political organization meticulously planned a way to prove the 2024 Venezuelan presidential election was rigged, after the opposition had disputed the ballot count for years without proof.</p>\n<p>Comando Con Venezuela secretly trained 600,000 volunteers and election witnesses to use their cell phones to scan and digitally secure the QR codes printed on the physical voting ballots, gathering 85% of voting tallies. When Maduro claimed power without proof, the Associated Press reported a 30-point gap between the official results and the actual results, a finding corroborated by The Carter Center and The Washington Post.</p>\n<p>Machado went on to win the Nobel Peace Prize for her efforts to save Venezuela from its authoritarian fate.</p>\n<p>Here are the other Grand Prix winners across Glass and Sustainable Development Goals.</p>\n<p>Instituto Yduqs, the philanthropic arm of Yduqs, Brazil’s largest higher education group, and IDOMED, a medical education institute, won the Glass Grand Prix for their medical study, “Nigrum Corpus.” The campaign was created by Artplan and tackles the fact that Black patients in Brazil (who make up 55.5% of the population) are six times more likely to suffer medical errors.</p>\n<p>Drawing from testimonies and healthcare data, they created a study to teach medical students how to treat Black bodies, mapping more than 20 conditions and including diagnostic comparisons across skin tones to dosage differences between Black and white children. The study was made available to universities across Brazil as a literacy tool for future doctors and has now been included in the World Health Organization’s collection.</p>\n<p>Kenyan dairy brand Too Good won the Sustainable Development Goals Grand Prix for “Paid Sick Pay for Cows,” created by The Partnership Agency. Kenya has the highest per capita milk consumption in Sub-Saharan Africa, with 80% of production coming from smallholder farmers. When Too Good found out 1 in 4 milk samples tested positive for antibiotics because farmers couldn’t afford to stop production during the withdrawal period, it created a labor framework and offered farmers paid sick leave for cows. The initiative registered dairy cows as economic workers and enabled farmers to apply for paid sick leave via WhatsApp. $27,000 was returned to farmers for withheld milk, which helped protect their income.</p>\n<p>Imogen Watson is a contributing writer for Adweek, based in North Wales. She has previously written for Creative Review, Campaign, and The Drum.</p>",
       "description": "Cannes Lions announces the winners across its awards for good track, including Glass, Sustainable Development Goals and Grand Prix For Good.",
       "pubDate": "2026-06-26T16:30:00+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2026/06/Untitled-design-3.png?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "Cannes Lions announces the winners across its awards for good track, including Glass, Sustainable Development Goals and Grand Prix For Good.",
-      "readingTime": 1
+      "summary": "By Imogen Watson Comando Con Venezuela, the informal Venezuelan political organization established to support politician María Corina Machado’s candidacy, has won the Grand Prix for Good for its “600K Network” election operation by Rainbow Lobster. When Machado was barred from standing as the leading opposition candidate to the widely classified authoritarian dictator, Nicolás Maduro, the political organization meticulously planned a way to prove the 2024 Venezuelan presidential election was rigged, after the opposition had disputed the ballot count for years without proof. Comando Con Venezuela secretly trained 600,000 volunteers and election witnesses to use their cell phones to scan and digitally secure the QR codes printed on the physical voting ballots, gathering 85% of voting tallies. When Maduro claimed power without proof, the Associated Press reported a 30-point gap between the official results and the actual results, a finding corroborated by The Carter Center and The Washington Post. Machado went on to win the Nobel Peace Prize for her efforts to save Venezuela from its authoritarian fate.",
+      "readingTime": 2
     },
     {
       "title": "Watch All the Grand Prix Winners of Cannes Lions 2026",
       "link": "https://www.adweek.com/creativity/watch-all-the-grand-prix-winners-of-cannes-lions-2026/",
-      "fullContent": "ADWEEK rounds up all the Grand Prix winners from Cannes Lions 2026.",
-      "description": "ADWEEK rounds up all the Grand Prix winners from Cannes Lions 2026.",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Brittaney Kiefer As the sun sets on another Cannes Lions , advertising’s most prestigious awards, the winners are heading home with shiny trophies and career bragging rights to last the year.</p>\n<p>The Grand Prix is the top prize in any category. Below, ADWEEK rounds up every Grand Prix winner from Cannes Lions 2026.</p>\n<p>The Ordinary | “The Periodic Fable” by Uncommon Creative Studio</p>\n<p>Novartis | “Relax Your Tight End” by Fallon</p>\n<p>Lions Health & United Nations Grand Prix for Good</p>\n<p>Caritas | “Vehicle of Hope” by Differ Agency</p>\n<p>Brittaney is Adweek's creative editor based in London.</p>\n<p>@BrittaneyKiefer | brittaney.kiefer@adweek.com</p>",
+      "description": "SUBSCRIPTION ONLY By Brittaney Kiefer As the sun sets on another Cannes Lions , advertising’s most prestigious awards, the winners are heading home with shiny trophies and career bragging rights to last the year. The Grand Prix is the top prize in any category. Below, ADWEEK rounds up every Grand Prix winner from Cannes Lions 2026.",
       "pubDate": "2026-06-26T16:30:00+00:00Z",
-      "image": null,
+      "image": "https://static-www.adweek.com/wp-content/uploads/2025/06/cannes-grand-prix-tracker-2024.jpg-1_36eb78.webp?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "ADWEEK rounds up all the Grand Prix winners from Cannes Lions 2026.",
-      "readingTime": 1
-    },
-    {
-      "title": "MS NOW Cancels The Weekend Primetime, Changes Weekend Schedule",
-      "link": "https://www.adweek.com/tvnewser/ms-now-cancels-the-weekend-primetime-changes-weekend-schedule/",
-      "fullContent": "Alex Witt to depart the network after more than 25 years.",
-      "description": "Alex Witt to depart the network after more than 25 years.",
-      "pubDate": "2026-06-26T16:27:46+00:00Z",
-      "image": null,
-      "source": "Adweek",
-      "category": "digital",
-      "summary": "Alex Witt to depart the network after more than 25 years.",
+      "summary": "SUBSCRIPTION ONLY By Brittaney Kiefer As the sun sets on another Cannes Lions , advertising’s most prestigious awards, the winners are heading home with shiny trophies and career bragging rights to last the year. The Grand Prix is the top prize in any category. Below, ADWEEK rounds up every Grand Prix winner from Cannes Lions 2026. The Ordinary | “The Periodic Fable” by Uncommon Creative Studio Novartis | “Relax Your Tight End” by Fallon Lions Health & United Nations Grand Prix for Good Caritas | “Vehicle of Hope” by Differ Agency Brittaney is Adweek's creative editor based in London. @BrittaneyKiefer | brittaney.kiefer@adweek.com",
       "readingTime": 1
     },
     {
@@ -131,42 +179,6 @@
       "category": "digital",
       "summary": "Reddit is more than just a social platform—it’s a massive engine of unfiltered consumer intent. If a consumer has a question, chances are, they’re bypassing traditional search to find the answer on Reddit. Redditors use the platform in multiple ways, from news aggregation to soliciting and sharing honest opinions without a marketing agenda. Instead of polished brand influencers, the network is populated by hyper-engaged, authentic communities sharing opinions about their hobbies, jobs, purchases, and more in threads or forums on specific topics called subreddits. These subreddits often dominate search query results when users search for specific topics, even more so in recent months, thanks to Google’s partnership with Reddit—making a brand&#8217;s presence or reputation on the platform a critical factor in modern SEO.",
       "readingTime": 5
-    },
-    {
-      "title": "Jonathan Mildenhall: A Lack of Kindness Is Costing Brands the Creative Work They Want",
-      "link": "https://www.adweek.com/brand-marketing/jonathan-mildenhall-a-lack-of-kindness-is-costing-brands-the-creative-work-they-want/",
-      "fullContent": "Rocket's highly regarded CMO has advice for his peers: Try being nice.",
-      "description": "Rocket's highly regarded CMO has advice for his peers: Try being nice.",
-      "pubDate": "2026-06-26T16:18:33+00:00Z",
-      "image": null,
-      "source": "Adweek",
-      "category": "branding",
-      "summary": "Rocket's highly regarded CMO has advice for his peers: Try being nice.",
-      "readingTime": 1
-    },
-    {
-      "title": "Life in the Fast Lane: Agency Execs Reflect on Leaving Holdcos",
-      "link": "https://www.adweek.com/agencies/life-in-the-fast-lane-agency-execs-reflect-on-leaving-holdcos/",
-      "fullContent": "ADWEEK House panelists said they found ‘freedom’ in launching or joining independent agencies.",
-      "description": "ADWEEK House panelists said they found ‘freedom’ in launching or joining independent agencies.",
-      "pubDate": "2026-06-26T16:13:14+00:00Z",
-      "image": null,
-      "source": "Adweek",
-      "category": "digital",
-      "summary": "ADWEEK House panelists said they found ‘freedom’ in launching or joining independent agencies.",
-      "readingTime": 1
-    },
-    {
-      "title": "Ticker: Janice Dean to Depart Fox News Due to Medical Condition",
-      "link": "https://www.adweek.com/tvnewser/ticker-janice-dean-to-depart-fox-news-due-to-medical-condition/",
-      "fullContent": "Dean had been with Fox News for the past 22 years.",
-      "description": "Dean had been with Fox News for the past 22 years.",
-      "pubDate": "2026-06-26T15:31:16+00:00Z",
-      "image": null,
-      "source": "Adweek",
-      "category": "digital",
-      "summary": "Dean had been with Fox News for the past 22 years.",
-      "readingTime": 1
     },
     {
       "title": "A Third Of Fintech Is Invisible To AI Agents via @sejournal, @slobodanmanic",
@@ -358,18 +370,6 @@
       "source": "Search Engine Journal",
       "category": "digital",
       "summary": "WordPress developers question whether the platform's AI ambitions are pulling attention away from what users have been asking for all along. The post WordPress Developers Say New AI Feature Does Not Belong In Core appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "AI Search Optimization Isn’t The Hard Part – It’s Getting Buy-In via @sejournal, @gregjarboe",
-      "link": "https://www.searchenginejournal.com/ai-search-optimization-isnt-the-hard-part-its-getting-buy-in/580032/",
-      "fullContent": "<p>Two SMX Advanced talks on AI search reveal why technical roadmaps stall without internal coalitions to move them forward.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/ai-search-optimization-isnt-the-hard-part-its-getting-buy-in/580032/\">AI Search Optimization Isn’t The Hard Part – It’s Getting Buy-In</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Two SMX Advanced talks on AI search reveal why technical roadmaps stall without internal coalitions to move them forward. The post AI Search Optimization Isn’t The Hard Part – It’s Getting Buy-In appeared first on Search Engine Journal .",
-      "pubDate": "2026-06-25T09:00:21+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/06/buy-in-376.png",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Two SMX Advanced talks on AI search reveal why technical roadmaps stall without internal coalitions to move them forward. The post AI Search Optimization Isn’t The Hard Part – It’s Getting Buy-In appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
