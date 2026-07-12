@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11T08:48:42.432834Z",
+  "updated": "2026-07-12T09:03:05.649762Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "AI Visibility Rankings Aren’t Stable – New Research Shows It’s Mostly Statistical Noise via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/ai-visibility-rankings-arent-stable-new-research-shows-its-mostly-statistical-noise/581905/",
+      "fullContent": "<p>AI visibility numbers move between runs, so a single reading can mislead. A new paper offers a stopping rule for when rankings are finally trustworthy. </p>\n<p>The post <a href=\"https://www.searchenginejournal.com/ai-visibility-rankings-arent-stable-new-research-shows-its-mostly-statistical-noise/581905/\">AI Visibility Rankings Aren’t Stable – New Research Shows It’s Mostly Statistical Noise</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "AI visibility numbers move between runs, so a single reading can mislead. A new paper offers a stopping rule for when rankings are finally trustworthy. The post AI Visibility Rankings Aren’t Stable – New Research Shows It’s Mostly Statistical Noise appeared first on Search Engine Journal .",
+      "pubDate": "2026-07-11T12:30:19+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/6d8827ec-a62d-445c-a3cc-68aad35a3ca7-524.jpeg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "AI visibility numbers move between runs, so a single reading can mislead. A new paper offers a stopping rule for when rankings are finally trustworthy. The post AI Visibility Rankings Aren’t Stable – New Research Shows It’s Mostly Statistical Noise appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "Google Says Canonical Re-Evaluation Can Take Up to Two Weeks via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/google-says-canonical-re-evaluation-can-take-up-to-two-weeks/582053/",
@@ -121,15 +133,15 @@
       "readingTime": 4
     },
     {
-      "title": "Free AI Citations Won’t Last. I’ve Watched Google Fence Off A Wide Open Field Before via @sejournal, @gregjarboe",
+      "title": "Google’s AI Citation Model Is Not Free Forever: What CMOs Need To Prepare For Now via @sejournal, @gregjarboe",
       "link": "https://www.searchenginejournal.com/free-ai-citations-wont-last-ive-watched-google-fence-off-a-wide-open-field-before/581471/",
-      "fullContent": "<p>Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/free-ai-citations-wont-last-ive-watched-google-fence-off-a-wide-open-field-before/581471/\">Free AI Citations Won’t Last. I’ve Watched Google Fence Off A Wide Open Field Before</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground. The post Free AI Citations Won’t Last. I’ve Watched Google Fence Off A Wide Open Field Before appeared first on Search Engine Journal .",
+      "fullContent": "<p>Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/free-ai-citations-wont-last-ive-watched-google-fence-off-a-wide-open-field-before/581471/\">Google’s AI Citation Model Is Not Free Forever: What CMOs Need To Prepare For Now</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground. The post Google’s AI Citation Model Is Not Free Forever: What CMOs Need To Prepare For Now appeared first on Search Engine Journal .",
       "pubDate": "2026-07-10T11:30:31+00:00Z",
       "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/ai-citations-357.png",
       "source": "Search Engine Journal",
       "category": "branding",
-      "summary": "Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground. I’ve Watched Google Fence Off A Wide Open Field Before appeared first on Search Engine Journal .",
+      "summary": "Most enterprise brands are invisible to AI models right now. That gap is closing fast, and the brands moving first will hold the ground. The post Google’s AI Citation Model Is Not Free Forever: What CMOs Need To Prepare For Now appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
@@ -322,18 +334,6 @@
       "source": "Search Engine Journal",
       "category": "digital",
       "summary": "Google's Nick Fox said Search saw its highest usage on record during Argentina's comeback win over Egypt at the World Cup. The post Google Search Hits All-Time Usage Record During World Cup appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "Google Ads Expands Travel Campaigns To Things To Do And Events via @sejournal, @brookeosmundson",
-      "link": "https://www.searchenginejournal.com/google-search-campaigns-travel-things-to-do-events-beta/581816/",
-      "fullContent": "<p>Google Ads expands its Travel campaign beta to Things to Do and Events, giving eligible advertisers a new campaign type for attractions and ticket sales.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-search-campaigns-travel-things-to-do-events-beta/581816/\">Google Ads Expands Travel Campaigns To Things To Do And Events</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Google Ads expands its Travel campaign beta to Things to Do and Events, giving eligible advertisers a new campaign type for attractions and ticket sales. The post Google Ads Expands Travel Campaigns To Things To Do And Events appeared first on Search Engine Journal .",
-      "pubDate": "2026-07-08T23:36:24+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/shutterstock_070820262-181.png",
-      "source": "Search Engine Journal",
-      "category": "strategy",
-      "summary": "Google Ads expands its Travel campaign beta to Things to Do and Events, giving eligible advertisers a new campaign type for attractions and ticket sales. The post Google Ads Expands Travel Campaigns To Things To Do And Events appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
