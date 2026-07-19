@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T08:50:23.577145Z",
+  "updated": "2026-07-19T09:05:19.825151Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,42 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "“Are You A Bot” Screens Can Get Your Pages Dropped By Google via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/are-you-a-bot-screens-can-get-your-pages-dropped-by-google/582801/",
+      "fullContent": "<p>Google's Mueller explained how an \"are you a bot\" screen can push a site's pages out of Google, and get another site picked as canonical.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/are-you-a-bot-screens-can-get-your-pages-dropped-by-google/582801/\">“Are You A Bot” Screens Can Get Your Pages Dropped By Google</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Google's Mueller explained how an \"are you a bot\" screen can push a site's pages out of Google, and get another site picked as canonical. The post “Are You A Bot” Screens Can Get Your Pages Dropped By Google appeared first on Search Engine Journal .",
+      "pubDate": "2026-07-19T05:00:38+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/d2de16d8-96da-407d-91ad-1f9498a75882-17.jpeg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Google's Mueller explained how an \"are you a bot\" screen can push a site's pages out of Google, and get another site picked as canonical. The post “Are You A Bot” Screens Can Get Your Pages Dropped By Google appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
+    {
+      "title": "When To Use Search Console’s ‘Validate Fix,’ According To Google via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/when-to-use-search-consoles-validate-fix-according-to-google/582791/",
+      "fullContent": "<p>Google's John Mueller explained what happens when you click Validate Fix in Search Console, and when the button is worth using. </p>\n<p>The post <a href=\"https://www.searchenginejournal.com/when-to-use-search-consoles-validate-fix-according-to-google/582791/\">When To Use Search Console’s ‘Validate Fix,’ According To Google</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Google's John Mueller explained what happens when you click Validate Fix in Search Console, and when the button is worth using. The post When To Use Search Console’s ‘Validate Fix,’ According To Google appeared first on Search Engine Journal .",
+      "pubDate": "2026-07-18T21:41:52+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/google-gemini-lm-846.jpg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Google's John Mueller explained what happens when you click Validate Fix in Search Console, and when the button is worth using. The post When To Use Search Console’s ‘Validate Fix,’ According To Google appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
+    {
+      "title": "Google NotebookLM Rebrand May Expose Your Site To More AI Scraping via @sejournal, @martinibuster",
+      "link": "https://www.searchenginejournal.com/google-notebooklm-rebrand-may-expose-your-site-to-more-ai-scraping/582775/",
+      "fullContent": "<p>Google's NotebookLM rebrand may expose websites to more AI scraping with zero attribution unless site owners take action right now.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-notebooklm-rebrand-may-expose-your-site-to-more-ai-scraping/582775/\">Google NotebookLM Rebrand May Expose Your Site To More AI Scraping</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Google's NotebookLM rebrand may expose websites to more AI scraping with zero attribution unless site owners take action right now. The post Google NotebookLM Rebrand May Expose Your Site To More AI Scraping appeared first on Search Engine Journal .",
+      "pubDate": "2026-07-18T10:09:29+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/google-gemini-lm-846.jpg",
+      "source": "Search Engine Journal",
+      "category": "branding",
+      "summary": "Google's NotebookLM rebrand may expose websites to more AI scraping with zero attribution unless site owners take action right now. The post Google NotebookLM Rebrand May Expose Your Site To More AI Scraping appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "Google Puts A Number On AI Search Clicks, Without The Data via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/google-puts-a-number-on-ai-search-clicks-without-the-data/582755/",
@@ -299,42 +335,6 @@
       "category": "strategy",
       "summary": "&lt;p&gt;The best enterprise rank-tracking software goes far beyond checking positions for a handful of keywords. At scale, it means monitoring millions of data points across devices, locations, and search features, including AI Overviews, featured snippets, and local packs. Then that intelligence is fed into dashboards, CRM workflows, and executive reports that drive action across large organizations.&lt;/p&gt; &lt;p&gt;&lt;a class=\"cta_button\" href=\"https://www.hubspot.com/cs/ci/?pg=342bfade-db24-4f9a-9473-1cde8bddec50&amp;amp;pid=53&amp;amp;ecid=&amp;amp;hseid=&amp;amp;hsic=\"&gt;&lt;img class=\"hs-cta-img \" style=\"height: auto !important; width: auto !important; max-width: 100% !important;border-width: 0px; /*hs-extra-styles*/; margin: 0 auto; display: block; margin-top: 20px; margin-bottom: 20px\" alt=\"Learn More About HubSpot's Enterprise Marketing Software\" height=\"60\" width=\"542\" src=\"https://no-cache.hubspot.com/cta/default/53/342bfade-db24-4f9a-9473-1cde8bddec50.png\" align=\"middle\"&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;This guide breaks down what separates enterprise-grade tools from basic trackers, how to evaluate them against the demands of a high-traffic website, and which platforms deserve a place on your shortlist.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=\"#what-is-enterprise-rank-tracking-software\"&gt;What is enterprise rank tracking software?&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=\"#how-to-evaluate-enterprise-rank-tracking-software\"&gt;How to Evaluate Enterprise Rank Tracking Software&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=\"#best-enterprise-rank-tracking-software\"&gt;Best Enterprise Rank Tracking Software&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=\"#how-to-choose-the-right-enterprise-rank-tracking-software\"&gt;How to Choose the Right Enterprise Rank Tracking Software&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=\"#how-to-track-competitor-rankings-at-an-enterprise-scale\"&gt;How to Track Competitor Rankings at an Enterprise Scale&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=\"#frequently-asked-questions-about-enterprise-rank-tracking-software\"&gt;Frequently Asked Questions About Enterprise Rank Tracking Software&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;a&gt;&lt;/a&gt; &lt;h2&gt;What is enterprise rank tracking software?&lt;/h2&gt; &lt;p&gt;Enterprise rank-tracking software is a platform designed to monitor keyword positions at scale. Often, keyword rank tracking for enterprises is required across multiple:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Keywords.&lt;/li&gt; &lt;li&gt;Domains.&lt;/li&gt; &lt;li&gt;Geographic markets.&lt;/li&gt; &lt;li&gt;Device types.&lt;/li&gt; &lt;li&gt;Search engine features.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;After the data is recorded, it needs to be actionable for large, cross-functional teams.&lt;/p&gt; &lt;p&gt;Unlike basic rank trackers, which are designed for small sites checking a few hundred keywords once a day, the &lt;a href=\"https://blog.hubspot.com/marketing/best-rank-tracker\"&gt;best rank trackers&lt;/a&gt; for enterprise are built for complexity: high data volumes, granular location targeting, real-time or near-real-time refresh rates, and integrations that push ranking data into the broader systems an organization already depends on.&lt;/p&gt; &lt;p&gt;Importantly, enterprise keyword ranking must fit in the wider data stack. On its own, ranking data provides visibility metrics — which are great to have — but paired with Business Intelligence (BI), rank tracking starts to tell a story about opportunity and risk.",
       "readingTime": 4
-    },
-    {
-      "title": "Do The Answer Engines Keep Your Fingerprint, Or Do They Start Fresh Every Time? via @sejournal, @DuaneForrester",
-      "link": "https://www.searchenginejournal.com/do-the-answer-engines-keep-your-fingerprint-or-do-they-start-fresh-every-time/582124/",
-      "fullContent": "<p>The fingerprint you pressed into Google's ranking systems now feeds the AI answers on top of them. Here's where it persists and goes dark.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/do-the-answer-engines-keep-your-fingerprint-or-do-they-start-fresh-every-time/582124/\">Do The Answer Engines Keep Your Fingerprint, Or Do They Start Fresh Every Time?</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "The fingerprint you pressed into Google's ranking systems now feeds the AI answers on top of them. Here's where it persists and goes dark. The post Do The Answer Engines Keep Your Fingerprint, Or Do They Start Fresh Every Time? appeared first on Search Engine Journal .",
-      "pubDate": "2026-07-16T13:30:01+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/duane-forrester-decodes-ai-fingerprint-643.png",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "The fingerprint you pressed into Google's ranking systems now feeds the AI answers on top of them. The post Do The Answer Engines Keep Your Fingerprint, Or Do They Start Fresh Every Time? appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "AI SEO: Writing That’s Specific May Get Cited More via @sejournal, @martinibuster",
-      "link": "https://www.searchenginejournal.com/ai-seo-writing-thats-specific-may-get-cited-more/582531/",
-      "fullContent": "<p>Someone posted on social media about their experience writing deep and insightful articles last year and was pleasantly surprised to see that AI was leaning on their articles and even referencing them. Their secret was to choose highly specific topics, which is a good idea.</p>\n<p>SEOs like to write articles based on keywords, and that’s actually how people did it in the relative caveman days of SEO, well over 25 years ago. Natural language processing has come a long way, and LLMs are now able to understand topics and questions in a conversational manner. So it’s truly outdated to proceed with SEO by focusing on keywords.</p>\n<p>User behavior and what other sites and people are saying about a site or product are increasingly important. The best way to influence that is with content that’s insightful and gives users what they’re looking for and a lot of it, as often as possible.</p>\n<p>The person who started the discussion pointed out that they chose a “specific enough topic” and wrote something insightful about it. That’s a deceptively simple tip, but it is one of the key points about writing for an audience of humans and machines that interpret content as if they were humans.</p>\n<p>Choosing a specific enough topic is about keeping the article focused on a topic and not allowing it to stray. One of the hallmarks of good writing is the willingness to remove the bits that tend to wander off topic. This is an American style of writing, although Europeans as far back as Charles Dickens knew the value of staying on topic so that the effect is a constant stream of interesting sentences that pull a reader all the way to the end of the page.</p>\n<p>Writing is an art, like painting and composing music. But you don’t have to have a literature or journalism degree to engage users with text.</p>\n<p>How Someone Got Lots Of Love From Claude AI</p>\n<p>Bluesky user @danabra.mov posted about their experience writing an insightful article that subsequently began getting referred to by Claude AI.</p>\n<p>“If you write an insightful blog post on a specific enough topic, and people link to it, you have a real chance at influencing everyone’s LLM output in a year or so. it’s a bit wild.</p>\n<p>I wrote some articles last year that I thought nobody would read because they’re super long. And now I see Claude regurgitating what I wrote in those articles in a perfectly condensed way (and occasionally explicitly referring to the posts). they took away exactly what I wanted the reader to take!</p>\n<p>For me it’s a relief because i was worried about falling interest to longform blogs and declining readership. but in a sense maybe it has significantly expanded! It’s just that my reader is now infinitely patient and really wants to hear the entire thing.”</p>\n<p>Others Agree That Being Specific Is Key To Success With AI Citations</p>\n<p>The response to Dan’s post was overwhelmingly positive, with one person commenting that it gave them hope.</p>\n<p>One person named Tyler shared that they had a similar experience with content they published that was specific.</p>\n<p>“I’ve seen a couple of mine, not even that insightful, just specific, get pulled into them and used within like 6 months. Wild.”</p>\n<p>The person who started the discussion, Dan, agreed :</p>\n<p>“I mean yeah but I think being specific by itself is enough…”</p>\n<p>Based on my well over forty years of writing experience, including writing poems, short stories, one novel, blog posts, and articles for Search Engine Journal, my opinion on the matter is that focusing on being specific helps to keep a work focused in a way that matches the reader’s focus. The moment the article strays off topic is when the reader loses interest and jumps away.</p>\n<p>Being insightful is not enough. Being witty or clever is nice in moderation, but in higher doses it becomes off topic and will, in my opinion, lose the reader. That’s why anyone who writes content must be willing to ruthlessly cut words out to keep it focused and specific (on topic).</p>\n<p>Google’s John Mueller reposted Dan’s post with the comment :</p>\n<p>There was one skeptic in the crowd who argued that the economics remove the incentive to put in the work.</p>\n<p>“Why on earth would anyone put in the effort required at this point only to have it immediately stolen, receive no compensation and no credit. It’s never been more hostile environment to be a creative. The economics DO NOT WORK.”</p>\n<p>Yes, it’s true that today’s environment is hostile to creators because of AI. Yet there is always an opportunity for success by writing about the topics that interest you because they will be sure to be of interest to someone else.</p>\n<p>Featured Image by Shutterstock/Nur Alam sabuz</p>\n<p>Category News SEO Read Full Bio SEJ STAFF Roger Montti Owner - Martinibuster.com at Martinibuster.com I have 25 years hands-on experience in SEO, evolving along with the search engines by keeping up with the latest ...</p>",
-      "description": "AI SEO that prioritizes content that is specific may be a key to getting cited by AI search engines. The post AI SEO: Writing That’s Specific May Get Cited More appeared first on Search Engine Journal .",
-      "pubDate": "2026-07-16T11:03:01+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/ai-seo-ranking-869.jpg",
-      "source": "Search Engine Journal",
-      "category": "content",
-      "summary": "Someone posted on social media about their experience writing deep and insightful articles last year and was pleasantly surprised to see that AI was leaning on their articles and even referencing them. Their secret was to choose highly specific topics, which is a good idea. SEOs like to write articles based on keywords, and that’s actually how people did it in the relative caveman days of SEO, well over 25 years ago. Natural language processing has come a long way, and LLMs are now able to understand topics and questions in a conversational manner. So it’s truly outdated to proceed with SEO by focusing on keywords.",
-      "readingTime": 4
-    },
-    {
-      "title": "Google Is Using Social Media Signals To Mask AI Search Click Loss via @sejournal, @TaylorDanRW",
-      "link": "https://www.searchenginejournal.com/google-is-using-social-media-signals-to-mask-ai-search-click-loss/582227/",
-      "fullContent": "<p>The new Search Console social tracking hides AI click loss and turns your verified profiles into free training data for Google's models.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-is-using-social-media-signals-to-mask-ai-search-click-loss/582227/\">Google Is Using Social Media Signals To Mask AI Search Click Loss</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "The new Search Console social tracking hides AI click loss and turns your verified profiles into free training data for Google's models. The post Google Is Using Social Media Signals To Mask AI Search Click Loss appeared first on Search Engine Journal .",
-      "pubDate": "2026-07-16T11:00:03+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/social-media-posts-427.png",
-      "source": "Search Engine Journal",
-      "category": "social",
-      "summary": "The new Search Console social tracking hides AI click loss and turns your verified profiles into free training data for Google's models. The post Google Is Using Social Media Signals To Mask AI Search Click Loss appeared first on Search Engine Journal .",
-      "readingTime": 1
     },
     {
       "title": "Writing Winning LinkedIn Content, Without AI",
