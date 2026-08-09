@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T07:50:58.571392Z",
+  "updated": "2026-08-09T07:54:18.696316Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "AI’s Impact Is Outrunning Measurement: The Trust And Attribution Gap Facing Brands via @sejournal, @gregjarboe",
+      "link": "https://www.searchenginejournal.com/ais-impact-is-outrunning-measurement-the-trust-and-attribution-gap-facing-brands/584141/",
+      "fullContent": "<p>AI's impact outpaced our ability to measure it in H1 2026. Indig's citation data, agent share shifts, and the intelligence-versus-agency split explain what changes next.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/ais-impact-is-outrunning-measurement-the-trust-and-attribution-gap-facing-brands/584141/\">AI’s Impact Is Outrunning Measurement: The Trust And Attribution Gap Facing Brands</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "AI's impact outpaced our ability to measure it in H1 2026. Indig's citation data, agent share shifts, and the intelligence-versus-agency split explain what changes next. The post AI’s Impact Is Outrunning Measurement: The Trust And Attribution Gap Facing Brands appeared first on Search Engine Journa",
+      "pubDate": "2026-08-08T12:00:30+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/07/trust-and-attribution-gap-82.png",
+      "source": "Search Engine Journal",
+      "category": "branding",
+      "summary": "AI's impact outpaced our ability to measure it in H1 2026. Indig's citation data, agent share shifts, and the intelligence-versus-agency split explain what changes next. The post AI’s Impact Is Outrunning Measurement: The Trust And Attribution Gap Facing Brands appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "AI Search Only Feels New If Your SEO Was Shallow via @sejournal, @slobodanmanic",
       "link": "https://www.searchenginejournal.com/ai-search-only-feels-new-if-your-seo-was-shallow/584115/",
@@ -51,13 +63,13 @@
     {
       "title": "What the Nielsen and DoubleVerify Merger Means for the Ad Industry, According to Experts",
       "link": "https://www.adweek.com/convergent-tv/what-the-nielsen-and-doubleverify-merger-means-for-the-ad-industry/",
-      "fullContent": "<p>SUBSCRIPTION ONLY By Bill Bradley Ad experts are taking measure of Nielsen’s $2.15 billion merger with DoubleVerify .</p>\n<p>On Aug. 6, measurement giant Nielsen announced it was looking to acquire ad verification company DoubleVerify in an all-cash transaction worth more than $2 billion. The deal, which is expected to close by the first quarter of 2027, takes DoubleVerify private and gives Nielsen more tools in the digital media space, uniting traditional linear TV ratings with DoubleVerify’s digital ad verification.</p>\n<p>In a statement, Karthik Rao, CEO of Nielsen, noted that the combined company would be “a truly independent, end-to-end partner that connects trusted audience intelligence with verified media delivery.”</p>\n<p>Bill Bradley is Adweek's deputy TV, Media and Sports editor.</p>",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Bill Bradley Ad experts are taking measure of Nielsen’s $2.15 billion merger with DoubleVerify .</p>\n<p>On Aug. 6, measurement giant Nielsen announced it was looking to acquire ad verification company DoubleVerify in an all-cash transaction worth more than $2 billion. The deal, which is expected to close by the first quarter of 2027, takes DoubleVerify private and gives Nielsen more tools in the digital media space, uniting traditional linear TV ratings with DoubleVerify’s digital ad verification.</p>\n<p>In a statement, Karthik Rao, CEO of Nielsen, noted that the combined company would be “a truly independent, end-to-end partner that connects trusted audience intelligence with verified media delivery.”</p>\n<p>Subscribe and get full access to the news, insights, and expertise that keep industry professionals ahead of the curve.</p>\n<p>VIEW ALL SUBSCRIPTION OPTIONS Bill Bradley</p>\n<p>Bill Bradley is Adweek's deputy TV, Media and Sports editor.</p>",
       "description": "As Nielsen prepares to acquire DoubleVerify, ad industry experts weigh in on everything from cost to transparency.",
       "pubDate": "2026-08-07T16:19:20+00:00Z",
       "image": "https://static-www.adweek.com/wp-content/uploads/2026/08/Nielsen-DV_cd1f8e.jpeg?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "SUBSCRIPTION ONLY By Bill Bradley Ad experts are taking measure of Nielsen’s $2.15 billion merger with DoubleVerify . 6, measurement giant Nielsen announced it was looking to acquire ad verification company DoubleVerify in an all-cash transaction worth more than $2 billion. The deal, which is expected to close by the first quarter of 2027, takes DoubleVerify private and gives Nielsen more tools in the digital media space, uniting traditional linear TV ratings with DoubleVerify’s digital ad verification. In a statement, Karthik Rao, CEO of Nielsen, noted that the combined company would be “a truly independent, end-to-end partner that connects trusted audience intelligence with verified media delivery.” Bill Bradley is Adweek's deputy TV, Media and Sports editor.",
+      "summary": "SUBSCRIPTION ONLY By Bill Bradley Ad experts are taking measure of Nielsen’s $2.15 billion merger with DoubleVerify . 6, measurement giant Nielsen announced it was looking to acquire ad verification company DoubleVerify in an all-cash transaction worth more than $2 billion. The deal, which is expected to close by the first quarter of 2027, takes DoubleVerify private and gives Nielsen more tools in the digital media space, uniting traditional linear TV ratings with DoubleVerify’s digital ad verification. In a statement, Karthik Rao, CEO of Nielsen, noted that the combined company would be “a truly independent, end-to-end partner that connects trusted audience intelligence with verified media delivery.” Subscribe and get full access to the news, insights, and expertise that keep industry professionals ahead of the curve. VIEW ALL SUBSCRIPTION OPTIONS Bill Bradley Bill Bradley is Adweek's deputy TV, Media and Sports editor.",
       "readingTime": 1
     },
     {
@@ -171,13 +183,13 @@
     {
       "title": "Woo, Sue, and ARPU: What Publisher Earnings Reveal About Their AI Strategies",
       "link": "https://www.adweek.com/media/woo-sue-arpu-publisher-earnings-reveal-ai-strategies/",
-      "fullContent": "<p>SUBSCRIPTION ONLY By Mark Stenberg Traffic is down across the media industry, and AI is the main reason why.</p>\n<p>That was the throughline connecting the second-quarter earnings from The New York Times, News Corp, USA Today Co., and People Inc., all of which were reported this week.</p>\n<p>In response to the declines, each company is implementing some version of the same three-part playbook: licensing their content to AI companies where they can; suing or blocking where they cannot; and squeezing more revenue out of the readers they have.</p>\n<p>In describing his approach to the problem, News Corp CEO Robert Thomson has called the strategy a “woo and sue” framework.</p>\n<p>Mark Stenberg is ADWEEK's senior media reporter.</p>\n<p>@markstenberg3 | mark.stenberg@adweek.com</p>",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Mark Stenberg Traffic is down across the media industry, and AI is the main reason why.</p>\n<p>That was the throughline connecting the second-quarter earnings from The New York Times, News Corp, USA Today Co., and People Inc., all of which were reported this week.</p>\n<p>In response to the declines, each company is implementing some version of the same three-part playbook: licensing their content to AI companies where they can; suing or blocking where they cannot; and squeezing more revenue out of the readers they have.</p>\n<p>In describing his approach to the problem, News Corp CEO Robert Thomson has called the strategy a “woo and sue” framework.</p>\n<p>Subscribe and get full access to the news, insights, and expertise that keep industry professionals ahead of the curve.</p>\n<p>VIEW ALL SUBSCRIPTION OPTIONS Mark Stenberg</p>\n<p>Mark Stenberg is ADWEEK's senior media reporter.</p>\n<p>@markstenberg3 | mark.stenberg@adweek.com</p>",
       "description": "The New York Times, News Corp, USA Today Co. and People Inc. reported this week, each of which is grappling with AI-driven pressure on traffic.",
       "pubDate": "2026-08-07T08:43:48+00:00Z",
       "image": "https://static-www.adweek.com/wp-content/uploads/2026/08/GettyImages-1219747202.jpg?w=600&h=315&crop=1",
       "source": "Adweek",
       "category": "digital",
-      "summary": "SUBSCRIPTION ONLY By Mark Stenberg Traffic is down across the media industry, and AI is the main reason why. That was the throughline connecting the second-quarter earnings from The New York Times, News Corp, USA Today Co., and People Inc., all of which were reported this week. In response to the declines, each company is implementing some version of the same three-part playbook: licensing their content to AI companies where they can; suing or blocking where they cannot; and squeezing more revenue out of the readers they have. In describing his approach to the problem, News Corp CEO Robert Thomson has called the strategy a “woo and sue” framework. Mark Stenberg is ADWEEK's senior media reporter.",
+      "summary": "SUBSCRIPTION ONLY By Mark Stenberg Traffic is down across the media industry, and AI is the main reason why. That was the throughline connecting the second-quarter earnings from The New York Times, News Corp, USA Today Co., and People Inc., all of which were reported this week. In response to the declines, each company is implementing some version of the same three-part playbook: licensing their content to AI companies where they can; suing or blocking where they cannot; and squeezing more revenue out of the readers they have. In describing his approach to the problem, News Corp CEO Robert Thomson has called the strategy a “woo and sue” framework. Subscribe and get full access to the news, insights, and expertise that keep industry professionals ahead of the curve.",
       "readingTime": 1
     },
     {
@@ -207,7 +219,7 @@
     {
       "title": "ADWEEK TV Advantage: World Cup Reveals 3 Marketing Lessons to Add a Real Kick",
       "link": "https://www.adweek.com/convergent-tv/adweek-tv-advantage-world-cup-reveals-3-marketing-lessons/",
-      "fullContent": "<p>SUBSCRIPTION ONLY By Bill Bradley The 2026 FIFA World Cup brought record viewership and kicked up some marketing trends. Now, it’s time to game plan for the future.</p>\n<p>Overall, the 2026 World Cup, held in the U.S., Canada, and Mexico, was a rousing success for marketers. For instance, the final, showcasing Spain’s extra-time win over Argentina, drew over 66 million viewers across Fox and Telemundo , according to final Nielsen figures, making it the most-watched soccer match in U.S. history.</p>\n<p>Meanwhile, tech and data company Samba told ADWEEK that over 75% of U.S. households watched at least one World Cup Match, with the average coming to 12 games and 13 hours per household.</p>\n<p>Bill Bradley is Adweek's deputy TV, Media and Sports editor.</p>",
+      "fullContent": "<p>SUBSCRIPTION ONLY By Bill Bradley The 2026 FIFA World Cup brought record viewership and kicked up some marketing trends. Now, it’s time to game plan for the future.</p>\n<p>Overall, the 2026 World Cup, held in the U.S., Canada, and Mexico, was a rousing success for marketers. For instance, the final, showcasing Spain’s extra-time win over Argentina, drew over 66 million viewers across Fox and Telemundo , according to final Nielsen figures, making it the most-watched soccer match in U.S. history.</p>\n<p>Meanwhile, tech and data company Samba told ADWEEK that over 75% of U.S. households watched at least one World Cup Match, with the average coming to 12 games and 13 hours per household.</p>\n<p>Subscribe and get full access to the news, insights, and expertise that keep industry professionals ahead of the curve.</p>\n<p>VIEW ALL SUBSCRIPTION OPTIONS Bill Bradley</p>\n<p>Bill Bradley is Adweek's deputy TV, Media and Sports editor.</p>",
       "description": "SUBSCRIPTION ONLY By Bill Bradley The 2026 FIFA World Cup brought record viewership and kicked up some marketing trends. Now, it’s time to game plan for the future. Overall, the 2026 World Cup, held in the U.S., Canada, and Mexico, was a rousing success for marketers.",
       "pubDate": "2026-08-07T06:00:00+00:00Z",
       "image": "https://static-www.adweek.com/wp-content/uploads/2026/07/fifa-worldcup-marketing.jpeg?w=600&h=315&crop=1",
@@ -394,18 +406,6 @@
       "source": "Search Engine Journal",
       "category": "branding",
       "summary": "Learn how Freshpet stands out in AI Overviews and why trust signals matter for brand recognition in AI search. The post The Trust Signals That Get Your Brand Cited By AI Overviews, Just Like Freshpet [Webinar] appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "Google Chief Scientist Who Helped Build Modern Search And AI Steps Away via @sejournal, @martinibuster",
-      "link": "https://www.searchenginejournal.com/google-loses-the-engineer-who-helped-build-search-and-modern-ai/584785/",
-      "fullContent": "<p>Google loses Jeff Dean, who helped build Google Search and AI, replaced by DeepMind's Demis Hassabis as Chief Scientist.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-loses-the-engineer-who-helped-build-search-and-modern-ai/584785/\">Google Chief Scientist Who Helped Build Modern Search And AI Steps Away</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Google loses Jeff Dean, who helped build Google Search and AI, replaced by DeepMind's Demis Hassabis as Chief Scientist. The post Google Chief Scientist Who Helped Build Modern Search And AI Steps Away appeared first on Search Engine Journal .",
-      "pubDate": "2026-08-05T22:16:33+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/08/google-loses-jeff-dean-330.jpg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Google loses Jeff Dean, who helped build Google Search and AI, replaced by DeepMind's Demis Hassabis as Chief Scientist. The post Google Chief Scientist Who Helped Build Modern Search And AI Steps Away appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
