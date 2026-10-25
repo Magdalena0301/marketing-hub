@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T11:52:57.400493Z",
+  "updated": "2026-10-25T12:23:13.193043Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -12,6 +12,18 @@
     "Sprout Social"
   ],
   "articles": [
+    {
+      "title": "Google Explains 503s, Robots.txt Limits & Bracket URLs – SEO Pulse via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/seo-pulse-google-explains-503s-robots-txt-limits-bracket-urls/594085/",
+      "fullContent": "<p>Google reminds sites to use 503s during PHP patch downtime. Other updates cover robots.txt controls, bracket URLs, and JPEG XL in Google Images and Discover.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/seo-pulse-google-explains-503s-robots-txt-limits-bracket-urls/594085/\">Google Explains 503s, Robots.txt Limits & Bracket URLs – SEO Pulse</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Google reminds sites to use 503s during PHP patch downtime. Other updates cover robots.txt controls, bracket URLs, and JPEG XL in Google Images and Discover. The post Google Explains 503s, Robots.txt Limits & Bracket URLs – SEO Pulse appeared first on Search Engine Journal .",
+      "pubDate": "2026-10-24T12:00:00+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/10/seo-pulse-october-24-2026.jpg",
+      "source": "Search Engine Journal",
+      "category": "digital",
+      "summary": "Google reminds sites to use 503s during PHP patch downtime. Other updates cover robots.txt controls, bracket URLs, and JPEG XL in Google Images and Discover. The post Google Explains 503s, Robots.txt Limits & Bracket URLs – SEO Pulse appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
     {
       "title": "GEO Is A Distraction: Here’s Where The Real Opportunity Is via @sejournal, @marie_haynes",
       "link": "https://www.searchenginejournal.com/geo-is-a-distraction-heres-where-the-real-opportunity-is/593870/",
@@ -455,18 +467,6 @@
       "category": "social",
       "summary": "Key takeaways Social media in healthcare builds patient trust, supports recruitment, raises public health awareness, and creates direct communication channels with patients, but compliance with HIPAA, FDA, and FTC regulations is non-negotiable. A documented healthcare social media policy with approval workflows protects your organization from violations that can carry fines of more than $2.1 million per violation category per year. Healthcare organizations that focus on educational, engaging content on one or two priority platforms outperform those spreading resources thin across every network. AI tools can save healthcare social teams significant time on content creation, but every post needs human review and compliance approval before publishing. Social media in healthcare is the use of public social platforms by healthcare organizations to communicate with patients, educate the public, recruit staff, and build their brand.",
       "readingTime": 4
-    },
-    {
-      "title": "Google Reminds Sites To Serve A 503 During PHP Patch Downtime via @sejournal, @MattGSouthern",
-      "link": "https://www.searchenginejournal.com/google-reminds-sites-to-serve-503s-during-server-downtime/593873/",
-      "fullContent": "<p>Taking a site offline to patch PHP? Serve a 503 from outside PHP and keep robots.txt reachable. Days of server errors may get URLs dropped.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/google-reminds-sites-to-serve-503s-during-server-downtime/593873/\">Google Reminds Sites To Serve A 503 During PHP Patch Downtime</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Taking a site offline to patch PHP? Serve a 503 from outside PHP and keep robots.txt reachable. Days of server errors may get URLs dropped. The post Google Reminds Sites To Serve A 503 During PHP Patch Downtime appeared first on Search Engine Journal .",
-      "pubDate": "2026-10-21T20:19:40+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/10/php-maintenance-503-593873-final.jpg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Serve a 503 from outside PHP and keep robots.txt reachable. Days of server errors may get URLs dropped. The post Google Reminds Sites To Serve A 503 During PHP Patch Downtime appeared first on Search Engine Journal .",
-      "readingTime": 1
     },
     {
       "title": "11 employee advocacy program examples for 2026",
