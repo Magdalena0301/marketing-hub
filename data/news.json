@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T13:58:28.910687Z",
+  "updated": "2026-11-15T14:34:15.411848Z",
   "total": 86,
   "sources": [
     "Adweek",
@@ -13,6 +13,30 @@
   ],
   "articles": [
     {
+      "title": "Same B2B Google Ads Keywords Cost About 21% More, Agency Data Shows via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/b2b-google-ads-keywords-cost-more-agency-data/597426/",
+      "fullContent": "<p>One agency's data on 14 B2B advertisers finds the same non-brand Google Ads keywords cost more per click, even after controlling for their own spending.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/b2b-google-ads-keywords-cost-more-agency-data/597426/\">Same B2B Google Ads Keywords Cost About 21% More, Agency Data Shows</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "One agency's data on 14 B2B advertisers finds the same non-brand Google Ads keywords cost more per click, even after controlling for their own spending. The post Same B2B Google Ads Keywords Cost About 21% More, Agency Data Shows appeared first on Search Engine Journal .",
+      "pubDate": "2026-11-15T11:30:33+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/11/b2b-google-ads-cpc-featured.jpg",
+      "source": "Search Engine Journal",
+      "category": "branding",
+      "summary": "One agency's data on 14 B2B advertisers finds the same non-brand Google Ads keywords cost more per click, even after controlling for their own spending. The post Same B2B Google Ads Keywords Cost About 21% More, Agency Data Shows appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
+    {
+      "title": "YouTube’s Clips Tool Turns Podcast Episodes Into Shorts via @sejournal, @MattGSouthern",
+      "link": "https://www.searchenginejournal.com/youtube-studio-clips-podcast-episodes-shorts/597408/",
+      "fullContent": "<p>YouTube expanded its Studio video clips tool to Shorts, letting creators turn segments of long-form videos, like podcast episodes, into vertical Shorts.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/youtube-studio-clips-podcast-episodes-shorts/597408/\">YouTube’s Clips Tool Turns Podcast Episodes Into Shorts</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "YouTube expanded its Studio video clips tool to Shorts, letting creators turn segments of long-form videos, like podcast episodes, into vertical Shorts. The post YouTube’s Clips Tool Turns Podcast Episodes Into Shorts appeared first on Search Engine Journal .",
+      "pubDate": "2026-11-15T10:00:48+00:00Z",
+      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/11/youtube-studio-featured.jpg",
+      "source": "Search Engine Journal",
+      "category": "social",
+      "summary": "YouTube expanded its Studio video clips tool to Shorts, letting creators turn segments of long-form videos, like podcast episodes, into vertical Shorts. The post YouTube’s Clips Tool Turns Podcast Episodes Into Shorts appeared first on Search Engine Journal .",
+      "readingTime": 1
+    },
+    {
       "title": "Core Update, ChatGPT Business Hub & AI Mode’s New Model – SEO Pulse via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/seo-pulse-core-update-chatgpt-business-hub-ai-modes-new-model/597135/",
       "fullContent": "<p>A core update rolls out, AI search gets a new default model, ChatGPT shares mention and click counts, and sites plan for less search traffic.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/seo-pulse-core-update-chatgpt-business-hub-ai-modes-new-model/597135/\">Core Update, ChatGPT Business Hub & AI Mode’s New Model – SEO Pulse</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
@@ -25,27 +49,27 @@
       "readingTime": 1
     },
     {
-      "title": "United Requires Permission For AI Agents, Keeps Search Indexing Open via @sejournal, @MattGSouthern",
+      "title": "United Lets Search Engines Index Its Site, Makes AI Agents Ask First via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/",
-      "fullContent": "<p>An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/\">United Requires Permission For AI Agents, Keeps Search Indexing Open</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data. The post United Requires Permission For AI Agents, Keeps Search Indexing Open appeared first on Search Engine Journal .",
+      "fullContent": "<p>An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/\">United Lets Search Engines Index Its Site, Makes AI Agents Ask First</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data. The post United Lets Search Engines Index Its Site, Makes AI Agents Ask First appeared first on Search Engine Journal .",
       "pubDate": "2026-11-14T10:00:14+00:00Z",
       "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/11/united-ai-agents-featured.jpg",
       "source": "Search Engine Journal",
       "category": "strategy",
-      "summary": "An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data. The post United Requires Permission For AI Agents, Keeps Search Indexing Open appeared first on Search Engine Journal .",
+      "summary": "An airline's updated terms let search engines index public pages but require written permission for AI agents and bar AI grounding on its data. The post United Lets Search Engines Index Its Site, Makes AI Agents Ask First appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
-      "title": "Meta’s Muse Now Sends Most AI Agent Requests One Security Firm Sees via @sejournal, @MattGSouthern",
+      "title": "Meta & OpenAI Agents Made Nearly 90% Of Agent Requests In Bot Data via @sejournal, @MattGSouthern",
       "link": "https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/",
-      "fullContent": "<p>Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/\">Meta’s Muse Now Sends Most AI Agent Requests One Security Firm Sees</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout. The post Meta’s Muse Now Sends Most AI Agent Requests One Security Firm Sees appeared first on Search Engine Journal .",
+      "fullContent": "<p>Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/\">Meta & OpenAI Agents Made Nearly 90% Of Agent Requests In Bot Data</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
+      "description": "Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout. The post Meta & OpenAI Agents Made Nearly 90% Of Agent Requests In Bot Data appeared first on Search Engine Journal .",
       "pubDate": "2026-11-14T08:00:52+00:00Z",
       "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/11/meta-muse-featured.jpg",
       "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout. The post Meta’s Muse Now Sends Most AI Agent Requests One Security Firm Sees appeared first on Search Engine Journal .",
+      "category": "strategy",
+      "summary": "Two companies' AI agents made most of the requests observed in one month, and most went to product and search pages rather than checkout. The post Meta & OpenAI Agents Made Nearly 90% Of Agent Requests In Bot Data appeared first on Search Engine Journal .",
       "readingTime": 1
     },
     {
@@ -335,30 +359,6 @@
       "category": "social",
       "summary": "Key takeaways Social media guidelines protect your brand. They set clear expectations for how employees, contractors, agencies, and influencers represent your organization online, which reduces legal, compliance, and reputation risk. Strong guidelines cover more than tone and voice. The best documents address disclosure, privacy, cybersecurity, copyright, accessibility, AI use, and how to handle negativity. A step-by-step writing process makes guidelines easier to enforce.",
       "readingTime": 4
-    },
-    {
-      "title": "Does The Affiliate Model Survive Checkout Inside AI Mode And Gemini? – Ask An SEO via @sejournal, @rollerblader",
-      "link": "https://www.searchenginejournal.com/does-the-affiliate-model-survive-checkout-inside-ai-mode-and-gemini-ask-an-seo/585080/",
-      "fullContent": "<p>Affiliate links still help protect your commissions as AI checkout grows, but stronger tracking and better program choices add crucial layers of protection.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/does-the-affiliate-model-survive-checkout-inside-ai-mode-and-gemini-ask-an-seo/585080/\">Does The Affiliate Model Survive Checkout Inside AI Mode And Gemini? – Ask An SEO</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Affiliate links still help protect your commissions as AI checkout grows, but stronger tracking and better program choices add crucial layers of protection. The post Does The Affiliate Model Survive Checkout Inside AI Mode And Gemini? – Ask An SEO appeared first on Search Engine Journal .",
-      "pubDate": "2026-11-12T20:00:07+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2024/06/ask-an-seo-adam-riemer-376.jpg",
-      "source": "Search Engine Journal",
-      "category": "digital",
-      "summary": "Affiliate links still help protect your commissions as AI checkout grows, but stronger tracking and better program choices add crucial layers of protection. The post Does The Affiliate Model Survive Checkout Inside AI Mode And Gemini? – Ask An SEO appeared first on Search Engine Journal .",
-      "readingTime": 1
-    },
-    {
-      "title": "Top Million Sites Lost 12% Of Visits; Top 100’s Share Barely Moved via @sejournal, @MattGSouthern",
-      "link": "https://www.searchenginejournal.com/visits-to-the-top-million-websites-fell-12-data-shows/597085/",
-      "fullContent": "<p>Data shows visits to the world's top million websites declined from an earlier peak, visits going to sites outside the top 100 barely changed.</p>\n<p>The post <a href=\"https://www.searchenginejournal.com/visits-to-the-top-million-websites-fell-12-data-shows/597085/\">Top Million Sites Lost 12% Of Visits; Top 100’s Share Barely Moved</a> appeared first on <a href=\"https://www.searchenginejournal.com\">Search Engine Journal</a>.</p>",
-      "description": "Data shows visits to the world's top million websites declined from an earlier peak, visits going to sites outside the top 100 barely changed. The post Top Million Sites Lost 12% Of Visits; Top 100’s Share Barely Moved appeared first on Search Engine Journal .",
-      "pubDate": "2026-11-12T18:43:03+00:00Z",
-      "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/11/9e28404b-6124-44e3-a880-98e7c62cf229-889.jpeg",
-      "source": "Search Engine Journal",
-      "category": "strategy",
-      "summary": "Data shows visits to the world's top million websites declined from an earlier peak, visits going to sites outside the top 100 barely changed. The post Top Million Sites Lost 12% Of Visits; Top 100’s Share Barely Moved appeared first on Search Engine Journal .",
-      "readingTime": 1
     },
     {
       "title": "How to optimize for AI search: A practical guide for marketing teams",
